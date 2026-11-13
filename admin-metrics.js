@@ -7,10 +7,10 @@
      visits section, no visits fetch, no total-signups count is injected.
    - "Export to Excel" downloads ALL signups as .xlsx (SheetJS via CDN,
      CSV fallback if the CDN is unreachable).
-   The section is built in the DOM only for an approved admin whose editor is
-   visible. Reads use the admin's own Supabase session (RLS: signups readable
-   by the four admins, visits readable by Nathan only). If a table does not
-   exist yet, the section shows the one-time setup SQL instead of numbers. */
+   The signup list shows email, name, phone, business, source page, and signup
+   time. The section is built in the DOM only for an approved admin whose
+   editor is visible. Reads use the admin's own Supabase session (RLS:
+   signups readable by the four admins, visits readable by Nathan only). */
 (function () {
   var NATHAN = "nathanltwong@gmail.com";
   var ADMINS = ["alexa@flwrpwr.co", "cass@flwrpwr.co", "ash@flwrpwr.co", "nathanltwong@gmail.com"];
@@ -21,42 +21,6 @@
   var client = null;
   var isNathan = false;
   var allSignups = [];
-
-  var SETUP_SQL = [
-    "-- Run once in the Supabase dashboard, SQL Editor, then Run.",
-    "-- After that, visits and signups land here automatically.",
-    "",
-    "create table if not exists public.flwrpwr_visits (",
-    "  id bigint generated always as identity primary key,",
-    "  page text not null,",
-    "  session_type text not null,",
-    "  session_email text,",
-    "  visited_at timestamptz not null default now()",
-    ");",
-    "alter table public.flwrpwr_visits enable row level security;",
-    "drop policy if exists \"flwrpwr_visits_insert\" on public.flwrpwr_visits;",
-    "create policy \"flwrpwr_visits_insert\" on public.flwrpwr_visits",
-    "  for insert to anon, authenticated with check (true);",
-    "drop policy if exists \"flwrpwr_visits_read\" on public.flwrpwr_visits;",
-    "create policy \"flwrpwr_visits_read\" on public.flwrpwr_visits",
-    "  for select to authenticated",
-    "  using ((auth.jwt() ->> 'email') = 'nathanltwong@gmail.com');",
-    "",
-    "create table if not exists public.flwrpwr_signups (",
-    "  id bigint generated always as identity primary key,",
-    "  email text not null unique,",
-    "  source text,",
-    "  created_at timestamptz not null default now()",
-    ");",
-    "alter table public.flwrpwr_signups enable row level security;",
-    "drop policy if exists \"flwrpwr_signups_insert\" on public.flwrpwr_signups;",
-    "create policy \"flwrpwr_signups_insert\" on public.flwrpwr_signups",
-    "  for insert to anon, authenticated with check (true);",
-    "drop policy if exists \"flwrpwr_signups_read\" on public.flwrpwr_signups;",
-    "create policy \"flwrpwr_signups_read\" on public.flwrpwr_signups",
-    "  for select to authenticated",
-    "  using ((auth.jwt() ->> 'email') in ('nathanltwong@gmail.com', 'ash@flwrpwr.co', 'alexa@flwrpwr.co', 'cass@flwrpwr.co'));"
-  ].join("\n");
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -101,13 +65,6 @@
         '<button class="btn ghost small" type="button" id="metricsExport" style="margin-top:0">Export to Excel</button>' +
       '</div>' +
       '<div id="metricsBody"><p class="muted">Loading…</p></div>' +
-      '<div id="metricsSetup" class="setup hidden" style="margin-top:14px">' +
-        '<b>One-time setup needed before the numbers show.</b>' +
-        '<p style="margin:8px 0">The visits / signups tables do not exist yet in Supabase. Paste this once in the Supabase dashboard, SQL Editor, then Run. Numbers will show right after.</p>' +
-        '<pre id="metricsSql" style="white-space:pre-wrap;word-break:break-word"></pre>' +
-        '<button class="btn ghost small" type="button" id="metricsCopySql">Copy the SQL</button>' +
-        '<div class="status" id="metricsCopyStatus"></div>' +
-      '</div>' +
       '<button class="btn ghost small" type="button" id="metricsRefresh">Refresh</button>' +
       '<div class="status" id="metricsStatus"></div>';
     var anchor = document.getElementById("approvePanel");
@@ -116,21 +73,6 @@
     } else {
       editor.appendChild(sec);
     }
-    var pre = document.getElementById("metricsSql");
-    if (pre) pre.textContent = SETUP_SQL;
-    var copyBtn = document.getElementById("metricsCopySql");
-    if (copyBtn) copyBtn.addEventListener("click", function () {
-      var done = function (ok) {
-        var el = document.getElementById("metricsCopyStatus");
-        if (el) {
-          el.textContent = ok ? "Copied." : "Copy did not work, select the SQL by hand.";
-          el.className = "status" + (ok ? " ok" : " err");
-        }
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(SETUP_SQL).then(function () { done(true); }, function () { done(false); });
-      } else { done(false); }
-    });
     var refresh = document.getElementById("metricsRefresh");
     if (refresh) refresh.addEventListener("click", loadMetrics);
     var exp = document.getElementById("metricsExport");
@@ -180,12 +122,12 @@
     try {
       var c = getClient();
       if (c) {
-        var res = await c.from("flwrpwr_signups").select("email,source,created_at").order("created_at", { ascending: true }).limit(5000);
+        var res = await c.from("flwrpwr_signups").select("email,name,phone,business,source,created_at").order("created_at", { ascending: true }).limit(5000);
         if (!res.error && res.data) rows = res.data;
       }
     } catch (e) {}
     var sheetRows = (rows || []).map(function (s) {
-      return { "Email": s.email || "", "Signup date/time": fmtTime(s.created_at), "Source page": s.source || "" };
+      return { "Email": s.email || "", "Name": s.name || "", "Phone": s.phone || "", "Business": s.business || "", "Signup date/time": fmtTime(s.created_at), "Source page": s.source || "" };
     });
     var done = function (msg, ok) {
       if (btn) { btn.disabled = false; btn.textContent = "Export to Excel"; }
@@ -202,8 +144,8 @@
         return;
       }
     } catch (e) {}
-    var csv = "Email,Signup date/time,Source page\n" + sheetRows.map(function (r) {
-      return csvEscape(r["Email"]) + "," + csvEscape(r["Signup date/time"]) + "," + csvEscape(r["Source page"]);
+    var csv = "Email,Name,Phone,Business,Signup date/time,Source page\n" + sheetRows.map(function (r) {
+      return csvEscape(r["Email"]) + "," + csvEscape(r["Name"]) + "," + csvEscape(r["Phone"]) + "," + csvEscape(r["Business"]) + "," + csvEscape(r["Signup date/time"]) + "," + csvEscape(r["Source page"]);
     }).join("\n");
     downloadBlob(new Blob([csv], { type: "text/csv" }), "flwrpwr-signups.csv");
     done("Excel library did not load, downloaded a CSV instead (" + sheetRows.length + " signups).", false);
@@ -215,13 +157,12 @@
     var body = document.getElementById("metricsBody");
     var stats = document.getElementById("metricsStats");
     var visitsEl = document.getElementById("metricsVisits");
-    var setup = document.getElementById("metricsSetup");
     if (!c || !status || !body) return;
     status.textContent = "Loading…";
     status.className = "status";
     var sRes;
     try {
-      sRes = await c.from("flwrpwr_signups").select("email,source,created_at").order("created_at", { ascending: false }).limit(500);
+      sRes = await c.from("flwrpwr_signups").select("email,name,phone,business,source,created_at").order("created_at", { ascending: false }).limit(500);
     } catch (e) { sRes = { error: e }; }
     var vRes = null;
     if (isNathan) {
@@ -232,25 +173,21 @@
     var signupFailed = !!(sRes && sRes.error);
     var visitsFailed = isNathan && !!(vRes && vRes.error);
     if (signupFailed || visitsFailed) {
-      if (setup) setup.classList.remove("hidden");
-      status.textContent = "A table is not set up yet. Run the SQL above once, then refresh.";
+      status.textContent = "Could not load the numbers. Check your connection and refresh.";
       status.className = "status err";
       if (stats) stats.innerHTML = statHtml("Total visits", "—") + statHtml("Visits today", "—") + statHtml("Total signups", "—");
       if (visitsEl) visitsEl.innerHTML = "";
-      if (body) body.innerHTML = signupFailed
-        ? "<p class=\"muted\">No signups until the table exists.</p>"
-        : "<p class=\"muted\">Signups will show once the table exists.</p>";
+      if (body) body.innerHTML = "<p class=\"muted\">Could not load signups.</p>";
       return;
     }
-    if (setup) setup.classList.add("hidden");
     var signups = (sRes && sRes.data) || [];
     allSignups = signups.slice();
     var signupRows = signups.length ? signups.slice(0, 100).map(function (s) {
-      return "<tr><td>" + esc(s.email) + "</td><td>" + esc(s.source || "—") + "</td><td>" + esc(fmtTime(s.created_at)) + "</td></tr>";
-    }).join("") : "<tr><td colspan=\"3\">No signups yet.</td></tr>";
+      return "<tr><td>" + esc(s.email) + "</td><td>" + esc(s.name || "—") + "</td><td>" + esc(s.phone || "—") + "</td><td>" + esc(s.business || "—") + "</td><td>" + esc(s.source || "—") + "</td><td>" + esc(fmtTime(s.created_at)) + "</td></tr>";
+    }).join("") : "<tr><td colspan=\"6\">No signups yet.</td></tr>";
     var note = signups.length >= 100 ? "<p class=\"muted\">Showing the latest 100 — Export to Excel downloads all of them.</p>" : "";
     body.innerHTML =
-      "<div style=\"overflow-x:auto\"><table style=\"width:100%;border-collapse:collapse;font-size:.92rem\"><thead><tr><th style=\"text-align:left;padding:6px 8px;border-bottom:1.5px solid #D8DECB\">Email</th><th style=\"text-align:left;padding:6px 8px;border-bottom:1.5px solid #D8DECB\">Source</th><th style=\"text-align:left;padding:6px 8px;border-bottom:1.5px solid #D8DECB\">When</th></tr></thead><tbody>" + signupRows + "</tbody></table></div>" + note;
+      "<div style=\"overflow-x:auto\"><table style=\"width:100%;border-collapse:collapse;font-size:.92rem\"><thead><tr><th style=\"text-align:left;padding:6px 8px;border-bottom:1.5px solid #D8DECB\">Email</th><th style=\"text-align:left;padding:6px 8px;border-bottom:1.5px solid #D8DECB\">Name</th><th style=\"text-align:left;padding:6px 8px;border-bottom:1.5px solid #D8DECB\">Phone</th><th style=\"text-align:left;padding:6px 8px;border-bottom:1.5px solid #D8DECB\">Business</th><th style=\"text-align:left;padding:6px 8px;border-bottom:1.5px solid #D8DECB\">Source</th><th style=\"text-align:left;padding:6px 8px;border-bottom:1.5px solid #D8DECB\">When</th></tr></thead><tbody>" + signupRows + "</tbody></table></div>" + note;
     if (isNathan && vRes) {
       var visits = (vRes && vRes.data) || [];
       var today = 0, byPage = {};

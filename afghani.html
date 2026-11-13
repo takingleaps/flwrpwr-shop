@@ -30,11 +30,17 @@
       <div class="flwr-soon-front" aria-hidden="true"><svg viewBox="0 0 100 100" data-daisy data-c="#ffffff" style="left:4%;top:56%;--s:64px;--d:16s"></svg><svg viewBox="0 0 100 100" data-daisy data-c="#F4728E" style="right:5%;top:14%;--s:48px;--d:16s"></svg><svg viewBox="0 0 100 100" data-daisy data-c="#ffffff" style="right:10%;bottom:8%;--s:38px;--d:10s"></svg></div>
       <div class="flwr-soon-petals" aria-hidden="true"><i style="--x:4%;--s:15px;--d:13s;--dl:-1s;--sway:30px;--c:#F4728E">✿</i><i style="--x:14%;--s:11px;--d:17s;--dl:-8s;--sway:-22px;--c:#ffffff">✿</i><i style="--x:26%;--s:18px;--d:12s;--dl:-4s;--sway:36px;--c:#F4728E">✿</i><i style="--x:38%;--s:12px;--d:16s;--dl:-11s;--sway:-28px;--c:#ffffff">✿</i><i style="--x:52%;--s:16px;--d:14s;--dl:-6s;--sway:24px;--c:#F4728E">✿</i><i style="--x:64%;--s:11px;--d:18s;--dl:-3s;--sway:-30px;--c:#ffffff">✿</i><i style="--x:76%;--s:17px;--d:12s;--dl:-9s;--sway:28px;--c:#F4728E">✿</i><i style="--x:88%;--s:13px;--d:15s;--dl:-13s;--sway:-24px;--c:#ffffff">✿</i></div>
       <div class="flwr-soon-inner">
-        <div class="flwr-soon-blaze">
-          <p class="flwr-soon-blaze-kicker">Catch us at</p>
-          <img class="flwr-soon-blaze-logo" src="img/autumn-blaze-logo.webp" alt="Autumn Blaze 2026 — The San Diego Budtender Experience" />
-          <p class="flwr-soon-blaze-details">Thurs, Nov 12th &middot; 5 PM &ndash; 10 PM &middot; Wicked West, San Diego, CA</p>
-          <p class="flwr-soon-blaze-copy">Pull up to our booth for new drops, exclusive goodies, and the full FLWRPWR experience.</p>
+        <div class="flwr-soon-media">
+          <div class="flwr-soon-blaze">
+            <p class="flwr-soon-blaze-kicker">Catch us at</p>
+            <img class="flwr-soon-blaze-logo" src="img/autumn-blaze-logo.webp" alt="Autumn Blaze 2026 — The San Diego Budtender Experience" />
+            <p class="flwr-soon-blaze-details">Thurs, Nov 12th &middot; 5 PM &ndash; 10 PM &middot; Wicked West, San Diego, CA</p>
+            <p class="flwr-soon-blaze-copy">Pull up to our booth for new drops, exclusive goodies, and the full FLWRPWR experience.</p>
+          </div>
+          <figure class="flwr-soon-video">
+            <video src="video/flwrpwr-booth.mp4" muted loop autoplay playsinline preload="metadata" aria-label="FLWRPWR booth at Autumn Blaze 2026"></video>
+            <figcaption>Our booth at Autumn Blaze</figcaption>
+          </figure>
         </div>
         <img class="flwr-soon-logo" src="img/logo-flwrpwr.png" alt="FLWRPWR, Good vibes, great flower" />
         <p class="flwr-soon-kicker">Good vibes, great flower.</p>
@@ -50,6 +56,11 @@
         <form id="flwrSoonForm" class="flwr-soon-form" novalidate>
           <input type="email" id="flwrSoonEmail" placeholder="your@email.com" aria-label="Email address" required />
           <button type="submit">Notify Me</button>
+          <div class="flwr-soon-extra">
+            <input type="text" id="flwrSoonName" placeholder="Name (optional)" aria-label="Name (optional)" autocomplete="name" />
+            <input type="tel" id="flwrSoonPhone" placeholder="Phone (optional)" aria-label="Phone (optional)" autocomplete="tel" />
+            <input type="text" id="flwrSoonBusiness" placeholder="Business (optional)" aria-label="Business (optional)" autocomplete="organization" />
+          </div>
         </form>
         <p class="flwr-soon-done" id="flwrSoonDone" hidden>you're on the list ✿ see you at launch</p>
         <p class="flwr-soon-err" id="flwrSoonErr" hidden>Hmm, that email looks off. One more try?</p>
@@ -98,6 +109,7 @@
     <header class="site">
       <nav class="nav" aria-label="Main">
         <div class="nav-links left">
+          <a href="index.html">Home</a>
           <a href="shop.html" aria-current="page">Shop</a>
           <a href="story.html">Our Story</a>
           <a href="feed.html">The Feed</a>
@@ -188,12 +200,18 @@
             <form class="subscribe-form" id="subscribeForm">
               <input type="email" id="subscribeEmail" placeholder="your@email.com" aria-label="Email address" required />
               <button type="submit">Bloom with us</button>
+              <div class="flwr-soon-extra">
+                <input type="text" id="subscribeName" placeholder="Name (optional)" aria-label="Name (optional)" autocomplete="name" />
+                <input type="tel" id="subscribePhone" placeholder="Phone (optional)" aria-label="Phone (optional)" autocomplete="tel" />
+                <input type="text" id="subscribeBusiness" placeholder="Business (optional)" aria-label="Business (optional)" autocomplete="organization" />
+              </div>
             </form>
             <p class="subscribe-done" id="subscribeDone" hidden>you're on the list ✿ see you at launch</p>
           </div>
         </div>
         <div class="foot-base">
           <span>© 2026 FLWRPWR. All Rights Reserved.</span>
+          <a class="foot-admin" href="admin.html">Admin</a>
           <span class="age-note">21+ Only. Consume Responsibly.</span>
           <span class="ca-warn" aria-label="California cannabis warning"><svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true"><path d="M17 2 L32 28 L2 28 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><text x="17" y="23" text-anchor="middle" font-size="14" font-weight="900" fill="currentColor">!</text></svg></span>
         </div>
@@ -205,6 +223,8 @@
     <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
     <script src="site.js?v=3"></script>
     <script src="motion.js"></script>
+      <script src="tracker.js?v=1"></script>
+
       <script src="gate.js?v=3"></script>
     <script src="signup.js?v=1"></script>
     <!-- mobile bottom tab bar (phones only; see .flwr-tabbar in the page styles) -->
