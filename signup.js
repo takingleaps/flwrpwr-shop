@@ -5,7 +5,8 @@
    - Validates the email, then POSTs {email, name, phone, business, source}
      with the anon key. name/phone/business are read from the form when the
      overlay-spacing pass's fields are present; when a form has no such field
-     the key is omitted (so an upsert never nulls a previously saved value).
+     the key is omitted. Plain INSERT (no upsert): the anon role has no
+     UPDATE/SELECT permission, so on_conflict would fail with RLS 42501.
    - On success the form hides and the "you're on the list" line shows.
    - If Supabase is unreachable or the table is not set up yet, the signup is
      queued on-device and retried on later page loads, and the visitor still
@@ -53,13 +54,13 @@
         timer = setTimeout(function () { try { ctrl.abort(); } catch (e) {} }, 5000);
       }
     } catch (e) {}
-    return fetch(SB_URL + "/rest/v1/flwrpwr_signups?on_conflict=email", {
+    return fetch(SB_URL + "/rest/v1/flwrpwr_signups", {
       method: "POST",
       headers: {
         apikey: SB_ANON,
         Authorization: "Bearer " + SB_ANON,
         "Content-Type": "application/json",
-        Prefer: "resolution=merge-duplicates,return=minimal"
+        Prefer: "return=minimal"
       },
       body: JSON.stringify(row),
       signal: ctrl ? ctrl.signal : undefined
