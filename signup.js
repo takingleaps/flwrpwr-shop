@@ -1,10 +1,13 @@
 /* FLWRPWR signup wiring: every Notify Me / subscribe form on the shop saves
-   the email to Supabase (table flwrpwr_signups) instead of going nowhere.
+   the signup to Supabase (table flwrpwr_signups) instead of going nowhere.
    Forms wired: flwrSoonForm (Coming Soon overlay, all 10 pages),
    subscribeForm (footer, all 10 pages), joinForm (home page only).
-   - Validates the email, then POSTs {email, source} with the anon key.
+   - Validates the email, then POSTs {email, name, phone, business, source}
+     with the anon key. name/phone/business are read from the form when the
+     overlay-spacing pass's fields are present; when a form has no such field
+     the key is omitted (so an upsert never nulls a previously saved value).
    - On success the form hides and the "you're on the list" line shows.
-   - If Supabase is unreachable or the table is not set up yet, the email is
+   - If Supabase is unreachable or the table is not set up yet, the signup is
      queued on-device and retried on later page loads, and the visitor still
      sees the success line. Nothing is shown to the visitor about the queue.
    Silent by design: no console errors, no change to the forms' look. */
@@ -88,6 +91,27 @@
     });
   }
 
+  function fieldValue(form, key) {
+    // Read an optional field (name | phone | business) from the form.
+    // Matches by input name first, then the form-prefix id convention
+    // (flwrSoonName, joinPhone, subscribeBusiness), then a few generics.
+    // Returns the trimmed value, or null when the form has no such field.
+    var cap = key.charAt(0).toUpperCase() + key.slice(1);
+    var el = null;
+    try {
+      el = form.querySelector('[name="' + key + '"]');
+      if (!el) {
+        var prefix = (form.id || "").replace(/Form$/, "");
+        if (prefix) el = document.getElementById(prefix + cap);
+      }
+      if (!el) el = document.getElementById("signup" + cap);
+      if (!el) el = document.getElementById(key + "Input");
+    } catch (e) { el = null; }
+    if (!el) return null;
+    var v = (el.value || "").trim();
+    return v || null;
+  }
+
   function wire(cfg) {
     var form = document.getElementById(cfg.form);
     if (!form) return;
@@ -105,6 +129,12 @@
         return;
       }
       var row = { email: v, source: pageName() };
+      var nm = fieldValue(form, "name");
+      var ph = fieldValue(form, "phone");
+      var bs = fieldValue(form, "business");
+      if (nm) row.name = nm;
+      if (ph) row.phone = ph;
+      if (bs) row.business = bs;
       postSignup(row).then(function (ok) {
         if (!ok) enqueue(row);
         if (err) err.hidden = true;
