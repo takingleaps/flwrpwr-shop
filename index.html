@@ -11053,10 +11053,12 @@ header.site{ background:#34AFFD; }
 .flwr-soon-feed-item:has(> iframe) > blockquote{ display:none; }
 /* ---- mobile header: icon-only basket at phone width so nothing is cut off ---- */
 @media (max-width:560px){ .cart-label{ display:none; } .cart-btn{ padding:10px 13px; } }
-/* ---- join form: round pink arrow button (mockup) ---- */
-#joinForm{ position:relative; max-width:520px; margin-left:auto; margin-right:auto; flex-wrap:nowrap; }
-#joinForm input{ padding-right:62px; }
-#joinForm button{ position:absolute; right:5px; top:50%; transform:translateY(-50%); width:48px; height:48px; min-height:48px; border-radius:50%; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.35rem; color:#fff; }
+/* ---- join form: email row on top, optional fields below (stacked, mobile-safe) ---- */
+#joinForm{ position:relative; max-width:520px; margin-left:auto; margin-right:auto; flex-direction:column; flex-wrap:wrap; align-items:stretch; }
+.join-email-row{ position:relative; width:100%; }
+.join-email-row input{ width:100%; padding-right:62px; box-sizing:border-box; }
+.join-email-row button{ position:absolute; right:5px; top:50%; transform:translateY(-50%); width:48px; height:48px; min-height:48px; border-radius:50%; padding:0; display:flex; align-items:center; justify-content:center; font-size:1.35rem; color:#fff; }
+#joinForm .flwr-soon-extra{ flex:1 1 100%; width:100%; }
 /* ---- hero shop button: mockup outline pill ---- */
 .hero-shop-btn{ background:var(--paper) !important; color:var(--rose-ink) !important; border:2px solid var(--rose) !important; box-shadow:0 6px 16px rgba(244,114,142,.28) !important; }
 /* ---- hero badges: 3-col icon + label cells like the mockup ---- */
@@ -11411,6 +11413,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
       .flwr-soon-form{ display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; width:100%; max-width:440px; }
       .flwr-soon-extra{ display:flex; flex-wrap:wrap; gap:10px; flex:1 1 100%; }
       .flwr-soon-extra input{ flex:1 1 120px; min-width:0; }
+      @media (max-width:560px){ .flwr-soon-extra input{ flex:1 1 100%; } }
       .flwr-soon-form input{ flex:1; min-width:0; box-sizing:border-box; border:1.5px solid #E3D9C6; border-radius:999px; padding:13px 20px; font:inherit; font-weight:700; background:#FFFDF7; color:#2A3620; outline:none; }
       .flwr-soon-form input:focus{ border-color:#F4728E; }
       .flwr-soon-form button{ border:none; border-radius:999px; padding:13px 24px; background:#F4728E; color:#fff; font:inherit; font-weight:900; cursor:pointer; white-space:nowrap; box-shadow:0 6px 16px rgba(244,114,142,.35); }
@@ -11951,8 +11954,10 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
             <p>Be the first to know about new drops, events, and exclusive releases.</p>
           </div>
           <form class="subscribe-form join-form reveal" id="joinForm">
-            <input type="email" id="joinEmail" placeholder="Enter your email" aria-label="Email address" required />
-            <button type="submit" aria-label="Join the list">&rarr;</button>
+            <div class="join-email-row">
+              <input type="email" id="joinEmail" placeholder="Enter your email" aria-label="Email address" required />
+              <button type="submit" aria-label="Join the list">&rarr;</button>
+            </div>
             <div class="flwr-soon-extra">
               <input type="text" id="joinName" placeholder="Name (optional)" aria-label="Name (optional)" autocomplete="name" />
               <input type="tel" id="joinPhone" placeholder="Phone (optional)" aria-label="Phone (optional)" autocomplete="tel" />

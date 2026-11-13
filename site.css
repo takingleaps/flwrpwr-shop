@@ -381,6 +381,7 @@ footer.site p{ color:var(--cream-2); font-weight:600; margin-top:10px; max-width
 .flwr-soon-form{ display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; width:100%; max-width:440px; }
 .flwr-soon-extra{ display:flex; flex-wrap:wrap; gap:10px; flex:1 1 100%; }
 .flwr-soon-extra input{ flex:1 1 120px; min-width:0; }
+@media (max-width:560px){ .flwr-soon-extra input{ flex:1 1 100%; } }
 .flwr-soon-form input{ flex:1; min-width:0; box-sizing:border-box; border:1.5px solid #E3D9C6; border-radius:999px; padding:13px 20px; font:inherit; font-weight:700; background:#FFFDF7; color:#2A3620; outline:none; }
 .flwr-soon-form input:focus{ border-color:#F4728E; }
 .flwr-soon-form button{ border:none; border-radius:999px; padding:13px 24px; background:#F4728E; color:#fff; font:inherit; font-weight:900; cursor:pointer; white-space:nowrap; box-shadow:0 6px 16px rgba(244,114,142,.35); }
