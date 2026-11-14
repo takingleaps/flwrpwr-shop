@@ -87,3 +87,34 @@
     init();
   }
 })();
+
+/* FLWRPWR blaze carousel dots: sync the dots under the Autumn Blaze
+   poster/video carousel with the horizontal scroll position. */
+(function () {
+  function init() {
+    var carousels = document.querySelectorAll("[data-carousel]");
+    for (var c = 0; c < carousels.length; c++) {
+      (function (car) {
+        var slides = car.querySelector(".flwr-soon-slides");
+        var dots = car.querySelectorAll(".flwr-soon-dots span");
+        if (!slides || !dots.length) return;
+        var update = function () {
+          var i = Math.round(slides.scrollLeft / slides.clientWidth);
+          if (i < 0) i = 0;
+          if (i > dots.length - 1) i = dots.length - 1;
+          for (var d = 0; d < dots.length; d++) {
+            dots[d].classList.toggle("on", d === i);
+          }
+        };
+        slides.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+        update();
+      })(carousels[c]);
+    }
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();

@@ -241,7 +241,7 @@ section.block{ padding:72px 0; }
    so the rows stay even, the whole card links out to the post. */
 .feed-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
 @media (max-width:900px){ .feed-grid{ gap:14px; } }
-@media (max-width:560px){ .feed-grid{ gap:8px; } }
+@media (max-width:560px){ .feed-grid{ grid-template-columns:1fr; gap:16px; } }
 .feed-card{ border:2px solid var(--ink); border-radius:22px; overflow:hidden; background:var(--paper); box-shadow:var(--card-shadow); display:flex; flex-direction:column; min-width:0; }
 /* instagram link cards: Instagram's embed endpoint returns "No Media Match"
    for every @flwrpwr_co post, so the iframe embeds only ever rendered the
@@ -381,7 +381,7 @@ footer.site p{ color:var(--cream-2); font-weight:600; margin-top:10px; max-width
 .flwr-soon-form{ display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; width:100%; max-width:440px; }
 .flwr-soon-extra{ display:flex; flex-wrap:wrap; gap:10px; flex:1 1 100%; }
 .flwr-soon-extra input{ flex:1 1 120px; min-width:0; }
-@media (max-width:560px){ .flwr-soon-extra input{ flex:1 1 100%; } }
+@media (max-width:560px){ .flwr-soon-form .flwr-soon-extra input, #joinForm .flwr-soon-extra input, #subscribeForm .flwr-soon-extra input{ flex:1 1 100%; } }
 .flwr-soon-form input{ flex:1; min-width:0; box-sizing:border-box; border:1.5px solid #E3D9C6; border-radius:999px; padding:13px 20px; font:inherit; font-weight:700; background:#FFFDF7; color:#2A3620; outline:none; }
 .flwr-soon-form input:focus{ border-color:#F4728E; }
 .flwr-soon-form button{ border:none; border-radius:999px; padding:13px 24px; background:#F4728E; color:#fff; font:inherit; font-weight:900; cursor:pointer; white-space:nowrap; box-shadow:0 6px 16px rgba(244,114,142,.35); }
@@ -401,6 +401,14 @@ footer.site p{ color:var(--cream-2); font-weight:600; margin-top:10px; max-width
 .flwr-soon-blaze-logo{ display:block; width:min(320px,100%); height:auto; margin:10px auto 0; border-radius:16px; }
 .flwr-soon-blaze-details{ margin:12px 0 0; font-weight:900; font-size:.88rem; line-height:1.5; color:#2A3620; text-align:center; text-wrap:balance; }
 .flwr-soon-blaze-copy{ margin:8px 0 0; font-weight:700; font-size:.88rem; line-height:1.55; color:#5A6B52; }
+.flwr-soon-carousel{ margin-top:10px; }
+.flwr-soon-slides{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; -ms-overflow-style:none; border-radius:16px; }
+.flwr-soon-slides::-webkit-scrollbar{ display:none; }
+.flwr-soon-slide{ flex:0 0 100%; scroll-snap-align:start; }
+.flwr-soon-slide img, .flwr-soon-slide video{ display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:16px; background:#1B2413; margin:0; }
+.flwr-soon-dots{ display:flex; gap:6px; justify-content:center; margin-top:10px; }
+.flwr-soon-dots span{ width:7px; height:7px; border-radius:50%; background:#D8CFC0; transition:background .2s; }
+.flwr-soon-dots span.on{ background:#F45078; }
 .flwr-soon-video{ flex:0 1 280px; margin:0; padding:10px 10px 12px; background:#FFFDF7; border:3px solid #E8A90C; border-radius:24px; box-shadow:0 10px 28px rgba(232,169,12,.35), 0 8px 20px rgba(85,107,63,.12); box-sizing:border-box; }
 .flwr-soon-video video{ display:block; width:100%; height:auto; border-radius:16px; background:#1B2413; }
 .flwr-soon-video figcaption{ margin:10px 0 0; text-align:center; font-weight:900; font-size:.82rem; line-height:1.4; color:#2A3620; }
