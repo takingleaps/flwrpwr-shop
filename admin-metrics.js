@@ -1,19 +1,16 @@
 /* FLWRPWR admin metrics + signup list.
-   - The SIGNUP EMAIL LIST is visible to EVERY approved admin
-     (nathanltwong@gmail.com, ash@flwrpwr.co, alexa@flwrpwr.co, cass@flwrpwr.co).
-   - The VISITS numbers (total visits, visits today, visits by page, total
-     signups count) stay NATHAN-ONLY: rendered only when the signed-in admin
-     is exactly nathanltwong@gmail.com. For any other admin, no stats, no
-     visits section, no visits fetch, no total-signups count is injected.
+   - NATHAN-ONLY (2026-11-13): only nathanltwong@gmail.com can see the
+     signup list or the visit numbers. The other admin emails were removed
+     until the site owner approves them.
    - "Export to Excel" downloads ALL signups as .xlsx (SheetJS via CDN,
      CSV fallback if the CDN is unreachable).
    The signup list shows email, name, phone, business, source page, and signup
    time. The section is built in the DOM only for an approved admin whose
    editor is visible. Reads use the admin's own Supabase session (RLS:
-   signups readable by the four admins, visits readable by Nathan only). */
+   signups readable by Nathan only, visits readable by Nathan only). */
 (function () {
   var NATHAN = "nathanltwong@gmail.com";
-  var ADMINS = ["alexa@flwrpwr.co", "cass@flwrpwr.co", "ash@flwrpwr.co", "nathanltwong@gmail.com"];
+  var ADMINS = ["nathanltwong@gmail.com"];
   var SB_URL = "https://dqcoincagejyowqxqqnz.supabase.co";
   var SB_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRxY29pbmNhZ2VqeW93cXhxcW56Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTExMzY4NTQsImV4cCI6MjEwNjcxMjg1NH0.dG7GwddKfuoq08DX_SgtluxWKAU-hyAjMZcAc320ysI";
   var XLSX_CDN = "https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js";

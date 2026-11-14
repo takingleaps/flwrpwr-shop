@@ -52,7 +52,7 @@
   <!-- LOGIN / SIGN UP -->
   <div class="card" id="authCard">
     <h2>Admin sign in</h2>
-    <p class="muted">Only the four admin emails can get in. First time here? Use the Create account tab and set your own password. New accounts wait for the site admin to approve them before they can edit.</p>
+    <p class="muted">Only the site owner can get in. First time here? Use the Create account tab and set your own password. New accounts wait for the site owner to approve them before they can edit.</p>
     <div class="tabs">
       <button type="button" id="tabLogin" class="on">Log in</button>
       <button type="button" id="tabSignup">Create account</button>
@@ -72,7 +72,7 @@
   <div class="card hidden" id="waitCard">
     <h2>Waiting on the site admin</h2>
     <p>You are in. Your account is set up and your password works.</p>
-    <p>The site admin needs to approve you before you can edit the site. You will get in once he approves you.</p>
+    <p>The site owner has to approve you before you can edit the site. You will get in once he approves you.</p>
     <p class="muted">Signed in as <span class="who" id="waitEmail"></span></p>
     <button class="btn ghost" type="button" id="waitSignOutBtn">Sign out</button>
   </div>
@@ -122,9 +122,6 @@
     <div style="margin-top:22px">
       <b>Admins on this site</b>
       <ul class="admins">
-        <li>alexa@flwrpwr.co</li>
-        <li>cass@flwrpwr.co</li>
-        <li>ash@flwrpwr.co</li>
         <li>nathanltwong@gmail.com</li>
       </ul>
       <p class="muted">To add someone, ask Nathan. The list lives in this page.</p>
