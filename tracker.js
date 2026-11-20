@@ -86,20 +86,21 @@
 
   recordVisit();
 
-  /* NATHAN-ONLY GATE (2026-11-13): only nathanltwong@gmail.com gets past the
-     Coming Soon overlay. Everyone else sees Coming Soon only. The other admin
-     emails were removed until the site owner approves them. This runs on every
-     shop page (tracker.js loads before gate.js) and re-checks after load, so it
-     wins even if gate.js hides the overlay for a non-Nathan admin. To view the
-     Coming Soon page yourself, open the site logged out or in a private tab. */
-  var NATHAN_EMAIL = "nathanltwong@gmail.com";
+  /* ACCESS GATE (2026-11-13 Nathan-only; 2026-11-19 Cass added, no time
+     limit): only nathanltwong@gmail.com and cass@flwrpwr.co get past the
+     Coming Soon overlay. Everyone else sees Coming Soon only. This runs on
+     every shop page (tracker.js loads before gate.js) and re-checks after
+     load, so it wins even if gate.js hides the overlay for a non-allowed
+     admin. To view the Coming Soon page yourself, open the site logged out
+     or in a private tab. */
+  var ALLOWED_EMAILS = ["nathanltwong@gmail.com", "cass@flwrpwr.co"];
   function enforceNathanOnlyGate() {
     try {
       var gate = document.getElementById("flwrGate");
       if (!gate) return;
       var email = sessionEmail();
-      var isNathan = email && String(email).trim().toLowerCase() === NATHAN_EMAIL;
-      if (isNathan) {
+      var isAllowed = email && ALLOWED_EMAILS.indexOf(String(email).trim().toLowerCase()) !== -1;
+      if (isAllowed) {
         gate.style.display = "none";
         gate.setAttribute("aria-hidden", "true");
       } else {
