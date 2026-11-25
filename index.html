@@ -10252,7 +10252,7 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
         --edge:#A1AA8C;
         --soft-shadow:0 12px 30px rgba(85,107,63,.16);
         --bg:var(--cream);
-        /* old names kept so inline styles and the 3D shop script keep working */
+        /* old names kept so inline styles and the shop script keep working */
         --pink:var(--rose); --pink-hot:var(--rose-ink); --pink-soft:var(--rose-soft); --pink-pale:var(--rose-soft);
         --lilac:var(--lav-soft); --mint:var(--sage); --mint-soft:var(--sage-soft);
         --blue:var(--sky); --blue-soft:var(--sky-soft); --gold:var(--sage); --gold-soft:var(--sage-soft);
@@ -10269,11 +10269,11 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
       button{ font-family:inherit; cursor:pointer; touch-action:manipulation; }
       img,svg{ display:block; }
       a{ color:inherit; }
-      .bubble{ font-family:"Shrikhand",cursive; font-weight:400; letter-spacing:.01em; }
+      .bubble{ font-family:"Shrikhand",cursive; font-weight:600; letter-spacing:.01em; }
       .hand{ font-family:"Caveat",cursive; }
       .wrap{ max-width:1180px; margin:0 auto; padding:0 20px; }
       :focus-visible{ outline:3px solid var(--olive-deep); outline-offset:3px; border-radius:6px; }
-      .skip{ position:absolute; left:12px; top:-60px; z-index:500; background:var(--olive-deep); color:var(--cream); padding:10px 16px; border-radius:999px; font-weight:800; text-decoration:none; }
+      .skip{ position:absolute; left:12px; top:-60px; z-index:500; background:var(--olive-deep); color:var(--cream); padding:10px 16px; border-radius:10px; font-weight:800; text-decoration:none; }
       .skip:focus{ top:10px; }
 
       /* ---------- announcement bar ---------- */
@@ -10300,15 +10300,15 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
       .logo .logo-word{ font-family:"Shrikhand",cursive; font-size:2rem; color:var(--olive); letter-spacing:.02em; }
       .logo .logo-sub{ font-size:.6rem; font-weight:900; letter-spacing:.42em; text-transform:uppercase; color:var(--rose-ink); margin-top:3px; display:block; }
       .logo-img{ height:64px; width:auto; display:block; }
-      .shop-btn{ display:inline-flex; align-items:center; justify-content:center; background:var(--rose); color:var(--ink); border:1.5px solid var(--olive); border-radius:999px; padding:10px 22px; min-height:44px; font-weight:900; font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; box-shadow:0 6px 16px rgba(244,114,142,.35); }
+      .shop-btn{ display:inline-flex; align-items:center; justify-content:center; background:var(--rose); color:var(--ink); border:1.5px solid var(--olive); border-radius:10px; padding:10px 22px; min-height:44px; font-weight:900; font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; box-shadow:0 6px 16px rgba(244,114,142,.35); }
       .shop-btn:hover{ transform:translateY(-1px); box-shadow:0 9px 20px rgba(244,114,142,.42); }
       .cart-btn{
         display:inline-flex; align-items:center; gap:8px; border:2px solid var(--rose);
-        background:var(--rose); color:#fff; border-radius:999px; padding:10px 18px; min-height:44px;
+        background:var(--rose); color:#fff; border-radius:10px; padding:10px 18px; min-height:44px;
         font-weight:900; font-size:.85rem; box-shadow:3px 3px 0 var(--ink); transition:transform .15s ease, box-shadow .15s ease;
       }
       .cart-btn:hover{ transform:translate(-1px,-1px); box-shadow:4px 4px 0 var(--ink); }
-      .cart-count{ background:var(--olive); color:var(--cream); border-radius:999px; min-width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center; font-size:.78rem; padding:0 5px; }
+      .cart-count{ background:var(--olive); color:var(--cream); border-radius:10px; min-width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center; font-size:.78rem; padding:0 5px; }
       @media (max-width:760px){
         .nav{ grid-template-columns:1fr auto; row-gap:0; padding:8px 16px 0; }
         .shop-btn{ grid-column:1; grid-row:1; justify-self:start; }
@@ -10326,15 +10326,15 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
         position:relative; overflow:hidden;
         background:url("img/blue-sky-hero.webp") center 80%/cover no-repeat;
       }
-      .hero-inner{ display:block; text-align:center; max-width:880px; margin:0 auto; padding:220px 20px 72px; position:relative; z-index:2; }
-      .hero-eyebrow{ display:inline-block; background:var(--paper); border:1.5px solid var(--edge); border-radius:999px; padding:7px 18px; font-weight:900; font-size:.8rem; letter-spacing:.28em; text-transform:uppercase; color:var(--rose-ink); }
-      .hero-badges{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:36px; }
-      .hero-badges span{ background:var(--paper); border:1.5px solid var(--line); border-radius:999px; padding:9px 16px; font-weight:800; font-size:.85rem; box-shadow:var(--soft-shadow); }
+      .hero-inner{ display:block; text-align:center; max-width:880px; margin:0 auto; padding:220px 20px 48px; position:relative; z-index:2; }
+      .hero-eyebrow{ display:inline-block; background:var(--paper); border:1.5px solid var(--edge); border-radius:10px; padding:7px 18px; font-weight:900; font-size:.8rem; letter-spacing:.28em; text-transform:uppercase; color:var(--rose-ink); }
+      .hero-badges{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:24px; }
+      .hero-badges span{ background:var(--paper); border:1.5px solid var(--line); border-radius:10px; padding:9px 16px; font-weight:800; font-size:.85rem; box-shadow:var(--soft-shadow); }
       .hero-kicker{
-        display:inline-block; background:var(--paper); border:1.5px solid var(--edge); border-radius:999px;
+        display:inline-block; background:var(--paper); border:1.5px solid var(--edge); border-radius:10px;
         padding:6px 16px; font-weight:900; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase;
       }
-      .hero h1{ font-family:"Shrikhand",cursive; font-weight:400; font-size:clamp(3.6rem,11vw,7.5rem); line-height:.95; margin:18px 0 4px; color:var(--olive); overflow-wrap:break-word; }
+      .hero h1{ font-family:"Shrikhand",cursive; font-weight:600; font-size:clamp(3.6rem,11vw,7.5rem); line-height:.95; margin:18px 0 4px; color:var(--olive); overflow-wrap:break-word; }
       .hero h1 .line-pink{ color:var(--rose-ink); }
       .hero h1 .line-lav{ color:var(--olive); }
       .hero h1.hero-logo{ margin:14px 0 2px; text-align:center; }
@@ -10347,12 +10347,12 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
       @keyframes heroLogoBreathe{ 0%,100%{ transform:translateY(0) rotate(0deg); } 38%{ transform:translateY(-4px) rotate(.4deg); } 71%{ transform:translateY(2px) rotate(-.3deg); } }
       .hero .hero-sub{ font-weight:900; letter-spacing:.34em; text-transform:uppercase; font-size:.85rem; color:var(--ink); margin-top:10px; }
       .hero .tagline{ font-size:1.2rem; font-weight:700; color:var(--ink-soft); max-width:52ch; margin:16px auto 0; }
-      .hero-copy{ display:inline-block; background:rgba(32,41,26,.62); border-radius:24px; padding:18px 26px 20px; margin-top:14px; backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); box-shadow:0 10px 28px rgba(32,41,26,.28); }
+      .hero-copy{ display:inline-block; background:rgba(32,41,26,.62); border-radius:10px; padding:18px 26px 20px; margin-top:14px; backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); box-shadow:0 10px 28px rgba(32,41,26,.28); }
       .hero-copy .hero-sub{ color:#FDF6EA; margin-top:0; }
       .hero-copy .tagline{ color:#E8EEDC; margin-top:10px; }
-      .hero-ctas{ display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; justify-content:center; }
+      .hero-ctas{ display:flex; flex-wrap:wrap; gap:14px; margin-top:20px; justify-content:center; }
       .btn{
-        box-sizing:border-box; display:inline-flex; align-items:center; justify-content:center; gap:9px; border-radius:999px; border:1.5px solid var(--olive);
+        box-sizing:border-box; display:inline-flex; align-items:center; justify-content:center; gap:9px; border-radius:10px; border:1.5px solid var(--olive);
         padding:14px 26px; min-height:48px; font-weight:900; font-size:1rem; text-decoration:none; text-align:center;
         box-shadow:0 8px 20px rgba(85,107,63,.18); transition:transform .15s ease, box-shadow .15s ease; background:var(--paper); color:var(--olive);
       }
@@ -10373,7 +10373,7 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
       .sparkle{ position:absolute; color:var(--lav); animation:twinkle 2.6s ease-in-out infinite; }
       @keyframes twinkle{ 0%,100%{ opacity:.3; transform:scale(.8); } 50%{ opacity:1; transform:scale(1.15); } }
       @media (max-width:900px){
-        .hero-inner{ padding:200px 20px 52px; }
+        .hero-inner{ padding:200px 20px 36px; }
         .hero-art{ min-height:320px; max-width:440px; width:100%; margin:0 auto; }
       }
       @media (max-width:480px){
@@ -10391,31 +10391,31 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
       /* ---------- sections ---------- */
       html{ scroll-padding-top:96px; }
       section[id]{ scroll-margin-top:96px; }
-      section.block{ padding:56px 0; }
+      section.block{ padding:38px 0; }
 
       /* ---------- vibe banners (mockup-style, big cards) ---------- */
       .vibe-banners{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
       @media (max-width:760px){ .vibe-banners{ grid-template-columns:1fr; } }
-      .vibe-banner{ position:relative; overflow:hidden; text-align:left; border:1.5px solid var(--line); border-radius:28px; min-height:190px; padding:22px 22px 20px; cursor:pointer; box-shadow:var(--soft-shadow); color:var(--ink); font:inherit; display:flex; flex-direction:column; justify-content:flex-end; gap:4px; transition:transform .18s ease, box-shadow .18s ease; }
+      .vibe-banner{ position:relative; overflow:hidden; text-align:left; border:1.5px solid var(--line); border-radius:10px; min-height:190px; padding:22px 22px 20px; cursor:pointer; box-shadow:var(--soft-shadow); color:var(--ink); font:inherit; display:flex; flex-direction:column; justify-content:flex-end; gap:4px; transition:transform .18s ease, box-shadow .18s ease; }
       .vibe-icon{ position:relative; z-index:1; width:44px; height:44px; margin-bottom:2px; color:#FFFDF7; filter:drop-shadow(0 2px 6px rgba(42,54,32,.55)); }
       .vibe-icon svg{ display:block; width:44px; height:44px; }
       .vibe-banner:hover{ transform:translateY(-4px); box-shadow:0 18px 36px rgba(85,107,63,.2); }
       .vibe-banner.v-sativa{ background:linear-gradient(150deg,#F9A8BC,#FDE6E5 70%); }
       .vibe-banner.v-hybrid{ background:linear-gradient(150deg,#A7B995,#E0E5D4 70%); }
       .vibe-banner.v-indica{ background:linear-gradient(150deg,#B9A7E7,#E0EEF6 70%); }
-      .vibe-banner b{ font-family:"Shrikhand",cursive; font-weight:400; font-size:1.9rem; line-height:1; color:var(--olive); }
+      .vibe-banner b{ font-family:"Shrikhand",cursive; font-weight:600; font-size:1.9rem; line-height:1; color:var(--olive); }
       .vibe-banner small{ font-weight:700; color:var(--ink-soft); font-size:.92rem; max-width:26ch; }
       .vibe-banner .vibe-arrow{ position:absolute; top:16px; right:16px; width:44px; height:44px; border-radius:50%; background:var(--paper); border:1.5px solid var(--line); display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.2rem; }
       .vibe-banner.active{ outline:3px solid var(--rose); outline-offset:3px; }
       .vibe-links{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:18px; }
-      .vibe-links a, .vibe-links button{ background:var(--paper); border:1.5px solid var(--line); border-radius:999px; padding:10px 20px; font-weight:800; font-size:.9rem; color:var(--olive); text-decoration:none; cursor:pointer; font:inherit; }
+      .vibe-links a, .vibe-links button{ background:var(--paper); border:1.5px solid var(--line); border-radius:10px; padding:10px 20px; font-weight:800; font-size:.9rem; color:var(--olive); text-decoration:none; cursor:pointer; font:inherit; }
       .best-art img{ width:100%; height:100%; object-fit:cover; display:block; }
-      .best-art .best-tag{ position:absolute; bottom:10px; left:10px; background:var(--paper); border:1.5px solid var(--line); border-radius:999px; padding:4px 12px; font-size:.72rem; font-weight:900; letter-spacing:.06em; }
+      .best-art .best-tag{ position:absolute; bottom:10px; left:10px; background:var(--paper); border:1.5px solid var(--line); border-radius:10px; padding:4px 12px; font-size:.72rem; font-weight:900; letter-spacing:.06em; }
       .mini{ font-weight:900; letter-spacing:.22em; text-transform:uppercase; font-size:.75rem; color:var(--rose-ink); }
-      .sec-head{ text-align:center; max-width:640px; margin:0 auto 40px; }
-      .sec-head h2{ font-family:"Shrikhand",cursive; font-weight:400; font-size:clamp(1.9rem,4.4vw,3rem); line-height:1.08; margin-top:10px; color:var(--olive); }
-      .sec-head p{ color:var(--ink-soft); font-weight:600; margin-top:12px; }
-      @media (max-width:640px){ section.block{ padding:48px 0; } .sec-head{ margin-bottom:26px; } }
+      .sec-head{ text-align:center; max-width:640px; margin:0 auto 28px; }
+      .sec-head h2{ font-family:"Shrikhand",cursive; font-weight:600; font-size:clamp(1.9rem,4.4vw,3rem); line-height:1.08; margin-top:10px; color:var(--olive); }
+      .sec-head p{ color:var(--ink-soft); font-weight:700; margin-top:12px; }
+      @media (max-width:640px){ section.block{ padding:32px 0; } .sec-head{ margin-bottom:26px; } }
 
       /* ---------- category circles ---------- */
       .cats{ display:flex; flex-wrap:wrap; justify-content:center; gap:26px; }
@@ -10431,7 +10431,7 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
       .cat.active .disc{ outline:3px solid var(--rose); outline-offset:3px; }
 
       /* ---------- vibe preview ---------- */
-      .vibe-preview{ display:flex; gap:24px; align-items:center; background:var(--paper); border:1.5px solid var(--line); border-radius:24px; padding:20px 24px; margin:26px auto 0; max-width:680px; box-shadow:var(--soft-shadow); }
+      .vibe-preview{ display:flex; gap:24px; align-items:center; background:var(--paper); border:1.5px solid var(--line); border-radius:10px; padding:20px 24px; margin:26px auto 0; max-width:680px; box-shadow:var(--soft-shadow); }
       .vibe-preview[hidden]{ display:none; }
       .vibe-preview img{ width:150px; height:auto; flex:none; }
       .vibe-preview h3{ font-family:"Shrikhand",cursive; font-size:1.5rem; margin:2px 0 6px; }
@@ -10444,11 +10444,11 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
 
       /* ---------- shop toggle ---------- */
       .shop-toggle{ display:flex; justify-content:center; gap:8px; margin-bottom:22px; }
-      .toggle-btn{ font:inherit; font-weight:800; padding:10px 22px; border-radius:999px; border:1.5px solid var(--line); background:var(--paper); color:var(--ink); cursor:pointer; }
+      .toggle-btn{ font:inherit; font-weight:800; padding:10px 22px; border-radius:10px; border:1.5px solid var(--line); background:var(--paper); color:var(--ink); cursor:pointer; }
       .toggle-btn.active{ background:var(--olive); border-color:var(--olive); color:var(--cream); }
 
       /* ---------- best sellers (actual flower photo placeholder) ---------- */
-      .best-art{ position:relative; margin:10px 10px 0; height:260px; display:block; border-radius:20px; background:var(--cream-2); border:1.5px solid var(--line); overflow:hidden; box-sizing:border-box; text-decoration:none; }
+      .best-art{ position:relative; margin:10px 10px 0; height:260px; display:block; border-radius:10px; background:var(--cream-2); border:1.5px solid var(--line); overflow:hidden; box-sizing:border-box; text-decoration:none; }
       .best-art span{ font-weight:800; font-size:.85rem; }
       @media (max-width:560px){
         .best-art{ height:220px; }
@@ -10459,16 +10459,16 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
       @media (max-width:900px){ .grid{ grid-template-columns:repeat(2,1fr); gap:18px; } }
       @media (max-width:560px){ .grid{ grid-template-columns:1fr; } }
       .card{
-        background:var(--paper); border:1.5px solid var(--line); border-radius:28px; overflow:hidden;
+        background:var(--paper); border:1.5px solid var(--line); border-radius:10px; overflow:hidden;
         box-shadow:var(--soft-shadow); display:flex; flex-direction:column; transition:transform .18s ease, box-shadow .18s ease;
         transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px)); will-change:transform;
       }
       .card:hover{ --ty:-6px; box-shadow:0 18px 36px rgba(85,107,63,.2); }
-      .card-art{ position:relative; margin:10px 10px 0; height:300px; padding:46px 20px 14px; box-sizing:border-box; display:flex; justify-content:center; align-items:flex-end; border-radius:200px 200px 20px 20px; }
+      .card-art{ position:relative; margin:10px 10px 0; height:300px; padding:46px 20px 14px; box-sizing:border-box; display:flex; justify-content:center; align-items:flex-end; border-radius:12px; }
       .card-art .badge{
         position:absolute; top:16px; left:50%; transform:translateX(-50%); background:var(--paper); color:var(--olive); border:1.5px solid var(--line);
         font-size:.66rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; white-space:nowrap;
-        padding:5px 12px; border-radius:999px; z-index:2;
+        padding:5px 12px; border-radius:10px; z-index:2;
       }
       .card-art .card-pouch{ height:216px; width:auto; max-width:100%; object-fit:contain; filter:drop-shadow(0 12px 12px rgba(85,107,63,.25)); transition:transform .2s ease; }
       .card:hover .card-pouch{ transform:rotate(-3deg) translateY(-4px); }
@@ -10477,21 +10477,21 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
          (up to 1920px wide) and blow the card out, cutting the packaging off at the
          card edge and burying the strain name thousands of pixels down. */
       .card-thumbs{ display:flex; gap:8px; padding:12px 14px 0; }
-      .card-thumb{ flex:1 1 0; min-width:0; height:64px; padding:0; border:2px solid var(--line); border-radius:12px; overflow:hidden; background:var(--cream-2); cursor:pointer; }
+      .card-thumb{ flex:1 1 0; min-width:0; height:64px; padding:0; border:2px solid var(--line); border-radius:8px; overflow:hidden; background:var(--cream-2); cursor:pointer; }
       .card-thumb img{ display:block; width:100%; height:100%; object-fit:cover; }
       .card-thumb.is-active{ border-color:var(--rose); box-shadow:0 0 0 2px var(--rose-soft); }
       @media (max-width:560px){ .card-thumb{ height:52px; } }
       .card-body{ padding:16px 22px 24px; display:flex; flex-direction:column; gap:8px; flex:1; }
-      .card-body h3{ font-family:"Shrikhand",cursive; font-weight:400; font-size:1.5rem; line-height:1.1; color:var(--olive); }
+      .card-body h3{ font-family:"Shrikhand",cursive; font-weight:600; font-size:1.5rem; line-height:1.1; color:var(--olive); }
       .card-meta{ display:flex; flex-wrap:wrap; gap:7px; }
-      .chip{ font-size:.72rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:4px 10px; border-radius:999px; border:1.5px solid var(--edge); }
+      .chip{ font-size:.72rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:4px 10px; border-radius:10px; border:1.5px solid var(--edge); }
       .chip.type{ background:var(--sage-soft); color:var(--ink); }
       .chip.note{ background:var(--paper); border-color:var(--line); color:var(--ink-soft); text-transform:none; letter-spacing:0; font-size:.78rem; }
       .card-body .size{ color:var(--ink-soft); font-weight:700; font-size:.9rem; }
       .card-foot{ margin-top:auto; padding-top:10px; display:flex; align-items:center; justify-content:space-between; gap:10px; }
       .price-note{ font-family:"Caveat",cursive; font-size:1.25rem; color:var(--rose-ink); line-height:1.1; }
       .add-btn{
-        border:1.5px solid var(--rose); background:var(--rose); color:var(--ink); border-radius:999px; min-height:44px;
+        border:1.5px solid var(--rose); background:var(--rose); color:var(--ink); border-radius:10px; min-height:44px;
         padding:10px 20px; font-weight:900; font-size:.9rem; box-shadow:0 6px 16px rgba(244,114,142,.35);
         transition:transform .15s ease, box-shadow .15s ease;
       }
@@ -10500,7 +10500,7 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
       .card.soon .card-art{ filter:saturate(.8); }
       .card.soon .card-pouch{ opacity:.95; }
       @media (max-width:560px){
-        .card{ border-radius:22px; }
+        .card{ border-radius:10px; }
         .card-art{ margin:8px 8px 0; height:260px; padding:34px 8px 10px; }
         .card-art .card-pouch{ height:200px; }
         .card-art .badge{ font-size:.58rem; letter-spacing:.1em; padding:4px 9px; top:12px; }
@@ -10511,96 +10511,63 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
         .card-body .size{ font-size:.8rem; }
       }
 
-      /* ---------- enter the shop banner ---------- */
-      .enter-banner{
-        position:relative; overflow:hidden;
-        background:
-          radial-gradient(520px 320px at 92% 12%, rgba(244,114,142,.28) 0%, transparent 70%),
-          radial-gradient(520px 360px at 4% 100%, rgba(167,185,149,.26) 0%, transparent 70%),
-          var(--olive-deep);
-        color:var(--cream);
-      }
-      .enter-banner .wrap{ display:grid; grid-template-columns:1.1fr .9fr; gap:30px; align-items:center; padding-top:64px; padding-bottom:64px; position:relative; z-index:2; }
-      .enter-banner h2{ font-family:"Shrikhand",cursive; font-weight:400; font-size:clamp(2rem,5vw,3.6rem); line-height:1.04; }
-      .enter-banner h2 .gold{ color:var(--rose); }
-      .enter-banner p{ margin-top:14px; font-weight:600; color:#E8EEDC; max-width:46ch; }
-      .rec-chip{
-        display:inline-flex; align-items:center; gap:8px; border:1.5px solid rgba(253,246,234,.55); border-radius:999px;
-        padding:6px 14px; font-size:.78rem; font-weight:800; letter-spacing:.18em; margin-bottom:18px;
-      }
-      .rec-dot{ width:10px; height:10px; border-radius:50%; background:var(--rose); animation:blink 1.1s steps(1) infinite; }
-      @keyframes blink{ 50%{ opacity:.1; } }
-      .enter-banner .btn-gold{ background:var(--rose); border-color:var(--rose); color:var(--ink); }
-      .cam-frame{
-        border:1.5px solid rgba(253,246,234,.45); border-radius:24px; padding:20px; position:relative;
-        background:rgba(253,246,234,.07);
-      }
-      .cam-frame .corner{ position:absolute; width:26px; height:26px; border:3px solid var(--rose); }
-      .corner.tl{ top:-3px; left:-3px; border-right:none; border-bottom:none; border-radius:22px 0 0 0; }
-      .corner.tr{ top:-3px; right:-3px; border-left:none; border-bottom:none; border-radius:0 22px 0 0; }
-      .corner.bl{ bottom:-3px; left:-3px; border-right:none; border-top:none; border-radius:0 0 0 22px; }
-      .corner.br{ bottom:-3px; right:-3px; border-left:none; border-top:none; border-radius:0 0 22px 0; }
-      .cam-frame ul{ display:grid; gap:10px; font-weight:700; }
-      .cam-frame li{ display:flex; gap:10px; align-items:baseline; }
-      .cam-frame li::before{ content:"✿"; color:var(--rose); }
-      @media (max-width:860px){ .enter-banner .wrap{ grid-template-columns:1fr; padding-top:44px; padding-bottom:44px; } }
 
       /* ---------- story ---------- */
       .story{ background:var(--rose-soft); border-block:1.5px solid var(--line); }
-      .story-grid{ display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center; }
-      @media (max-width:860px){ .story-grid{ grid-template-columns:1fr; gap:28px; } }
-      .story h2{ font-family:"Shrikhand",cursive; font-weight:400; font-size:clamp(1.9rem,4vw,2.9rem); line-height:1.1; color:var(--olive); margin-top:8px; }
+      .story-grid{ display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; }
+      @media (max-width:860px){ .story-grid{ grid-template-columns:1fr; gap:20px; } }
+      .story h2{ font-family:"Shrikhand",cursive; font-weight:600; font-size:clamp(1.9rem,4vw,2.9rem); line-height:1.1; color:var(--olive); margin-top:8px; }
       .story h2 .pink{ color:var(--rose-ink); }
-      .story p{ color:var(--ink-soft); font-weight:600; margin-top:16px; max-width:52ch; }
+      .story p{ color:var(--ink-soft); font-weight:700; margin-top:16px; max-width:52ch; }
       .story .hand-note{ font-family:"Caveat",cursive; font-size:1.5rem; color:var(--rose-ink); margin-top:14px; transform:rotate(-1.5deg); display:inline-block; }
       .props{ display:grid; gap:16px; }
-      .prop{ display:flex; gap:16px; background:var(--paper); border:1.5px solid var(--line); border-radius:24px; padding:18px 20px; box-shadow:var(--soft-shadow); }
+      .prop{ display:flex; gap:16px; background:var(--paper); border:1.5px solid var(--line); border-radius:10px; padding:18px 20px; box-shadow:var(--soft-shadow); }
       .prop .prop-ico{ flex:none; width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:1.5px solid var(--edge); }
       .prop b{ font-size:1.02rem; color:var(--olive); }
       .prop p{ margin-top:2px; font-size:.92rem; }
 
       /* ---------- mission ---------- */
-      .mission{ background:var(--sage-soft); border-block:1.5px solid var(--line); padding:64px 0; text-align:center; }
+      .mission{ background:var(--sage-soft); border-block:1.5px solid var(--line); padding:44px 0; text-align:center; }
       .mission .wrap{ max-width:760px; }
       .mission .mini{ color:var(--olive); }
-      .mission h2{ font-family:"Shrikhand",cursive; font-weight:400; font-size:clamp(1.9rem,4.4vw,3rem); line-height:1.08; margin-top:10px; color:var(--olive-deep); }
+      .mission h2{ font-family:"Shrikhand",cursive; font-weight:600; font-size:clamp(1.9rem,4.4vw,3rem); line-height:1.08; margin-top:10px; color:var(--olive-deep); }
       .mission .lead{ color:var(--ink); font-weight:700; margin-top:16px; font-size:1.1rem; }
-      .mission .body{ color:var(--ink-soft); font-weight:600; margin-top:12px; }
-      @media (max-width:640px){ .mission{ padding:44px 0; } }
+      .mission .body{ color:var(--ink-soft); font-weight:700; margin-top:12px; }
+      @media (max-width:640px){ .mission{ padding:30px 0; } }
 
       /* ---------- about / gives back / find us / events / join (Nov 8 ChatGPT mockups, woven into the live cream/pastel design) ---------- */
       .about{ background:var(--paper); border-block:1.5px solid var(--line); }
       .about-badges{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:860px; margin:0 auto; }
       @media (max-width:860px){ .about-badges{ grid-template-columns:repeat(2,1fr); } }
-      .about-badge{ background:var(--cream); border:1.5px solid var(--line); border-radius:22px; padding:20px 12px; text-align:center; box-shadow:var(--soft-shadow); }
+      .about-badge{ background:var(--cream); border:1.5px solid var(--line); border-radius:10px; padding:20px 12px; text-align:center; box-shadow:var(--soft-shadow); }
       .about-badge .about-ico{ display:flex; align-items:center; justify-content:center; width:56px; height:56px; margin:0 auto 10px; border-radius:50%; background:var(--sage-soft); border:1.5px solid var(--edge); font-size:1.5rem; }
       .about-badge b{ display:block; font-size:.9rem; letter-spacing:.04em; color:var(--olive); }
       .mission .quote{ font-family:"Caveat",cursive; font-size:1.7rem; color:var(--rose-ink); margin-top:18px; }
       .gives-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:900px; margin:0 auto; }
       @media (max-width:760px){ .gives-grid{ grid-template-columns:1fr; } }
-      .gives-card{ background:var(--paper); border:1.5px solid var(--line); border-radius:24px; padding:26px 20px; text-align:center; box-shadow:var(--soft-shadow); }
+      .gives-card{ background:var(--paper); border:1.5px solid var(--line); border-radius:10px; padding:26px 20px; text-align:center; box-shadow:var(--soft-shadow); }
       .gives-card .gives-ico{ display:flex; align-items:center; justify-content:center; width:60px; height:60px; margin:0 auto 12px; border-radius:50%; background:var(--rose-soft); border:1.5px solid var(--line); font-size:1.7rem; }
       .gives-card b{ display:block; font-size:1rem; color:var(--olive); }
-      .gives-card p{ color:var(--ink-soft); font-weight:600; font-size:.92rem; margin-top:6px; }
+      .gives-card p{ color:var(--ink-soft); font-weight:700; font-size:.92rem; margin-top:6px; }
       .find-us{ background:var(--cream-2); border-block:1.5px solid var(--line); }
-      .weedmaps-card{ background:var(--paper); border:1.5px solid var(--line); border-radius:28px; padding:28px 24px; max-width:680px; margin:0 auto; text-align:center; box-shadow:var(--soft-shadow); }
+      .weedmaps-card{ background:var(--paper); border:1.5px solid var(--line); border-radius:10px; padding:20px 24px; max-width:680px; margin:0 auto; text-align:center; box-shadow:var(--soft-shadow); }
       .weedmaps-search{ display:flex; gap:10px; margin:18px 0 12px; flex-wrap:wrap; }
-      .weedmaps-search input{ flex:1; min-width:200px; min-height:48px; border-radius:999px; border:1.5px solid var(--edge); background:var(--cream); color:var(--ink); padding:12px 18px; font:inherit; font-weight:600; }
-      .weedmaps-search button{ border-radius:999px; border:1.5px solid var(--olive); background:var(--olive); color:var(--cream); font-weight:900; padding:12px 22px; min-height:48px; cursor:pointer; }
-      .weedmaps-note{ color:var(--ink-soft); font-weight:600; font-size:.92rem; }
-      .weedmaps-coming{ margin-top:16px; border:1.5px dashed var(--line); border-radius:18px; padding:16px; color:var(--ink-soft); font-weight:800; font-size:.9rem; background:var(--cream); }
-      .event-card{ display:flex; gap:20px; align-items:center; background:var(--paper); border:1.5px solid var(--line); border-radius:28px; padding:24px; max-width:680px; margin:0 auto; box-shadow:var(--soft-shadow); text-align:left; }
+      .weedmaps-search input{ flex:1; min-width:200px; min-height:48px; border-radius:10px; border:1.5px solid var(--edge); background:var(--cream); color:var(--ink); padding:12px 18px; font:inherit; font-weight:700; }
+      .weedmaps-search button{ border-radius:10px; border:1.5px solid var(--olive); background:var(--olive); color:var(--cream); font-weight:900; padding:12px 22px; min-height:48px; cursor:pointer; }
+      .weedmaps-note{ color:var(--ink-soft); font-weight:700; font-size:.92rem; }
+      .weedmaps-coming{ margin-top:16px; border:1.5px dashed var(--line); border-radius:10px; padding:16px; color:var(--ink-soft); font-weight:800; font-size:.9rem; background:var(--cream); }
+      .event-card{ display:flex; gap:20px; align-items:center; background:var(--paper); border:1.5px solid var(--line); border-radius:10px; padding:24px; max-width:680px; margin:0 auto; box-shadow:var(--soft-shadow); text-align:left; }
       @media (max-width:560px){ .event-card{ flex-direction:column; text-align:center; } }
-      .event-date{ flex:none; width:92px; height:92px; border-radius:22px; background:linear-gradient(150deg,#7CC3F6,#F4728E); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+      .event-date{ flex:none; width:92px; height:92px; border-radius:10px; background:linear-gradient(150deg,#7CC3F6,#F4728E); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; }
       .event-date span{ font-size:.78rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; }
       .event-date b{ font-size:1.15rem; }
-      .event-card h3{ font-family:"Shrikhand",cursive; font-weight:400; font-size:1.45rem; color:var(--olive); line-height:1.15; }
-      .event-card p{ color:var(--ink-soft); font-weight:600; margin:8px 0 14px; }
-      .events-note{ text-align:center; color:var(--ink-soft); font-weight:600; margin-top:18px; }
+      .event-card h3{ font-family:"Shrikhand",cursive; font-weight:600; font-size:1.45rem; color:var(--olive); line-height:1.15; }
+      .event-card p{ color:var(--ink-soft); font-weight:700; margin:8px 0 14px; }
+      .events-note{ text-align:center; color:var(--ink-soft); font-weight:700; margin-top:18px; }
       .join{ background:var(--rose-soft); border-block:1.5px solid var(--line); }
       .join-form{ justify-content:center; }
       .join-form input{ background:var(--paper); }
-      .join .gallery{ margin-top:28px; grid-template-columns:repeat(6,1fr); }
+      .join .gallery{ margin-top:20px; grid-template-columns:repeat(6,1fr); }
       @media (max-width:900px){ .join .gallery{ grid-template-columns:repeat(3,1fr); } }
       @media (max-width:540px){ .join .gallery{ grid-template-columns:repeat(2,1fr); } }
       .join .tile img{ width:100%; height:100%; object-fit:cover; }
@@ -10609,36 +10576,36 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
       .gallery{ display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
       @media (max-width:900px){ .gallery{ grid-template-columns:repeat(3,1fr); } }
       @media (max-width:540px){ .gallery{ grid-template-columns:repeat(2,1fr); gap:10px; } }
-      .tile{ position:relative; border-radius:22px; border:1.5px solid var(--line); aspect-ratio:1; overflow:hidden; display:flex; align-items:center; justify-content:center; text-decoration:none; }
-      .tile .tile-label{ position:absolute; bottom:8px; left:8px; right:8px; text-align:center; background:var(--paper); border:1.5px solid var(--line); border-radius:14px; padding:3px 8px; font-size:.7rem; font-weight:800; line-height:1.25; color:var(--ink); }
+      .tile{ position:relative; border-radius:10px; border:1.5px solid var(--line); aspect-ratio:1; overflow:hidden; display:flex; align-items:center; justify-content:center; text-decoration:none; }
+      .tile .tile-label{ position:absolute; bottom:8px; left:8px; right:8px; text-align:center; background:var(--paper); border:1.5px solid var(--line); border-radius:10px; padding:3px 8px; font-size:.7rem; font-weight:800; line-height:1.25; color:var(--ink); }
       .tile:hover{ outline:3px solid var(--rose); outline-offset:-3px; }
 
       /* ---------- footer ---------- */
-      footer.site{ background:var(--olive-deep); color:var(--cream); padding:64px 0 34px; }
-      .foot-grid{ display:grid; grid-template-columns:1.2fr .8fr 1fr; gap:40px; }
-      @media (max-width:860px){ .foot-grid{ grid-template-columns:1fr; gap:30px; } }
-      footer.site h3{ font-family:"Shrikhand",cursive; font-weight:400; font-size:1.9rem; color:var(--rose); }
-      footer.site p{ color:#E8EEDC; font-weight:600; margin-top:10px; max-width:40ch; }
+      footer.site{ background:var(--olive-deep); color:var(--cream); padding:44px 0 34px; }
+      .foot-grid{ display:grid; grid-template-columns:1.2fr .8fr 1fr; gap:28px; }
+      @media (max-width:860px){ .foot-grid{ grid-template-columns:1fr; gap:20px; } }
+      footer.site h3{ font-family:"Shrikhand",cursive; font-weight:600; font-size:1.9rem; color:var(--rose); }
+      footer.site p{ color:#E8EEDC; font-weight:700; margin-top:10px; max-width:40ch; }
       .foot-links{ display:grid; gap:4px; font-weight:700; }
       .foot-links a{ text-decoration:none; color:#E8EEDC; padding:8px 0; min-height:44px; box-sizing:border-box; display:flex; align-items:center; }
       .foot-links a:hover{ color:var(--rose); }
       .foot-h{ font-size:.75rem; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:#C9D6BD; margin-bottom:10px; }
       .subscribe-form{ display:flex; gap:10px; margin-top:6px; flex-wrap:wrap; }
       .subscribe-form input{
-        flex:1; min-width:200px; min-height:48px; border-radius:999px; border:1.5px solid #C9D6BD; background:transparent;
-        color:var(--cream); padding:12px 18px; font:inherit; font-weight:600;
+        flex:1; min-width:200px; min-height:48px; border-radius:10px; border:1.5px solid #C9D6BD; background:transparent;
+        color:var(--cream); padding:12px 18px; font:inherit; font-weight:700;
       }
       .subscribe-form input::placeholder{ color:#B5C4A6; }
-      .subscribe-form button{ border-radius:999px; border:1.5px solid var(--rose); background:var(--rose); color:var(--ink); font-weight:900; padding:12px 22px; min-height:48px; }
+      .subscribe-form button{ border-radius:10px; border:1.5px solid var(--rose); background:var(--rose); color:var(--ink); font-weight:900; padding:12px 22px; min-height:48px; }
       .subscribe-done{ margin-top:12px; font-family:"Caveat",cursive; font-size:1.35rem; color:#F9B8C5; }
-      .foot-base{ border-top:1px solid rgba(253,246,234,.2); margin-top:44px; padding-top:20px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; font-size:.82rem; color:#C9D6BD; font-weight:600; }
-      .foot-admin{ display:inline-flex; align-items:center; min-height:32px; padding:4px 14px; border:2px solid #F4728E; border-radius:999px; color:#F4728E; font-weight:800; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; }
+      .foot-base{ border-top:1px solid rgba(253,246,234,.2); margin-top:30px; padding-top:20px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; font-size:.82rem; color:#C9D6BD; font-weight:700; }
+      .foot-admin{ display:inline-flex; align-items:center; min-height:32px; padding:4px 14px; border:2px solid #F4728E; border-radius:10px; color:#F4728E; font-weight:800; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; }
       .foot-admin:hover{ background:#F4728E; color:#fff; }
-      .foot-credit{ text-align:center; margin-top:16px; font-family:"Shrikhand",cursive; font-weight:400; font-size:1rem; letter-spacing:.1em; color:#C9D6BD; }
+      .foot-credit{ text-align:center; margin-top:16px; font-family:"Shrikhand",cursive; font-weight:600; font-size:1rem; letter-spacing:.1em; color:#C9D6BD; }
       .foot-credit a{ color:#F4728E; text-decoration:none; font-family:"Nunito",sans-serif; font-weight:900; letter-spacing:.02em; }
       .foot-credit a:hover{ color:#F8A8C0; text-decoration:underline; }
       .age-note{ font-weight:800; color:var(--cream); }
-      footer.site :focus-visible, .enter-banner :focus-visible, .announce :focus-visible{ outline-color:var(--cream); }
+      footer.site :focus-visible, .announce :focus-visible{ outline-color:var(--cream); }
 
       /* ---------- reveal (pure garnish: content is ALWAYS visible; .in only plays a soft rise) ---------- */
       .reveal{ opacity:1; }
@@ -10648,7 +10615,7 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
         html{ scroll-behavior:auto; }
         .reveal.in{ animation:none; }
         .flwr-soon-title, .flwr-soon-logo, .hero-logo, .sec-head h2, .sec-head .mini{ animation:none !important; }
-        .pouch,.hero-art .sun,.hero-daisy,.ticker-track,.sparkle,.success-box .big-daisy,.vhs-track{ animation:none !important; }
+        .pouch,.hero-art .sun,.hero-daisy,.ticker-track,.sparkle,.success-box .big-daisy{ animation:none !important; }
         .card,.btn,.add-btn,.cart-btn,.cat .disc{ transition:none; }
         .petal-field, .scroll-bloom{ display:none !important; }
         .petal{ animation:none !important; }
@@ -10680,125 +10647,59 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
       }
       .drawer.open{ transform:none; }
       .drawer-head{ display:flex; align-items:center; justify-content:space-between; padding:18px 20px; border-bottom:1.5px solid var(--line); }
-      .drawer-head h3{ font-family:"Shrikhand",cursive; font-weight:400; font-size:1.45rem; color:var(--olive); }
+      .drawer-head h3{ font-family:"Shrikhand",cursive; font-weight:600; font-size:1.45rem; color:var(--olive); }
       .icon-btn{ width:44px; height:44px; border-radius:50%; border:1.5px solid var(--edge); background:var(--paper); color:var(--ink); font-size:1.05rem; font-weight:900; display:inline-flex; align-items:center; justify-content:center; }
       .drawer-body{ flex:1; overflow-y:auto; padding:20px; }
       .drawer-foot{ border-top:1.5px solid var(--line); padding:16px 20px calc(20px + env(safe-area-inset-bottom)); }
       .cart-item{ display:flex; gap:12px; padding:14px 0; border-bottom:1.5px dashed var(--line); align-items:center; flex-wrap:wrap; }
-      .cart-item .thumb{ width:58px; height:58px; border-radius:16px; border:1.5px solid var(--edge); flex:none; display:flex; align-items:center; justify-content:center; }
+      .cart-item .thumb{ width:58px; height:58px; border-radius:10px; border:1.5px solid var(--edge); flex:none; display:flex; align-items:center; justify-content:center; }
       .cart-item .ci-main{ flex:1; min-width:120px; }
       .cart-item b{ font-size:1rem; color:var(--olive); }
       .cart-item .ci-sub{ color:var(--ink-soft); font-size:.82rem; font-weight:700; }
-      .qty{ display:inline-flex; align-items:center; gap:2px; border:1.5px solid var(--edge); border-radius:999px; overflow:hidden; }
+      .qty{ display:inline-flex; align-items:center; gap:2px; border:1.5px solid var(--edge); border-radius:10px; overflow:hidden; }
       .qty button{ width:40px; height:40px; border:none; background:var(--sage-soft); font-weight:900; font-size:1.1rem; color:var(--ink); }
       .qty span{ min-width:28px; text-align:center; font-weight:900; }
       .remove-btn{ background:none; border:none; color:var(--rose-ink); font-weight:800; font-size:.85rem; text-decoration:underline; padding:10px 8px; min-height:44px; }
-      .empty-cart{ text-align:center; padding:36px 10px; color:var(--ink-soft); font-weight:700; }
+      .empty-cart{ text-align:center; padding:24px 10px; color:var(--ink-soft); font-weight:700; }
       .empty-cart .big{ font-size:2.6rem; margin-bottom:8px; color:var(--rose); }
-      .drawer-note{ font-size:.86rem; color:var(--ink-soft); font-weight:600; margin-bottom:14px; }
-      .checkout-btn{ width:100%; min-height:52px; border:1.5px solid var(--rose); background:var(--rose); color:var(--ink); border-radius:999px; padding:15px; font-weight:900; font-size:1.02rem; box-shadow:0 8px 20px rgba(244,114,142,.35); }
+      .drawer-note{ font-size:.86rem; color:var(--ink-soft); font-weight:700; margin-bottom:14px; }
+      .checkout-btn{ width:100%; min-height:52px; border:1.5px solid var(--rose); background:var(--rose); color:var(--ink); border-radius:10px; padding:15px; font-weight:900; font-size:1.02rem; box-shadow:0 8px 20px rgba(244,114,142,.35); }
       .checkout-btn:disabled{ opacity:.45; box-shadow:none; cursor:not-allowed; }
       .field{ margin-bottom:14px; }
       .field label{ display:block; font-weight:800; font-size:.86rem; margin-bottom:6px; }
-      .field input{ width:100%; box-sizing:border-box; min-height:48px; border:1.5px solid var(--edge); border-radius:16px; padding:12px 14px; font:inherit; font-size:16px; background:var(--paper); color:var(--ink); }
+      .field input{ width:100%; box-sizing:border-box; min-height:48px; border:1.5px solid var(--edge); border-radius:10px; padding:12px 14px; font:inherit; font-size:16px; background:var(--paper); color:var(--ink); }
       .field input:focus{ outline:3px solid var(--rose); outline-offset:1px; border-color:transparent; }
       .age-confirm{
         width:100%; min-height:48px; border:1.5px dashed var(--ink-soft); background:transparent; color:var(--ink);
-        border-radius:16px; padding:12px; font-weight:800; margin:4px 0 16px;
+        border-radius:10px; padding:12px; font-weight:800; margin:4px 0 16px;
       }
       .age-confirm.on{ border-style:solid; border-color:var(--olive); background:var(--sage-soft); }
       .form-err{ color:#A8344F; font-weight:800; font-size:.88rem; margin-bottom:12px; display:none; }
       .back-link{ background:none; border:none; color:var(--rose-ink); font-weight:800; text-decoration:underline; padding:10px 0 12px; min-height:44px; }
       .success-box{ text-align:center; padding:22px 6px; }
       .success-box .big-daisy{ width:84px; margin:0 auto 14px; animation:spin 16s linear infinite; }
-      .success-box h4{ font-family:"Shrikhand",cursive; font-weight:400; font-size:1.6rem; margin:0 0 8px; color:var(--olive); }
-      .success-box p{ color:var(--ink-soft); font-weight:600; }
-      .success-list{ text-align:left; background:var(--rose-soft); border:1.5px solid var(--line); border-radius:18px; padding:14px 18px; margin:16px 0; font-weight:700; }
+      .success-box h4{ font-family:"Shrikhand",cursive; font-weight:600; font-size:1.6rem; margin:0 0 8px; color:var(--olive); }
+      .success-box p{ color:var(--ink-soft); font-weight:700; }
+      .success-list{ text-align:left; background:var(--rose-soft); border:1.5px solid var(--line); border-radius:10px; padding:14px 18px; margin:16px 0; font-weight:700; }
 
       /* ---------- toast ---------- */
       .toast{
         position:fixed; left:50%; bottom:calc(26px + env(safe-area-inset-bottom)); transform:translate(-50%,120px); z-index:320;
-        background:var(--olive-deep); color:var(--cream); border-radius:999px; padding:13px 24px; font-weight:800;
+        background:var(--olive-deep); color:var(--cream); border-radius:10px; padding:13px 24px; font-weight:800;
         box-shadow:0 14px 34px rgba(42,54,32,.35); transition:transform .3s cubic-bezier(.32,.72,.28,1); max-width:92vw; text-align:center;
       }
       .toast.show{ transform:translate(-50%,0); }
 
-      /* ---------- 3D shop overlay ---------- */
-      .shop-overlay{ position:fixed; inset:0; z-index:200; background:var(--cream); display:none; outline:none; }
-      .shop-overlay.open{ display:block; }
-      #shopCanvasWrap{ position:absolute; inset:0; overflow:hidden; }
-      #shopCanvasWrap canvas{ display:block; }
-      .vhs-grain{ position:absolute; inset:0; width:100%; height:100%; opacity:.045; pointer-events:none; mix-blend-mode:overlay; image-rendering:pixelated; }
-      .vhs-scan{
-        position:absolute; inset:0; pointer-events:none;
-        background:repeating-linear-gradient(to bottom, rgba(0,0,0,.07) 0 1px, transparent 1px 3px);
-        mix-blend-mode:multiply; opacity:.14;
-      }
-      .vhs-vignette{
-        position:absolute; inset:0; pointer-events:none;
-        box-shadow:inset 0 0 90px rgba(60,77,44,.18);
-      }
-      .vhs-track{ position:absolute; left:0; right:0; height:64px; pointer-events:none; opacity:.3; background:linear-gradient(to bottom, transparent, rgba(255,255,255,.10), transparent); animation:track 7s linear infinite; }
-      @keyframes track{ 0%{ top:-12%; } 100%{ top:110%; } }
-      .hud{ position:absolute; z-index:5; color:#fff; font-weight:800; text-shadow:0 1px 6px rgba(42,54,32,.55), 0 0 2px rgba(42,54,32,.4); }
-      .hud-rec{ top:20px; left:24px; display:flex; align-items:center; gap:10px; font-size:1.05rem; letter-spacing:.14em; }
-      .hud-rec .rec-dot{ width:14px; height:14px; }
-      .hud-time{ top:20px; right:24px; text-align:right; font-size:.95rem; letter-spacing:.1em; line-height:1.5; }
-      .hud-play{ top:64px; left:24px; font-size:.85rem; letter-spacing:.22em; opacity:.9; }
-      .crosshair{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:5; width:8px; height:8px; border-radius:50%; border:2px solid rgba(255,255,255,.9); box-shadow:0 0 8px rgba(0,0,0,.45); pointer-events:none; }
-      .hud-shops{ top:16px; left:50%; transform:translateX(-50%); text-align:center; }
-      .shops-row{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
-      .shop-pick{
-        border:1.5px solid rgba(255,255,255,.85); background:rgba(42,54,32,.6); color:#fff;
-        border-radius:999px; padding:9px 14px; min-height:40px; font-weight:900; font-size:.8rem; font-family:inherit; cursor:pointer;
-      }
-      .shop-pick:hover{ filter:brightness(1.15); }
-      .shop-pick.is-on{ background:var(--rose); border-color:var(--rose); color:var(--ink); }
-      .presence{ margin-top:7px; font-size:.84rem; letter-spacing:.03em; }
-      .lock-prompt{ position:absolute; inset:0; z-index:7; display:none; align-items:center; justify-content:center; pointer-events:none; }
-      .lock-prompt.show{ display:flex; }
-      .lp-card{
-        pointer-events:none; background:rgba(255,252,246,.96); color:var(--ink);
-        border:1.5px solid var(--line); border-radius:28px; box-shadow:var(--soft-shadow);
-        padding:26px 30px; text-align:center; max-width:410px; margin:0 16px;
-      }
-      .lp-card .hud-btn{ pointer-events:auto; }
-      .lp-title{ font-size:1.7rem; color:var(--olive); line-height:1.1; }
-      .lp-card p{ font-weight:700; color:var(--ink-soft); margin:9px 0 14px; }
-      .lp-keys{ font-weight:800; font-size:.86rem; margin-bottom:16px; }
-      .lp-keys kbd{ background:var(--olive-deep); color:#fff; border-radius:6px; padding:1px 7px; font-family:inherit; font-weight:900; font-size:.8rem; }
-      .hud-label{
-        position:absolute; left:50%; top:calc(50% + 34px); transform:translateX(-50%); z-index:5;
-        background:rgba(42,54,32,.85); color:#fff; border:1.5px solid var(--rose); border-radius:999px;
-        padding:7px 18px; font-weight:800; font-size:.92rem; display:none; white-space:nowrap;
-      }
-      .hud-label.show{ display:block; }
-      .hud-bottom{ position:absolute; left:0; right:0; bottom:0; z-index:6; display:flex; justify-content:space-between; align-items:flex-end; gap:14px; padding:18px 22px; flex-wrap:wrap; }
-      .hud-hint{ color:#F3F7EA; font-size:.85rem; font-weight:700; background:rgba(42,54,32,.7); border:1.5px solid rgba(255,255,255,.3); border-radius:16px; padding:10px 16px; line-height:1.6; }
-      .hud-hint kbd{ background:#fff; color:var(--ink); border-radius:5px; padding:1px 7px; font-family:inherit; font-weight:900; font-size:.8rem; }
-      .hud-actions{ display:flex; gap:10px; }
-      .hud-btn{ border:1.5px solid #fff; background:rgba(42,54,32,.82); color:#fff; border-radius:999px; padding:12px 22px; min-height:44px; font-weight:900; font-size:.95rem; }
-      .hud-btn.gold{ background:var(--rose); border-color:var(--rose); color:var(--ink); }
-      .hud-btn:hover{ filter:brightness(1.12); }
-      .shop-fallback{
-        position:absolute; inset:0; z-index:8; display:none; align-items:center; justify-content:center; padding:24px;
-        background:linear-gradient(150deg, var(--olive-deep), var(--olive)); color:#fff; text-align:center;
-      }
-      .shop-fallback.show{ display:flex; }
-      .shop-fallback .fb-card{ max-width:430px; }
-      .shop-fallback h3{ font-family:"Shrikhand",cursive; font-weight:400; font-size:2rem; margin:0 0 12px; }
-      .shop-fallback p{ font-weight:600; color:#E8EEDC; margin:0 0 22px; }
-      .shop-fallback .btn-gold{ background:var(--rose); border-color:var(--rose); color:var(--ink); }
       body.shop-locked{ overflow:hidden; }
 
       /* ---- multi-page build additions (2026-10-22) ---- */
       .grain{ position:fixed; inset:-50%; width:200%; height:200%; z-index:400; pointer-events:none;
         background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
         opacity:.04; mix-blend-mode:multiply; }
-      img.pouch{ height:auto; border-radius:14px; }
+      img.pouch{ height:auto; border-radius:10px; }
       .card-art{ text-decoration:none; }
       .card-body h3 a{ text-decoration:none; display:inline-block; padding:12px 0; margin:-4px 0; } .card-body h3 a:hover{ color:var(--rose-ink); }
-      .card-art .card-pouch{ border-radius:10px; }
+      .card-art .card-pouch{ border-radius:8px; }
 
 /* ---------- mobile bottom tab bar (app-style nav, phones only) ---------- */
 .flwr-tabbar{ display:none; }
@@ -10839,26 +10740,26 @@ void [_deriveContainmentCorpusDigest_8001, stepShadowHeapSharedHandle_762c, read
       .roots{ position:relative; overflow:hidden; background:linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08)), linear-gradient(rgba(24,90,170,.16), rgba(24,90,170,.16)), url("img/blue-sky-hero.webp") center 28%/cover no-repeat; color:#fff; text-align:center; }
       .roots .wrap{ position:relative; z-index:1; }
       .roots-logo img{ width:min(300px,72%); height:auto; margin:0 auto; display:block; filter:drop-shadow(0 10px 24px rgba(20,60,120,.35)); }
-      .roots-rule{ display:flex; align-items:center; gap:16px; max-width:760px; margin:36px auto 0; }
+      .roots-rule{ display:flex; align-items:center; gap:16px; max-width:760px; margin:24px auto 0; }
       .roots-rule::before,.roots-rule::after{ content:""; flex:1; height:2px; background:rgba(255,255,255,.9); border-radius:2px; }
-      .roots-rule h2{ flex:none; font-family:"Shrikhand",cursive; font-weight:400; font-size:clamp(2rem,7vw,3.4rem); line-height:1; color:#E87774; -webkit-text-stroke:1.5px #fff; text-shadow:0 3px 0 rgba(255,255,255,.85), 0 8px 22px rgba(20,60,120,.35); letter-spacing:.02em; margin:0; }
-      .roots-pill{ flex:none; display:inline-block; background:#FDF6EA; color:#F45078; font-family:"Shrikhand",cursive; font-weight:400; font-size:1.25rem; letter-spacing:.04em; padding:10px 24px; border-radius:999px; box-shadow:0 8px 20px rgba(20,60,120,.25); }
-      .roots-lede{ max-width:660px; margin:22px auto 0; font-style:italic; font-weight:600; font-size:1.06rem; line-height:1.65; text-shadow:0 1px 10px rgba(10,50,110,.45); }
+      .roots-rule h2{ flex:none; font-family:"Shrikhand",cursive; font-weight:600; font-size:clamp(2rem,7vw,3.4rem); line-height:1; color:#E87774; -webkit-text-stroke:1.5px #fff; text-shadow:0 3px 0 rgba(255,255,255,.85), 0 8px 22px rgba(20,60,120,.35); letter-spacing:.02em; margin:0; }
+      .roots-pill{ flex:none; display:inline-block; background:#FDF6EA; color:#F45078; font-family:"Shrikhand",cursive; font-weight:600; font-size:1.25rem; letter-spacing:.04em; padding:10px 24px; border-radius:10px; box-shadow:0 8px 20px rgba(20,60,120,.25); }
+      .roots-lede{ max-width:660px; margin:22px auto 0; font-style:italic; font-weight:700; font-size:1.06rem; line-height:1.65; text-shadow:0 1px 10px rgba(10,50,110,.45); }
       .roots-lede p{ margin:0 0 14px; }
       .roots-lede b{ font-weight:900; }
-      .roots-sub{ font-style:italic; font-weight:600; margin:14px 0 0; text-shadow:0 1px 10px rgba(10,50,110,.45); }
-      .cause-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:1020px; margin:28px auto 0; text-align:left; }
-      .cause-card{ background:rgba(255,255,255,.16); border:2px solid rgba(255,255,255,.85); border-radius:24px; padding:20px; display:flex; gap:16px; align-items:flex-start; }
+      .roots-sub{ font-style:italic; font-weight:700; margin:14px 0 0; text-shadow:0 1px 10px rgba(10,50,110,.45); }
+      .cause-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:1020px; margin:20px auto 0; text-align:left; }
+      .cause-card{ background:rgba(255,255,255,.16); border:2px solid rgba(255,255,255,.85); border-radius:10px; padding:20px; display:flex; gap:16px; align-items:flex-start; }
       .cause-ico{ flex:none; width:64px; height:64px; border-radius:50%; background:#FDF6EA; display:flex; align-items:center; justify-content:center; }
       .cause-ico svg{ width:38px; height:38px; display:block; }
       .cause-card h3{ font-weight:900; font-size:.98rem; letter-spacing:.06em; text-transform:uppercase; line-height:1.3; margin:2px 0 10px; text-shadow:0 1px 8px rgba(10,50,110,.4); }
       .cause-orgs{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 10px; }
-      .cause-org{ background:#FDF6EA; color:#2F3822; border-radius:12px; padding:8px 12px; font-weight:900; font-size:.82rem; line-height:1.25; }
+      .cause-org{ background:#FDF6EA; color:#2F3822; border-radius:8px; padding:8px 12px; font-weight:900; font-size:.82rem; line-height:1.25; }
       .cause-org small{ display:block; font-weight:700; font-size:.66rem; color:#5A6B52; margin-top:2px; }
       .cause-card p{ font-size:.92rem; line-height:1.5; margin:0 0 12px; text-shadow:0 1px 8px rgba(10,50,110,.4); }
-      .cause-link{ display:inline-block; background:#FDF6EA; color:#F45078; font-weight:900; font-size:.82rem; padding:7px 14px; border-radius:999px; text-decoration:none; margin:0 6px 6px 0; }
+      .cause-link{ display:inline-block; background:#FDF6EA; color:#F45078; font-weight:900; font-size:.82rem; padding:7px 14px; border-radius:10px; text-decoration:none; margin:0 6px 6px 0; }
       .cause-link:hover{ text-decoration:underline; }
-      .roots-close{ margin:32px 0 0; }
+      .roots-close{ margin:22px 0 0; }
       @media (max-width:900px){ .cause-grid{ grid-template-columns:1fr; max-width:560px; } }
     </style>
   <style id="fm-mockup">
@@ -10891,11 +10792,8 @@ html[data-theme="dark"] .fm-on .hero{ background:none; }
 html[data-theme="dark"] .fm-bg{
   background:url("img/blue-sky-hero.webp") center 80%/cover no-repeat;
 }
-html[data-theme="dark"] .shop-btn.shop-unavail{ background:#FDF6EA; color:#2A3620; border-color:#FDF6EA; opacity:1; filter:none; }
 html[data-theme="dark"] .hero-logo img{ filter:drop-shadow(0 14px 34px rgba(0,0,0,.6)); }
 html[data-theme="dark"] .hero-copy{ background:rgba(20,26,14,.72); }
-html[data-theme="dark"] .enter-banner{ background:var(--olive-deep); }
-html[data-theme="dark"] .enter-banner p{ color:#C9D6BD; }
 html[data-theme="dark"] footer.site{ background:#141A0E; }
 html[data-theme="dark"] .announce{ background:#141A0E; }
 html[data-theme="dark"] .ticker{ background:#3C4D2C; }
@@ -10987,7 +10885,7 @@ header.site{ background:#34AFFD; }
 .header-search.open{ display:block; }
 .header-search input{
   width:100%; max-width:560px; margin:0 auto; display:block; min-height:48px;
-  border-radius:999px; border:1.5px solid var(--edge); background:var(--bg); color:var(--ink);
+  border-radius:10px; border:1.5px solid var(--edge); background:var(--bg); color:var(--ink);
   padding:12px 20px; font:inherit; font-weight:700;
 }
 .header-search input:focus{ outline:3px solid var(--rose); outline-offset:1px; border-color:transparent; }
@@ -11011,7 +10909,7 @@ header.site{ background:#34AFFD; }
 }
 
 /* ---- hero: tighter, logo-forward, mockup badges ---- */
-.hero-inner{ padding:64px 20px 56px; }
+.hero-inner{ padding:44px 20px 38px; }
 .hero-logo img{ width:min(560px, 92%); }
 .hero .hero-sub{ font-size:.95rem; letter-spacing:.3em; }
 .hero-badges span{
@@ -11040,15 +10938,15 @@ header.site{ background:#34AFFD; }
 .flwr-soon-admin a:hover{ color:#FFFFFF; }
 .flwr-soon-feed{ width:100%; max-width:720px; margin:20px auto 0; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
 .flwr-soon-feed-kicker{ grid-column:1/-1; margin:0 0 2px; font-weight:900; letter-spacing:.22em; text-transform:uppercase; font-size:.72rem; color:#FFFFFF; text-align:center; text-shadow:0 1px 6px rgba(20,26,14,.55), 0 0 3px rgba(20,26,14,.35); }
-.flwr-soon-feed-item{ margin:0; border-radius:20px; overflow:hidden; background:#FFFDF7; border:1.5px solid #E3D9C6; min-width:0; }
+.flwr-soon-feed-item{ margin:0; border-radius:10px; overflow:hidden; background:#FFFDF7; border:1.5px solid #E3D9C6; min-width:0; }
 @media (max-width:560px){
   .flwr-soon-feed{ gap:8px; }
-  .flwr-soon-feed-item{ border-radius:14px; }
+  .flwr-soon-feed-item{ border-radius:10px; }
   .flwr-soon-feed-item .ig-card{ padding:8px; }
 }
 .flwr-soon-feed-item .ig-card{ padding:12px; }
 .flwr-soon-feed-item blockquote{ margin:0 !important; border:0 !important; box-shadow:none !important; background:transparent !important; padding:18px; text-align:center; }
-.flwr-soon-feed-item blockquote a{ display:inline-block; background:#FFFDF7; border:2px solid #2A3620; border-radius:999px; padding:10px 20px; font-weight:900; text-decoration:none; color:#2A3620; box-shadow:3px 3px 0 #2A3620; }
+.flwr-soon-feed-item blockquote a{ display:inline-block; background:#FFFDF7; border:2px solid #2A3620; border-radius:10px; padding:10px 20px; font-weight:900; text-decoration:none; color:#2A3620; box-shadow:3px 3px 0 #2A3620; }
 .flwr-soon-feed-item iframe{ position:relative !important; display:block; width:100% !important; min-width:0 !important; min-height:540px; border:0 !important; margin:0 !important; }
 .flwr-soon-feed-item:has(> iframe) > blockquote{ display:none; }
 /* ---- mobile header: icon-only basket at phone width so nothing is cut off ---- */
@@ -11063,23 +10961,23 @@ header.site{ background:#34AFFD; }
 .hero-shop-btn{ background:var(--paper) !important; color:var(--rose-ink) !important; border:2px solid var(--rose) !important; box-shadow:0 6px 16px rgba(244,114,142,.28) !important; }
 /* ---- hero badges: 3-col icon + label cells like the mockup ---- */
 .hero-badges{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; max-width:620px; margin-left:auto; margin-right:auto; }
-.hero-badges span{ display:flex; flex-direction:column; align-items:center; gap:7px; border-radius:20px; padding:14px 8px 12px; text-align:center; font-size:.8rem; line-height:1.25; }
+.hero-badges span{ display:flex; flex-direction:column; align-items:center; gap:7px; border-radius:10px; padding:14px 8px 12px; text-align:center; font-size:.8rem; line-height:1.25; }
 .hero-badges .hb-ico{ width:46px; height:46px; border-radius:50%; background:var(--rose-soft); color:var(--rose-ink); display:flex; align-items:center; justify-content:center; font-size:1.45rem; font-style:normal; }
 .hero-badges span:nth-child(3n+2) .hb-ico{ background:var(--sage-soft); color:var(--olive); }
 .hero-badges span:nth-child(3n) .hb-ico{ background:#E0EEF6; color:#3E7CB1; }
 @media (max-width:560px){ .hero-badges{ gap:9px; } .hero-badges span{ font-size:.72rem; padding:11px 6px 10px; } .hero-badges .hb-ico{ width:38px; height:38px; font-size:1.2rem; } }
 /* ---- shop: vibe filter chips ---- */
 .shop-chips{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:20px 0 6px; }
-.chip-btn{ border:1.5px solid var(--line); background:var(--paper); color:var(--ink); border-radius:999px; padding:9px 20px; font-weight:900; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; cursor:pointer; font-family:inherit; box-shadow:var(--soft-shadow); }
+.chip-btn{ border:1.5px solid var(--line); background:var(--paper); color:var(--ink); border-radius:10px; padding:9px 20px; font-weight:900; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase; cursor:pointer; font-family:inherit; box-shadow:var(--soft-shadow); }
 .chip-btn.active{ background:var(--rose); border-color:var(--rose); color:#fff; }
 /* ---- shop: format subhead (mockup PREMIUM FLOWER / CANNABIS PREROLLS) ---- */
 .shop-subhead{ text-align:center; margin:20px 0 4px; }
-.shop-subhead h3{ font-family:"Shrikhand",cursive; font-weight:400; font-size:1.6rem; color:var(--olive); }
+.shop-subhead h3{ font-family:"Shrikhand",cursive; font-weight:600; font-size:1.6rem; color:var(--olive); }
 .shop-subhead p{ font-weight:800; font-size:.85rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-top:4px; }
 /* ---- shop: vibe cards at the bottom of the grid ---- */
-.shop-vibes{ margin-top:28px; }
+.shop-vibes{ margin-top:20px; }
 /* ---- about: wide flower-field photo band ---- */
-.about-field{ height:210px; border-radius:28px; background:url("img/hero-daisy-field.webp") center 35%/cover no-repeat; border:2px solid var(--line); margin:24px 0 28px; box-shadow:var(--soft-shadow); }
+.about-field{ height:210px; border-radius:10px; background:url("img/hero-daisy-field.webp") center 35%/cover no-repeat; border:2px solid var(--line); margin:24px 0 20px; box-shadow:var(--soft-shadow); }
 @media (max-width:640px){ .about-field{ height:170px; } }
 
 /* ---- vibe banners: photo cards like the mockup ---- */
@@ -11099,8 +10997,8 @@ header.site{ background:#34AFFD; }
 .vibe-banner.active{ outline:3px solid var(--rose); outline-offset:3px; }
 
 /* ---- product cards: mockup arch + full-width pink button, no price line ---- */
-.card{ border-width:2px; border-radius:30px; }
-.card-art{ border-radius:220px 220px 20px 20px; }
+.card{ border-width:2px; border-radius:10px; }
+.card-art{ border-radius:12px; }
 .card-body h3{ color:var(--rose-ink); }
 .card-foot{ flex-direction:column; align-items:stretch; gap:10px; }
 .card-foot .price-note{ text-align:center; }
@@ -11132,14 +11030,14 @@ header.site{ background:#34AFFD; }
 @media (max-width:560px){ #productGrid .card{ flex:0 0 78%; } }
 
 /* ---- about badges: green circle icons, mockup style ---- */
-.about-badge{ border-width:2px; border-radius:26px; }
+.about-badge{ border-width:2px; border-radius:10px; }
 .about-badge .about-ico{ background:var(--sage); border-color:var(--olive); color:#fff; }
 .about-badge:nth-child(2) .about-ico{ background:var(--sky); }
 .about-badge:nth-child(3) .about-ico{ background:var(--rose); }
 .about-badge:nth-child(4) .about-ico{ background:var(--lav); }
 
 /* ---- gives back cards ---- */
-.gives-card{ border-width:2px; border-radius:28px; }
+.gives-card{ border-width:2px; border-radius:10px; }
 .gives-card .gives-ico{ background:var(--rose-soft); }
 
 /* ---- find us: mockup header + honest not-listed note ---- */
@@ -11149,7 +11047,7 @@ header.site{ background:#34AFFD; }
   color:#00857A; letter-spacing:-.02em; line-height:1; display:block; margin-top:6px;
 }
 html[data-theme="dark"] .weedmaps-word{ color:#2EC4B6; }
-.weedmaps-card{ border-width:2px; border-radius:30px; }
+.weedmaps-card{ border-width:2px; border-radius:10px; }
 .weedmaps-card .btn{ width:100%; justify-content:center; }
 .weedmaps-coming{ background:var(--rose-soft); border-style:solid; }
 
@@ -11205,7 +11103,7 @@ footer.site{ background:var(--olive-deep); }
 .foot-base{ text-align:center; justify-content:center; }
 .age-badge{
   display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px;
-  border:2px solid var(--cream); border-radius:8px; font-weight:900; font-size:.8rem; color:var(--cream);
+  border:2px solid var(--cream); border-radius:6px; font-weight:900; font-size:.8rem; color:var(--cream);
 }
 
 /* ---- buttons: pink pills, mockup weight ---- */
@@ -11262,12 +11160,8 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
       .fm-on .hero-logo img{ animation:logoShine 7s ease-in-out 2.5s infinite; }
       @keyframes logoShine{ 0%,60%,100%{ filter:drop-shadow(0 10px 28px rgba(85,107,63,.28)) brightness(1); } 72%{ filter:drop-shadow(0 10px 28px rgba(85,107,63,.28)) brightness(1.15) saturate(1.08); } }
 
-      /* "Enter the shop" is not available in the current plan: visible but greyed out, tooltip on hover/focus */
-      .shop-btn-wrap{ position:relative; display:inline-block; }
-      .shop-btn-wrap .shop-unavail{ opacity:1; filter:none; cursor:not-allowed; box-shadow:none; }
-      .shop-tip{ position:absolute; left:50%; bottom:calc(100% + 10px); transform:translateX(-50%) translateY(4px); background:#2A3620; color:#FDF6EA; font-weight:800; font-size:.82rem; white-space:nowrap; padding:8px 14px; border-radius:999px; box-shadow:0 8px 20px rgba(42,54,32,.3); opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease; z-index:5; }
+      .shop-tip{ position:absolute; left:50%; bottom:calc(100% + 10px); transform:translateX(-50%) translateY(4px); background:#2A3620; color:#FDF6EA; font-weight:800; font-size:.82rem; white-space:nowrap; padding:8px 14px; border-radius:10px; box-shadow:0 8px 20px rgba(42,54,32,.3); opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease; z-index:5; }
       .shop-tip::after{ content:""; position:absolute; left:50%; top:100%; transform:translateX(-50%); border:6px solid transparent; border-top-color:#2A3620; }
-      .shop-btn-wrap:hover .shop-tip, .shop-btn-wrap:focus-within .shop-tip{ opacity:1; transform:translateX(-50%) translateY(0); }
       .shop-btn .store-ico{ width:22px; height:22px; display:block; }
       .shop-tip-below{ top:calc(100% + 10px); bottom:auto; transform:translateX(-50%) translateY(-4px); }
       .shop-tip-below::after{ top:auto; bottom:100%; border:6px solid transparent; border-bottom-color:#2A3620; border-top-color:transparent; }
@@ -11284,7 +11178,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
       .feed-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
       @media (max-width:900px){ .feed-grid{ gap:14px; } }
       @media (max-width:560px){ .feed-grid{ grid-template-columns:1fr; gap:16px; } }
-      .feed-card{ border:2px solid var(--ink); border-radius:22px; overflow:hidden; background:var(--paper); box-shadow:var(--card-shadow); display:flex; flex-direction:column; min-width:0; }
+      .feed-card{ border:2px solid var(--ink); border-radius:10px; overflow:hidden; background:var(--paper); box-shadow:var(--card-shadow); display:flex; flex-direction:column; min-width:0; }
       .ig-card{ display:flex; flex-direction:column; gap:10px; padding:18px; text-decoration:none; color:inherit; min-width:0; }
       .feed-card .ig-card{ flex:1; }
       .ig-card-head{ display:flex; align-items:center; gap:12px; min-width:0; }
@@ -11293,18 +11187,18 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
       .ig-card-meta b{ font-weight:900; font-size:.95rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
       .ig-card-meta span{ font-family:"Space Mono",monospace; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); white-space:nowrap; }
       .ig-card-cap{ font-weight:700; line-height:1.55; font-size:.95rem; overflow-wrap:break-word; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
-      .ig-card-photo{ display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px; border:2px solid var(--line); background:var(--paper); }
+      .ig-card-photo{ display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:8px; border:2px solid var(--line); background:var(--paper); }
       .ig-card-open{ font-weight:900; color:var(--coral); font-size:.9rem; }
       .ig-card:hover .ig-card-open, .ig-card:focus-visible .ig-card-open{ text-decoration:underline; }
       @media (max-width:560px){
-        .feed-card{ border-radius:14px; }
+        .feed-card{ border-radius:10px; }
         .ig-card{ gap:6px; padding:8px; }
         .ig-card-head{ gap:7px; }
         .ig-card-ava{ width:26px; height:26px; }
         .ig-card-meta b{ font-size:.68rem; }
         .ig-card-meta span{ font-size:.55rem; letter-spacing:.04em; }
         .ig-card-cap{ font-size:.72rem; line-height:1.4; -webkit-line-clamp:2; }
-        .ig-card-photo{ border-radius:8px; }
+        .ig-card-photo{ border-radius:6px; }
         .ig-card-open{ font-size:.7rem; }
       }
       .flwr-cursor svg{ display:block; width:44px; height:44px; filter:drop-shadow(0 2px 6px rgba(42,54,32,.35)); animation:flwrCursorSpin 14s linear infinite; }
@@ -11356,7 +11250,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
 
       /* Flower / Prerolls: one pill glides between them */
       .fm-on .shop-toggle{ position:relative; }
-      .fm-pill{ position:absolute; z-index:0; border-radius:999px; background:var(--olive); opacity:0; pointer-events:none; }
+      .fm-pill{ position:absolute; z-index:0; border-radius:10px; background:var(--olive); opacity:0; pointer-events:none; }
       .fm-ready .fm-pill{ opacity:1; transition:transform .5s cubic-bezier(.3,1.25,.5,1), width .5s cubic-bezier(.3,1.25,.5,1); }
       .fm-ready .toggle-btn{ position:relative; z-index:1; transition:color .3s ease .05s, border-color .3s ease; }
       .fm-ready .toggle-btn.active{ background:transparent; }
@@ -11394,11 +11288,11 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
       .flwr-soon-front svg{ position:absolute; width:var(--s,56px); height:var(--s,56px); filter:drop-shadow(0 8px 10px rgba(85,107,63,.18)); animation:flwrSoonSpin var(--d,16s) linear infinite; }
       .flwr-soon-front svg:nth-child(2){ animation-direction:reverse; }
       @keyframes flwrSoonSpin{ to{ rotate:360deg; } }
-      .flwr-soon-inner{ position:relative; z-index:3; min-height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:56px 20px 40px; box-sizing:border-box; }
+      .flwr-soon-inner{ position:relative; z-index:3; min-height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:38px 20px 28px; box-sizing:border-box; }
       .flwr-soon-logo{ width:min(300px, 100%); height:auto; display:block; filter:drop-shadow(0 10px 28px rgba(85,107,63,.28)); animation:logoIn .9s cubic-bezier(.22,.9,.3,1) both, flwrSoonBreathe 8s ease-in-out 1s infinite; }
       @keyframes flwrSoonBreathe{ 0%,100%{ transform:translateY(0) rotate(0deg); } 38%{ transform:translateY(-4px) rotate(.4deg); } 71%{ transform:translateY(2px) rotate(-.3deg); } }
       .flwr-soon-kicker{ font-weight:800; letter-spacing:.14em; text-transform:uppercase; font-size:.8rem; color:#FFFFFF; margin:20px 0 0; text-shadow:0 1px 6px rgba(20,26,14,.55), 0 0 3px rgba(20,26,14,.35); }
-      .flwr-soon-title{ font-family:"Shrikhand",cursive; font-weight:400; font-size:clamp(1.9rem,8vw,4.6rem); line-height:1; color:#EA386C; margin:10px 0 0; max-width:100%; overflow-wrap:break-word; animation:titleIn .8s cubic-bezier(.22,.9,.3,1) both, titleFloat 6s ease-in-out 1s infinite; }
+      .flwr-soon-title{ font-family:"Shrikhand",cursive; font-weight:600; font-size:clamp(1.9rem,8vw,4.6rem); line-height:1; color:#EA386C; margin:10px 0 0; max-width:100%; overflow-wrap:break-word; animation:titleIn .8s cubic-bezier(.22,.9,.3,1) both, titleFloat 6s ease-in-out 1s infinite; }
       /* dynamic titles: smooth fade-and-rise entrance, then a gentle float on the
          Coming Soon heading. Section headings animate when they scroll into view
          (hooked to the existing .reveal.in trigger); hero titles animate on load.
@@ -11414,40 +11308,40 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
       .flwr-soon-extra{ display:flex; flex-wrap:wrap; gap:10px; flex:1 1 100%; }
       .flwr-soon-extra input{ flex:1 1 120px; min-width:0; }
       @media (max-width:560px){ .flwr-soon-form .flwr-soon-extra input, #joinForm .flwr-soon-extra input, #subscribeForm .flwr-soon-extra input{ flex:1 1 100%; } }
-      .flwr-soon-form input{ flex:1; min-width:0; box-sizing:border-box; border:1.5px solid #E3D9C6; border-radius:999px; padding:13px 20px; font:inherit; font-weight:700; background:#FFFDF7; color:#2A3620; outline:none; }
+      .flwr-soon-form input{ flex:1; min-width:0; box-sizing:border-box; border:1.5px solid #E3D9C6; border-radius:10px; padding:13px 20px; font:inherit; font-weight:700; background:#FFFDF7; color:#2A3620; outline:none; }
       .flwr-soon-form input:focus{ border-color:#F4728E; }
-      .flwr-soon-form button{ border:none; border-radius:999px; padding:13px 24px; background:#F4728E; color:#fff; font:inherit; font-weight:900; cursor:pointer; white-space:nowrap; box-shadow:0 6px 16px rgba(244,114,142,.35); }
+      .flwr-soon-form button{ border:none; border-radius:10px; padding:13px 24px; background:#F4728E; color:#fff; font:inherit; font-weight:900; cursor:pointer; white-space:nowrap; box-shadow:0 6px 16px rgba(244,114,142,.35); }
       .flwr-soon-done{ font-weight:800; color:#FFFDF7; margin:18px 0 0; text-shadow:0 1px 6px rgba(20,26,14,.55), 0 0 3px rgba(20,26,14,.35); }
       .flwr-soon-err{ font-weight:800; color:#D43D5E; font-size:.85rem; margin:12px 0 0; }
       .flwr-soon-preview{ display:inline-block; margin-top:26px; font-size:.82rem; font-weight:800; letter-spacing:.06em; color:#FFFDF7; text-decoration:underline; text-underline-offset:3px; text-shadow:0 1px 6px rgba(20,26,14,.55), 0 0 3px rgba(20,26,14,.35); }
       .flwr-soon-preview:hover{ color:#FFFFFF; }
       .flwr-soon-fine{ font-size:.78rem; color:#FFFDF7; margin:14px 0 0; text-shadow:0 1px 6px rgba(20,26,14,.55), 0 0 3px rgba(20,26,14,.35); }
       .flwr-soon-ig{ margin:18px 0 0; }
-      .flwr-soon-ig a{ display:inline-flex; align-items:center; gap:8px; padding:11px 20px; border-radius:999px; background:#FFFDF7; border:1.5px solid #E3D9C6; color:#F45078; font-weight:900; font-size:.9rem; text-decoration:none; box-shadow:0 8px 20px rgba(85,107,63,.12); }
+      .flwr-soon-ig a{ display:inline-flex; align-items:center; gap:8px; padding:11px 20px; border-radius:10px; background:#FFFDF7; border:1.5px solid #E3D9C6; color:#F45078; font-weight:900; font-size:.9rem; text-decoration:none; box-shadow:0 8px 20px rgba(85,107,63,.12); }
       .flwr-soon-ig a:hover{ border-color:#F4728E; background:#FDF6EA; }
       .flwr-soon-ig svg{ width:18px; height:18px; display:block; }
       /* ---- coming soon: autumn blaze booth showcase ---- */
-      .flwr-soon-media{ display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:center; width:100%; max-width:768px; margin:0 auto 32px; box-sizing:border-box; }
-.flwr-soon-blaze{ flex:1 1 420px; max-width:460px; margin:0; padding:18px 18px 16px; border-radius:24px; background:#FFFDF7; border:1.5px solid #E3D9C6; box-shadow:0 8px 20px rgba(85,107,63,.12); box-sizing:border-box; }
+      .flwr-soon-media{ display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:center; width:100%; max-width:768px; margin:0 auto 22px; box-sizing:border-box; }
+.flwr-soon-blaze{ flex:1 1 420px; max-width:460px; margin:0; padding:18px 18px 16px; border-radius:10px; background:#FFFDF7; border:1.5px solid #E3D9C6; box-shadow:0 8px 20px rgba(85,107,63,.12); box-sizing:border-box; }
       .flwr-soon-blaze-kicker{ margin:0; font-weight:900; letter-spacing:.22em; text-transform:uppercase; font-size:.72rem; color:#F45078; }
-      .flwr-soon-blaze-logo{ display:block; width:min(320px,100%); height:auto; margin:10px auto 0; border-radius:16px; }
+      .flwr-soon-blaze-logo{ display:block; width:min(320px,100%); height:auto; margin:10px auto 0; border-radius:10px; }
       .flwr-soon-blaze-details{ margin:12px 0 0; font-weight:900; font-size:.88rem; line-height:1.5; color:#2A3620; text-align:center; text-wrap:balance; }
       .flwr-soon-blaze-copy{ margin:8px 0 0; font-weight:700; font-size:.88rem; line-height:1.55; color:#5A6B52; }
       .flwr-soon-carousel{ margin-top:10px; }
-      .flwr-soon-slides{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; -ms-overflow-style:none; border-radius:16px; }
+      .flwr-soon-slides{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; -ms-overflow-style:none; border-radius:10px; }
       .flwr-soon-slides::-webkit-scrollbar{ display:none; }
       .flwr-soon-slide{ flex:0 0 100%; scroll-snap-align:start; }
-      .flwr-soon-slide img, .flwr-soon-slide video{ display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:16px; background:#1B2413; margin:0; }
+      .flwr-soon-slide img, .flwr-soon-slide video{ display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:10px; background:#1B2413; margin:0; }
       .flwr-soon-dots{ display:flex; gap:6px; justify-content:center; margin-top:10px; }
       .flwr-soon-dots span{ width:7px; height:7px; border-radius:50%; background:#D8CFC0; transition:background .2s; }
       .flwr-soon-dots span.on{ background:#F45078; }
-.flwr-soon-video{ flex:0 1 280px; margin:0; padding:10px 10px 12px; background:#FFFDF7; border:3px solid #E8A90C; border-radius:24px; box-shadow:0 10px 28px rgba(232,169,12,.35), 0 8px 20px rgba(85,107,63,.12); box-sizing:border-box; }
-.flwr-soon-video video{ display:block; width:100%; height:auto; border-radius:16px; background:#1B2413; }
+.flwr-soon-video{ flex:0 1 280px; margin:0; padding:10px 10px 12px; background:#FFFDF7; border:3px solid #E8A90C; border-radius:10px; box-shadow:0 10px 28px rgba(232,169,12,.35), 0 8px 20px rgba(85,107,63,.12); box-sizing:border-box; }
+.flwr-soon-video video{ display:block; width:100%; height:auto; border-radius:10px; background:#1B2413; }
 .flwr-soon-video figcaption{ margin:10px 0 0; text-align:center; font-weight:900; font-size:.82rem; line-height:1.4; color:#2A3620; }
 @media (max-width:800px){ .flwr-soon-media{ flex-direction:column; align-items:center; } .flwr-soon-blaze{ flex:none; width:100%; } .flwr-soon-video{ flex:none; width:min(280px,100%); } }
       .flwr-soon-count{ display:flex; gap:10px; margin-top:22px; }
-      .flwr-soon-count div{ background:#FFFDF7; border:1.5px solid #E3D9C6; border-radius:16px; padding:8px 12px 6px; min-width:66px; box-shadow:0 8px 20px rgba(85,107,63,.12); }
-      .flwr-soon-count b{ display:block; font-family:"Shrikhand",cursive; font-weight:400; font-size:1.5rem; line-height:1; color:#F45078; font-variant-numeric:tabular-nums; }
+      .flwr-soon-count div{ background:#FFFDF7; border:1.5px solid #E3D9C6; border-radius:10px; padding:8px 12px 6px; min-width:66px; box-shadow:0 8px 20px rgba(85,107,63,.12); }
+      .flwr-soon-count b{ display:block; font-family:"Shrikhand",cursive; font-weight:600; font-size:1.5rem; line-height:1; color:#F45078; font-variant-numeric:tabular-nums; }
       .flwr-soon-count span{ font-size:.62rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#8A9A7E; }
       .flwr-soon-cd-note{ font-weight:800; font-size:.82rem; color:#FFFDF7; margin:10px 0 0; text-shadow:0 1px 6px rgba(20,26,14,.55), 0 0 3px rgba(20,26,14,.35); } .flwr-soon-cd-note::first-letter{ text-transform:uppercase; }
       @media (max-width:540px){
@@ -11473,16 +11367,16 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
             <p class="flwr-soon-blaze-kicker">Catch us at</p>
             <div class="flwr-soon-carousel" data-carousel>
               <div class="flwr-soon-slides">
-                <div class="flwr-soon-slide"><img class="flwr-soon-blaze-logo" src="img/autumn-blaze-logo.webp" alt="Autumn Blaze 2026 — The San Diego Budtender Experience" /></div>
+                <div class="flwr-soon-slide"><img class="flwr-soon-blaze-logo" src="img/autumn-blaze-logo.webp" alt="Autumn Blaze 2026 - San Diego Budtender Event" data-image="autumn-blaze-logo" /></div>
                 <div class="flwr-soon-slide"><video src="video/flwrpwr-booth.mp4" muted loop autoplay playsinline preload="metadata" aria-label="FLWRPWR booth at Autumn Blaze 2026"></video></div>
               </div>
               <div class="flwr-soon-dots" aria-hidden="true"><span class="on"></span><span></span></div>
             </div>
             <p class="flwr-soon-blaze-details">Thurs, Nov 12th &middot; 5 PM &ndash; 10 PM &middot; Wicked West, San Diego, CA</p>
-            <p class="flwr-soon-blaze-copy">Pull up to our booth for new drops, exclusive goodies, and the full FLWRPWR experience.</p>
+            <p class="flwr-soon-blaze-copy">Pull up to our booth for new drops, exclusive goodies, and the full FLWRPWR lineup.</p>
           </div>
         </div>
-        <img class="flwr-soon-logo" src="img/logo-flwrpwr.png" alt="FLWRPWR, Good vibes, great flower" />
+        <img class="flwr-soon-logo" src="img/logo-flwrpwr.png" alt="FLWRPWR, Good vibes, great flower" data-image="logo" />
         <p class="flwr-soon-kicker">Good vibes, great flower.</p>
         <h1 class="flwr-soon-title">COMING SOON</h1>
         <p class="flwr-soon-sub">The first drop is blooming soon. Leave your email and we will tell you the day the shop opens.</p>
@@ -11515,7 +11409,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
               </span>
               <img class="ig-card-photo" src="img/ig-DfkxgnoEkdH.jpg" alt="FLWRPWR Instagram post, Nov 10, 2026" loading="lazy" />
               <span class="ig-card-cap">Our first event!! 🌸✨ We’re so excited to officially introduce FLWRPWR at Autumn Blaze 2026 on November 12th! Come say hi, check us out, grab some free goodies, and stop by our flower bar to make your own mini bouquet! 💐💗 We can’t wait to meet you all! good vibes, great flower. @cannamanagementgroup #flwrpwr #autumnblaze</span>
-              <span class="ig-card-open">Open on Instagram ↗</span>
+              <span class="ig-card-open">Open on Instagram</span>
             </a>
           </div>
           <div class="flwr-soon-feed-item">
@@ -11526,7 +11420,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
               </span>
               <img class="ig-card-photo" src="img/ig-De76FCwj5mE.jpg" alt="FLWRPWR Instagram post, Oct 25, 2026" loading="lazy" />
               <span class="ig-card-cap">you’ve got mail! 💌 swipe to check out our first issue of FLWRPWR Daily 🌸 #flwrpwr</span>
-              <span class="ig-card-open">Open on Instagram ↗</span>
+              <span class="ig-card-open">Open on Instagram</span>
             </a>
           </div>
           <div class="flwr-soon-feed-item">
@@ -11537,7 +11431,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
               </span>
               <img class="ig-card-photo" src="img/ig-DeBEyYfuTG3.jpg" alt="FLWRPWR Instagram post, Oct 2, 2026" loading="lazy" />
               <span class="ig-card-cap">flowers are a girls best friend 💐 #flwrpwr #flowerchild</span>
-              <span class="ig-card-open">Open on Instagram ↗</span>
+              <span class="ig-card-open">Open on Instagram</span>
             </a>
           </div>
         </div>
@@ -11556,7 +11450,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
           <a href="story.html">Our Story</a>
           <a href="feed.html">The Feed</a>
         </div>
-        <span class="shop-btn-wrap"><span class="shop-btn shop-unavail" role="button" aria-disabled="true" tabindex="0" aria-label="Live Shop, Currently Unavailable With This Build"><svg class="store-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2 2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 10 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 6 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 2 12V7"/></svg><span class="shop-btn-label">✿ LIVE SHOP</span></span><span class="shop-tip shop-tip-below" role="tooltip">Currently Unavailable With This Build</span></span>
+        
         <div class="nav-links right">
           <button class="search-btn" id="searchBtn" type="button" aria-label="Search flower" aria-expanded="false"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></button>
           <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch to dark mode">☾</button>
@@ -11581,28 +11475,28 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
 
     <main id="top">
       <!-- HERO (mockup-style: flower field, big lockup, badges) -->
-      <section class="hero">
+      <section class="hero" data-section="hero">
         <div class="fm-par fm-bg" aria-hidden="true"></div>
         <div class="fm-par hero-sun" aria-hidden="true"></div>
         <div class="fm-par fm-mid" aria-hidden="true"><i style="left:9%;top:22%;--s:20px;--d:4s">✦</i><i style="left:84%;top:40%;--s:14px;--d:2s;--o:-.7s">✦</i><i style="left:18%;top:78%;--s:12px;--d:8s;--o:-3.1s">✦</i><i class="fs4" style="left:70%;top:12%;--s:16px;--d:4s;--o:-2.3s">✦</i></div>
         <div class="fm-par fm-front" aria-hidden="true"><svg class="fd1" viewBox="0 0 100 100" data-daisy data-c="#ffffff" style="left:3%;top:58%;--s:64px;--d:16s"></svg><svg class="fd2" viewBox="0 0 100 100" data-daisy data-c="#F4728E" style="right:5%;top:16%;--s:48px;--d:16s"></svg><svg class="fd3" viewBox="0 0 100 100" data-daisy data-c="#ffffff" style="right:11%;bottom:6%;--s:38px;--d:8s"></svg></div>
         <div class="fm-par fm-petals" aria-hidden="true"><i style="left:6%;--s:20px;--d:13s;--o:-2s;--sw:26px">✿</i><i class="pk" style="left:16%;--s:14px;--d:17s;--o:-8s;--sw:-20px">✿</i><i style="left:27%;--s:24px;--d:15s;--o:-5s;--sw:30px">✿</i><i style="left:41%;--s:15px;--d:19s;--o:-11s;--sw:-24px">✿</i><i class="pk" style="left:55%;--s:18px;--d:14s;--o:-1s;--sw:22px">✿</i><i style="left:68%;--s:22px;--d:16s;--o:-7s;--sw:-28px">✿</i><i style="left:79%;--s:13px;--d:18s;--o:-4s;--sw:20px">✿</i><i class="pk" style="left:90%;--s:19px;--d:15s;--o:-9s;--sw:-22px">✿</i></div>
         <div class="wrap hero-inner">
-          <h1 class="hero-logo" aria-label="FLWRPWR"><img src="img/logo-flwrpwr.png" alt="FLWRPWR" /></h1>
+          <h1 class="hero-logo" aria-label="FLWRPWR"><img src="img/logo-flwrpwr.png" alt="FLWRPWR" data-image="logo" /></h1>
           <div class="hero-copy">
-            <p class="hero-sub">Premium cannabis flower</p>
-            <p class="tagline">FLWRPWR 4g Smalls, packed pretty and ready to reserve. The shop doors open soon.</p>
+            <p class="hero-sub" data-content="hero-sub">Premium cannabis flower</p>
+            <p class="tagline" data-content="hero-tagline">FLWRPWR 4g Smalls, packed pretty and ready to reserve. The shop doors open soon.</p>
           </div>
           <div class="hero-ctas">
-            <a class="btn btn-pink hero-shop-btn" href="#shop">Shop flower →</a>
-            <span class="shop-btn-wrap"><button class="btn btn-gold shop-unavail" type="button" data-enter-shop aria-disabled="true">▶ Enter the shop</button><span class="shop-tip" role="tooltip">Currently Unavailable With This Build</span></span>
+            <a class="btn btn-pink hero-shop-btn" href="#shop">Shop flower</a>
+            
           </div>
         </div>
       </section>
 
       <!-- CATEGORIES -->
       <div class="wave" aria-hidden="true"><svg viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q 150 -4 300 10 T 600 10 T 900 10 T 1200 10" stroke="#F4728E" /><path d="M0 18 Q 150 4 300 18 T 600 18 T 900 18 T 1200 18" stroke="#F2A22F" /><path d="M0 26 Q 150 12 300 26 T 600 26 T 900 26 T 1200 26" stroke="#A7B995" /></svg></div>
-      <section class="block" style="padding-bottom:8px">
+      <section class="block" style="padding-bottom:8px" data-section="vibe">
         <div class="wrap">
           <div class="sec-head reveal">
             <span class="mini">Shop by feeling</span>
@@ -11611,29 +11505,29 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
           <div class="vibe-banners reveal">
             <button class="vibe-banner v-sativa" type="button" data-vibe="Sativa">
               <span class="vibe-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
-              <span class="vibe-arrow">→</span>
+              
               <b>Sativa</b>
-              <small>Uplifting Energy, Creativity &amp; Focus</small>
+              <small>Uplifting energy, creativity and focus</small>
             </button>
             <button class="vibe-banner v-hybrid" type="button" data-vibe="Hybrid">
               <span class="vibe-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16"/><path d="M8 20h8"/><path d="M4 6h16"/><path d="M7 6L4.8 12.5"/><path d="M7 6l2.2 6.5"/><path d="M4.8 12.5Q7 17 9.2 12.5"/><path d="M17 6l-2.2 6.5"/><path d="M17 6l2.2 6.5"/><path d="M14.8 12.5Q17 17 19.2 12.5"/></svg></span>
-              <span class="vibe-arrow">→</span>
+              
               <b>Hybrid</b>
-              <small>Balanced Vibes for Mind &amp; Body</small>
+              <small>Balanced vibes for mind and body</small>
             </button>
             <button class="vibe-banner v-indica" type="button" data-vibe="Indica">
               <span class="vibe-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5z"/></svg></span>
-              <span class="vibe-arrow">→</span>
+              
               <b>Indica</b>
-              <small>Deep Relaxation, Stress Relief &amp; Full-Body Calm</small>
+              <small>Deep relaxation, stress relief and full-body calm</small>
             </button>
           </div>
           <div class="vibe-links reveal">
-            <a href="shop.html">Blooming soon: 3 more strains →</a>
-            <span class="shop-btn-wrap"><button type="button" data-enter-shop class="shop-unavail" aria-disabled="true">The Shop IRL: walk in, virtually →</button><span class="shop-tip" role="tooltip">Currently Unavailable With This Build</span></span>
+            <a href="shop.html">Blooming soon: 3 more strains</a>
+            
           </div>
           <div class="vibe-preview" id="vibePreview" hidden>
-            <img id="vibeImg" src="img/pouch-maui-wowie.png" alt="" />
+            <img id="vibeImg" src="img/pouch-maui-wowie.png" alt="" data-image="vibe" />
             <div>
               <span class="mini" id="vibeType">Sativa</span>
               <h3 id="vibeName">Maui Wowie</h3>
@@ -11646,21 +11540,20 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
 
       <!-- FIND US ON WEEDMAPS (mockup layout, honest placeholder: not listed yet) -->
       <div class="wave" aria-hidden="true"><svg viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q 150 -4 300 10 T 600 10 T 900 10 T 1200 10" stroke="#F4728E" /><path d="M0 18 Q 150 4 300 18 T 600 18 T 900 18 T 1200 18" stroke="#F2A22F" /><path d="M0 26 Q 150 12 300 26 T 600 26 T 900 26 T 1200 26" stroke="#A7B995" /></svg></div>
-      <section class="block find-us" id="find-us">
+      <section class="block find-us" id="find-us" data-section="find-us">
         <div class="wrap">
           <div class="sec-head reveal">
-            <span class="mini">Find us</span>
             <h2>Find us on</h2>
             <span class="weedmaps-word" aria-label="Weedmaps">weedmaps</span>
-            <p>We are not on Weedmaps yet. Join the list and we will tell you when we launch near you.</p>
+            <p data-content="findus-copy">We are not on Weedmaps yet. Join the list and we will tell you when we launch near you.</p>
           </div>
           <div class="weedmaps-card reveal">
-            <a class="btn btn-pink" href="https://weedmaps.com/search?query=FLWRPWR" target="_blank" rel="noopener">View on Weedmaps ↗</a>
+            <a class="btn btn-pink" href="https://weedmaps.com/search?query=FLWRPWR" target="_blank" rel="noopener">View on Weedmaps</a>
             <form class="weedmaps-search" id="weedmapsSearch">
               <input type="text" id="weedmapsQuery" placeholder="Enter city, ZIP, or address" aria-label="City, ZIP, or address" />
               <button type="submit">Find a shop</button>
             </form>
-            <p class="weedmaps-note">Our Weedmaps storefront is on its way. We are not listed yet, so check back at launch.</p>
+            <p class="weedmaps-note" data-content="findus-note">Search your city or ZIP below to find a shop near you at launch.</p>
             <div class="weedmaps-coming">Dispensary list coming soon</div>
           </div>
         </div>
@@ -11668,7 +11561,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
 
       <!-- PRODUCTS -->
       <div class="wave" aria-hidden="true"><svg viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q 150 -4 300 10 T 600 10 T 900 10 T 1200 10" stroke="#F4728E" /><path d="M0 18 Q 150 4 300 18 T 600 18 T 900 18 T 1200 18" stroke="#F2A22F" /><path d="M0 26 Q 150 12 300 26 T 600 26 T 900 26 T 1200 26" stroke="#A7B995" /></svg></div>
-      <section class="block" id="shop">
+      <section class="block" id="shop" data-section="shop">
         <div class="wrap">
           <div class="sec-head reveal">
             <span class="mini">Shop</span>
@@ -11686,34 +11579,14 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
             <button type="button" class="chip-btn" data-vibe="Indica">🌙 Indica</button>
           </div>
           <div class="shop-subhead reveal">
-            <h3 id="shopTitle">Premium flower</h3>
-            <p id="shopIntro">4g Smalls · 6 flavors · 3 vibes. No price tag yet, reserving saves your spot for launch day.</p>
+            <h3 id="shopTitle" data-content="shop-title">Premium flower</h3>
+            <p id="shopIntro" data-content="shop-intro">4g Smalls · 6 flavors · 3 vibes. No prices yet. Reserving saves your spot for launch day.</p>
           </div>
           <div class="gal-wrap">
           <div class="grid" id="productGrid"></div>
           <button class="gal-arrow gal-prev" type="button" aria-label="Previous products"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
           <button class="gal-arrow gal-next" type="button" aria-label="Next products"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
-          <div class="vibe-banners shop-vibes reveal">
-            <button class="vibe-banner v-sativa" type="button" data-vibe="Sativa">
-              <span class="vibe-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
-              <span class="vibe-arrow">→</span>
-              <b>Sativa</b>
-              <small>Uplifting energy, creativity &amp; focus</small>
-            </button>
-            <button class="vibe-banner v-hybrid" type="button" data-vibe="Hybrid">
-              <span class="vibe-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16"/><path d="M8 20h8"/><path d="M4 6h16"/><path d="M7 6L4.8 12.5"/><path d="M7 6l2.2 6.5"/><path d="M4.8 12.5Q7 17 9.2 12.5"/><path d="M17 6l-2.2 6.5"/><path d="M17 6l2.2 6.5"/><path d="M14.8 12.5Q17 17 19.2 12.5"/></svg></span>
-              <span class="vibe-arrow">→</span>
-              <b>Hybrid</b>
-              <small>Balanced vibes for mind &amp; body</small>
-            </button>
-            <button class="vibe-banner v-indica" type="button" data-vibe="Indica">
-              <span class="vibe-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5z"/></svg></span>
-              <span class="vibe-arrow">→</span>
-              <b>Indica</b>
-              <small>Deep relaxation, stress relief &amp; calm</small>
-            </button>
-          </div>
         </div>
       </section>
 
@@ -11724,13 +11597,13 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
           <div class="sec-head reveal">
             <span class="mini">Most loved</span>
             <h2>Best sellers</h2>
-            <p>The flower itself, not the pouch. These are preview photos for now. Real flower photos coming soon. Tap any one for its own page.</p>
+            <p>The flower itself, not the pouch. Real flower photos coming soon. Tap any one for its own page.</p>
           </div>
           <div class="gal-wrap">
             <div class="grid reveal">
             <article class="card">
               <a class="best-art" href="thai-stick.html" aria-label="Thai Stick, its own page">
-                <img src="img/bud-thai-stick.webp" alt="Thai Stick flower bud, preview photo" />
+                <img src="img/bud-thai-stick.webp" alt="Thai Stick flower bud, preview photo" data-image="bud-thai-stick" />
                 <span class="best-tag">Preview photo</span>
               </a>
               <div class="card-body"><h3><a href="thai-stick.html">Thai Stick</a></h3>
@@ -11740,7 +11613,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
             </article>
             <article class="card">
               <a class="best-art" href="maui-wowie.html" aria-label="Maui Wowie, its own page">
-                <img src="img/bud-maui-wowie.webp" alt="Maui Wowie flower bud, preview photo" />
+                <img src="img/bud-maui-wowie.webp" alt="Maui Wowie flower bud, preview photo" data-image="bud-maui-wowie" />
                 <span class="best-tag">Preview photo</span>
               </a>
               <div class="card-body"><h3><a href="maui-wowie.html">Maui Wowie</a></h3>
@@ -11750,7 +11623,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
             </article>
             <article class="card">
               <a class="best-art" href="northern-lights.html" aria-label="Northern Lights, its own page">
-                <img src="img/bud-northern-lights.webp" alt="Northern Lights flower bud, preview photo" />
+                <img src="img/bud-northern-lights.webp" alt="Northern Lights flower bud, preview photo" data-image="bud-northern-lights" />
                 <span class="best-tag">Preview photo</span>
               </a>
               <div class="card-body"><h3><a href="northern-lights.html">Northern Lights</a></h3>
@@ -11758,7 +11631,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
               <p class="size">FLWRPWR · 4g Smalls</p>
               <div class="card-foot"><span class="price-note">pricing at launch</span><button class="add-btn" type="button" data-add="northern-lights">Reserve ✿</button></div></div>
             </article>
-          <div style="text-align:center;margin-top:28px" class="reveal"><a class="btn btn-pink" href="#shop">Shop all flower &rarr;</a></div>
+          <div style="text-align:center;margin-top:28px" class="reveal"><a class="btn btn-pink" href="#shop">Shop all flower</a></div>
           </div>
             <button class="gal-arrow gal-prev" type="button" aria-label="Previous products"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
             <button class="gal-arrow gal-next" type="button" aria-label="Next products"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -11787,14 +11660,14 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
       <section class="block roots" id="roots" aria-label="Our roots and foundations">
         <div class="wrap">
           <div class="roots-logo reveal">
-            <img src="img/logo-flwrpwr.png" alt="FLWRPWR" />
+            <img src="img/logo-flwrpwr.png" alt="FLWRPWR" data-image="logo" />
           </div>
           <div class="roots-rule reveal"><h2>OUR ROOTS</h2></div>
           <div class="roots-lede reveal">
             <p>Founded in Southern California in 2026, FLWRPWR is a women-owned cannabis brand rooted in quality flower, wellness, and community.</p>
             <p>We believe quality begins with intention. Our flower is selected from trusted farms, using only whole cannabis flower, never trim or shake. The care we put into our products extends beyond cannabis to the people who support us and the earth we call home.</p>
             <p>Our commitment to giving back is an extension of who we are. By supporting environmental restoration and advocating for survivors of domestic violence and sexual assault, we hope to create a positive impact that extends beyond our flower.</p>
-            <p>As FLWRPWR continues to grow we want to create a welcoming community where everyone feels supported and part of a larger purpose.</p>
+            <p>As FLWRPWR continues to grow, we want to create a welcoming community where everyone feels supported and part of a larger purpose.</p>
             <p><b>Good vibes, great flower. Together, we grow.</b></p>
           </div>
           <div class="roots-rule reveal"><span class="roots-pill">OUR FOUNDATIONS</span></div>
@@ -11806,7 +11679,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
                 <h3>Planting Trees for a Greater Tomorrow</h3>
                 <div class="cause-orgs"><span class="cause-org">One Tree Planted</span></div>
                 <p>Reforestation, environmental restoration, and a healthier planet.</p>
-                <a class="cause-link" href="https://onetreeplanted.org" target="_blank" rel="noopener">onetreeplanted.org ↗</a>
+                <a class="cause-link" href="https://onetreeplanted.org" target="_blank" rel="noopener">onetreeplanted.org</a>
               </div>
             </article>
             <article class="cause-card reveal">
@@ -11815,8 +11688,8 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
                 <h3>Supporting Domestic Violence Survivors</h3>
                 <div class="cause-orgs"><span class="cause-org">House of Ruth<small>Assisting Families Victimized by Domestic Violence</small></span><span class="cause-org">California Partnership to End Domestic Violence</span></div>
                 <p>Direct support, prevention, education, advocacy, and stronger survivor services across California.</p>
-                <a class="cause-link" href="https://houseofruthinc.org" target="_blank" rel="noopener">houseofruthinc.org ↗</a>
-                <a class="cause-link" href="https://cpedv.org" target="_blank" rel="noopener">cpedv.org ↗</a>
+                <a class="cause-link" href="https://houseofruthinc.org" target="_blank" rel="noopener">houseofruthinc.org</a>
+                <a class="cause-link" href="https://cpedv.org" target="_blank" rel="noopener">cpedv.org</a>
               </div>
             </article>
             <article class="cause-card reveal">
@@ -11825,8 +11698,8 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
                 <h3>Supporting Sexual Assault Survivors</h3>
                 <div class="cause-orgs"><span class="cause-org">Project Sister Family Services</span><span class="cause-org">ValorUS<small>Advancing Equity. Ending Sexual Violence.</small></span></div>
                 <p>Survivor support, crisis care, prevention, education, and systemic change.</p>
-                <a class="cause-link" href="https://projectsister.org" target="_blank" rel="noopener">projectsister.org ↗</a>
-                <a class="cause-link" href="https://valor.us" target="_blank" rel="noopener">valor.us ↗</a>
+                <a class="cause-link" href="https://projectsister.org" target="_blank" rel="noopener">projectsister.org</a>
+                <a class="cause-link" href="https://valor.us" target="_blank" rel="noopener">valor.us</a>
               </div>
             </article>
           </div>
@@ -11834,41 +11707,16 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
         </div>
       </section>
 
-      <!-- ENTER THE SHOP -->
-      <div class="wave" aria-hidden="true"><svg viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q 150 -4 300 10 T 600 10 T 900 10 T 1200 10" stroke="#F4728E" /><path d="M0 18 Q 150 4 300 18 T 600 18 T 900 18 T 1200 18" stroke="#F2A22F" /><path d="M0 26 Q 150 12 300 26 T 600 26 T 900 26 T 1200 26" stroke="#A7B995" /></svg></div>
-      <section class="enter-banner" id="visit">
-        <div class="wrap">
-          <div class="reveal">
-            <span class="rec-chip"><span class="rec-dot"></span> REC, NOW TOURING</span>
-            <h2>Step inside the <span class="gold">flower shop</span></h2>
-            <p>A first-person walk-through of the FLWRPWR shop, bright, sunny and shared with other shoppers wandering the aisles. Click a pouch on the shelf and it lands in your basket, same basket as this page.</p>
-            <div class="hero-ctas">
-              <span class="shop-btn-wrap"><button class="btn btn-gold shop-unavail" type="button" data-enter-shop aria-disabled="true">▶ Enter the shop</button><span class="shop-tip" role="tooltip">Currently Unavailable With This Build</span></span>
-              <a class="btn" href="#shop" style="background:transparent;color:#FDF6EA;border-color:#FDF6EA;box-shadow:none">Shop the grid instead</a>
-            </div>
-          </div>
-          <div class="cam-frame reveal" aria-hidden="true">
-            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-            <ul>
-              <li>Click in to lock the mouse, look around first-person, WASD to walk</li>
-              <li>Other shoppers browse the aisles, hop between three little shops to find your crowd</li>
-              <li>Click any pouch or jar on the shelves to add it</li>
-              <li>Checkout is a launch-day reservation, no payment, ever, on a concept</li>
-              <li>Best on desktop, phones get the grid, same flowers</li>
-            </ul>
-          </div>
-        </div>
-      </section>
 
       <!-- STORY -->
-      <section class="block story" id="story">
+      <section class="block story" id="story" data-section="story">
         <div class="wrap story-grid">
           <div class="reveal">
             <span class="mini">Our story</span>
             <h2>Grown by women, <span class="pink">wrapped like a gift</span></h2>
             <p data-content="story-intro">FLWRPWR is a women-owned flower company with one rule: good vibes, great flower. We think buying flower should feel like walking into your favorite boutique, soft colors, pretty shelves, zero intimidation.</p>
-            <p data-content="story-drop">The first drop is our 4g Smalls: Thai Stick, Northern Lights and Maui Wowie, with three more strains still blooming. Follow along at <b>@flwrpwr_co</b>, launch day is getting close.</p>
-            <span class="hand-note">picked, packed &amp; posted with love ✿</span><div style="margin-top:18px"><a class="btn" href="story.html">Read the full story →</a></div>
+            <p data-content="story-drop">The first drop is our 4g Smalls: Thai Stick, Northern Lights and Maui Wowie, with three more strains still blooming. Follow along at <b>@flwrpwr_co</b>.</p>
+            <span class="hand-note">picked, packed &amp; posted with love ✿</span><div style="margin-top:18px"><a class="btn" href="story.html">Read the full story</a></div>
           </div>
           <div class="props reveal">
             <div class="prop">
@@ -11891,7 +11739,6 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
           <span class="mini">Our mission</span>
           <h2>People. Plants. Purpose.<br />A brighter tomorrow.</h2>
           <p class="lead">Rooted in wellness. Powered by women. Grown for community.</p>
-          <p class="body">FLWRPWR is a women-owned flower company. Good vibes, great flower, and a shop that feels like walking into your favorite boutique.</p>
           <p class="quote" data-content="mission-quote">Be present, feel better, grow together.</p>
           <p class="body" data-content="mission-body">We celebrate flower, creativity, and community: a lifestyle that encourages mindfulness, connection, and positive energy in everyday life.</p>
           <div class="about-field reveal" role="img" aria-label="A field of daisies and wildflowers"></div>
@@ -11907,23 +11754,23 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
             <p data-content="gives-intro">A portion of our proceeds supports real impact, from tree planting initiatives to organizations that serve and empower survivors.</p>
           </div>
           <div class="gives-grid reveal">
-            <div class="gives-card"><span class="gives-ico">🌳</span><b>Tree Planting</b><p>Planting trees for a greater tomorrow.</p></div>
-            <div class="gives-card"><span class="gives-ico">🎗️</span><b>Supporting Survivors</b><p>Organizations that serve and empower survivors.</p></div>
+            <div class="gives-card"><span class="gives-ico">🌳</span><b>Tree Planting</b><p>Reforestation and a healthier planet.</p></div>
+            <div class="gives-card"><span class="gives-ico">🎗️</span><b>Supporting Survivors</b><p>Direct support and stronger services for survivors.</p></div>
             <div class="gives-card"><span class="gives-ico">👥</span><b>Community Programs</b><p>Growing a kinder, more inclusive community.</p></div>
           </div>
-          <div style="text-align:center;margin-top:28px" class="reveal"><a class="btn btn-pink" href="story.html">Learn more →</a></div>
+          <div style="text-align:center;margin-top:28px" class="reveal"><a class="btn btn-pink" href="story.html">Learn more</a></div>
         </div>
       </section>
 
 
       <!-- UPCOMING EVENTS (Nov 8 mockup: San Diego, Thu Nov 12) -->
       <div class="wave" aria-hidden="true"><svg viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q 150 -4 300 10 T 600 10 T 900 10 T 1200 10" stroke="#F4728E" /><path d="M0 18 Q 150 4 300 18 T 600 18 T 900 18 T 1200 18" stroke="#F2A22F" /><path d="M0 26 Q 150 12 300 26 T 600 26 T 900 26 T 1200 26" stroke="#A7B995" /></svg></div>
-      <section class="block events" id="events">
+      <section class="block events" id="events" data-section="events">
         <div class="wrap">
           <div class="sec-head reveal">
             <span class="mini">Upcoming events</span>
             <h2>Upcoming Events</h2>
-            <p>Come say hi in person</p>
+            <p data-content="events-copy">Come say hi in person</p>
           </div>
           <article class="event-card reveal">
             <div class="event-img" aria-hidden="true"><span>San Diego · Nov 12</span></div>
@@ -11931,7 +11778,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
               <div class="event-date"><span>Thu</span><b>Nov 12</b></div>
               <h3>San Diego FLWRPWR Event</h3>
               <p>Thursday, November 12. Event details on our Instagram.</p>
-              <a class="btn btn-pink" href="#join">Event details →</a>
+              <a class="btn btn-pink" href="#join">Event details</a>
             </div>
           </article>
           <div class="event-dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
@@ -11941,17 +11788,17 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
 
       <!-- JOIN THE COMMUNITY (Nov 8 mockup) -->
       <div class="wave" aria-hidden="true"><svg viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q 150 -4 300 10 T 600 10 T 900 10 T 1200 10" stroke="#F4728E" /><path d="M0 18 Q 150 4 300 18 T 600 18 T 900 18 T 1200 18" stroke="#F2A22F" /><path d="M0 26 Q 150 12 300 26 T 600 26 T 900 26 T 1200 26" stroke="#A7B995" /></svg></div>
-      <section class="block join" id="join">
+      <section class="block join" id="join" data-section="join">
         <div class="wrap">
           <div class="sec-head reveal">
             <span class="mini">Join the community</span>
-            <h2>Be first to know</h2>
-            <p>Be the first to know about new drops, events, and exclusive releases.</p>
+            <h2 data-content="join-title">Be first to know</h2>
+            <p data-content="join-copy">Be the first to know about new drops, events, and exclusive releases.</p>
           </div>
           <form class="subscribe-form join-form reveal" id="joinForm">
             <div class="join-email-row">
               <input type="email" id="joinEmail" placeholder="Enter your email" aria-label="Email address" required />
-              <button type="submit" aria-label="Join the list">&rarr;</button>
+              <button type="submit" aria-label="Join the list">Join</button>
             </div>
             <div class="flwr-soon-extra">
               <input type="text" id="joinName" placeholder="Name (optional)" aria-label="Name (optional)" autocomplete="name" />
@@ -11962,10 +11809,10 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
           <p class="subscribe-done" id="joinDone" hidden style="text-align:center">You're on the list ✿ See you at launch</p>
           <p style="text-align:center;margin-top:14px;font-weight:700">Follow us <a href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener" style="color:var(--rose-ink)">@flwrpwr_co</a></p>
           <div class="gallery reveal">
-            <a class="tile" href="feed.html" style="background:linear-gradient(150deg,#E0E5D4,#A7B995)" aria-label="FLWRPWR feed"><img src="img/bud-thai-stick.webp" alt="Thai Stick flower bud, preview photo" /></a>
-            <a class="tile" href="feed.html" style="background:linear-gradient(150deg,#FDDEDF,#F4728E)" aria-label="FLWRPWR feed"><img src="img/bud-maui-wowie.webp" alt="Maui Wowie flower bud, preview photo" /></a>
-            <a class="tile" href="feed.html" style="background:linear-gradient(150deg,#E0EEF6,#7CC3F6)" aria-label="FLWRPWR feed"><img src="img/bud-northern-lights.webp" alt="Northern Lights flower bud, preview photo" /></a>
-            <a class="tile" href="feed.html" style="background:linear-gradient(150deg,#EBE1D7,#FAC2CA)" aria-label="FLWRPWR feed"><img src="img/hero-daisy-field.webp" alt="A field of daisies" /></a>
+            <a class="tile" href="feed.html" style="background:linear-gradient(150deg,#E0E5D4,#A7B995)" aria-label="FLWRPWR feed"><img src="img/bud-thai-stick.webp" alt="Thai Stick flower bud, preview photo" data-image="bud-thai-stick" /></a>
+            <a class="tile" href="feed.html" style="background:linear-gradient(150deg,#FDDEDF,#F4728E)" aria-label="FLWRPWR feed"><img src="img/bud-maui-wowie.webp" alt="Maui Wowie flower bud, preview photo" data-image="bud-maui-wowie" /></a>
+            <a class="tile" href="feed.html" style="background:linear-gradient(150deg,#E0EEF6,#7CC3F6)" aria-label="FLWRPWR feed"><img src="img/bud-northern-lights.webp" alt="Northern Lights flower bud, preview photo" data-image="bud-northern-lights" /></a>
+            <a class="tile" href="feed.html" style="background:linear-gradient(150deg,#EBE1D7,#FAC2CA)" aria-label="FLWRPWR feed"><img src="img/hero-daisy-field.webp" alt="A field of daisies" data-image="hero-daisy" /></a>
             <a class="tile" href="feed.html" style="background:linear-gradient(150deg,#E0E5D4,#A7B995)" aria-label="FLWRPWR feed"><svg width="84" height="84" viewBox="0 0 100 100" data-bud></svg></a>
             <a class="tile" href="feed.html" style="background:linear-gradient(150deg,#EBE1D7,#CAD4BC)" aria-label="FLWRPWR feed"><svg width="84" height="84" viewBox="0 0 100 100" data-daisy data-c="#F4728E"></svg></a>
           </div>
@@ -11973,12 +11820,12 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
       </section>
 
       <!-- GALLERY -->
-      <section class="block" id="gallery">
+      <section class="block" id="gallery" data-section="feed">
         <div class="wrap">
           <div class="sec-head reveal">
             <span class="mini">Latest from @flwrpwr_co</span>
             <h2>@flwrpwr_co, lately</h2>
-            <p>Petals, pouches and shop days, the six newest posts from the FLWRPWR Instagram. Tap any card to open it on Instagram.</p>
+            <p>Petals, pouches and shop days from the FLWRPWR Instagram. Tap any card to open it.</p>
           </div>
           <div class="feed-grid reveal" id="homeFeedGrid">
             <article class="feed-card reveal">
@@ -11989,7 +11836,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
                 </span>
                 <img class="ig-card-photo" src="img/ig-DfkxgnoEkdH.jpg" alt="FLWRPWR Instagram post, Nov 10, 2026" loading="lazy" />
                 <span class="ig-card-cap">Our first event!! 🌸✨ We’re so excited to officially introduce FLWRPWR at Autumn Blaze 2026 on November 12th! Come say hi, check us out, grab some free goodies, and stop by our flower bar to make your own mini bouquet! 💐💗 We can’t wait to meet you all! good vibes, great flower. @cannamanagementgroup #flwrpwr #autumnblaze</span>
-                <span class="ig-card-open">Open on Instagram ↗</span>
+                <span class="ig-card-open">Open on Instagram</span>
               </a>
             </article>
             <article class="feed-card reveal">
@@ -12000,7 +11847,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
                 </span>
                 <img class="ig-card-photo" src="img/ig-De76FCwj5mE.jpg" alt="FLWRPWR Instagram post, Oct 25, 2026" loading="lazy" />
                 <span class="ig-card-cap">you’ve got mail! 💌 swipe to check out our first issue of FLWRPWR Daily 🌸 #flwrpwr</span>
-                <span class="ig-card-open">Open on Instagram ↗</span>
+                <span class="ig-card-open">Open on Instagram</span>
               </a>
             </article>
             <article class="feed-card reveal">
@@ -12011,7 +11858,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
                 </span>
                 <img class="ig-card-photo" src="img/ig-DeBEyYfuTG3.jpg" alt="FLWRPWR Instagram post, Oct 2, 2026" loading="lazy" />
                 <span class="ig-card-cap">flowers are a girls best friend 💐 #flwrpwr #flowerchild</span>
-                <span class="ig-card-open">Open on Instagram ↗</span>
+                <span class="ig-card-open">Open on Instagram</span>
               </a>
             </article>
             <article class="feed-card reveal">
@@ -12022,7 +11869,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
                 </span>
                 <img class="ig-card-photo" src="img/ig-Dd98nDTzbGv.jpg" alt="FLWRPWR Instagram post, Oct 1, 2026" loading="lazy" />
                 <span class="ig-card-cap">new month. new beginnings. more to come 🌼 #flwrpwr</span>
-                <span class="ig-card-open">Open on Instagram ↗</span>
+                <span class="ig-card-open">Open on Instagram</span>
               </a>
             </article>
             <article class="feed-card reveal">
@@ -12033,7 +11880,7 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
                 </span>
                 <img class="ig-card-photo" src="img/ig-DduPwQxyaZ5.jpg" alt="FLWRPWR Instagram post, Sep 25, 2026" loading="lazy" />
                 <span class="ig-card-cap">take a break 💚 unplug. unwind. #flwrpwr</span>
-                <span class="ig-card-open">Open on Instagram ↗</span>
+                <span class="ig-card-open">Open on Instagram</span>
               </a>
             </article>
             <article class="feed-card reveal">
@@ -12044,11 +11891,11 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
                 </span>
                 <img class="ig-card-photo" src="img/ig-DdrsAp-Sd0-.jpg" alt="FLWRPWR Instagram post, Sep 24, 2026" loading="lazy" />
                 <span class="ig-card-cap">where good vibes grow 🌿 #flwrpwr</span>
-                <span class="ig-card-open">Open on Instagram ↗</span>
+                <span class="ig-card-open">Open on Instagram</span>
               </a>
             </article>
           </div>
-          <div style="text-align:center;margin-top:28px" class="reveal"><a class="btn btn-pink" href="feed.html">See the whole feed &rarr;</a></div>
+          <div style="text-align:center;margin-top:28px" class="reveal"><a class="btn btn-pink" href="feed.html">See the whole feed</a></div>
         </div>
       </section>
     </main>
@@ -12056,9 +11903,9 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
     <div class="daisy-strip" aria-hidden="true"></div>
 
     <!-- FOOTER -->
-    <footer class="site">
+    <footer class="site" data-section="footer">
       <div class="wrap">
-        <img class="foot-logo" src="img/logo-flwrpwr.png" alt="FLWRPWR" />
+        <img class="foot-logo" src="img/logo-flwrpwr.png" alt="FLWRPWR" data-image="logo" />
         <p class="foot-tag">Good vibes, great flower</p>
         <div style="margin-top:26px">
           <details class="foot-acc">
@@ -12066,7 +11913,6 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
             <div class="foot-acc-links">
               <a href="shop.html">Shop the smalls</a>
               <a href="#best-sellers">Best sellers</a>
-              <a href="#visit">Enter the shop</a>
               <a href="feed.html">The feed</a>
             </div>
           </details>
@@ -12104,11 +11950,11 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
           <a href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener" aria-label="Instagram @flwrpwr_co">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.4" fill="currentColor" stroke="none"/></svg>
           </a>
-          <a href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener" style="width:auto;border-radius:999px;padding:0 18px;font-weight:900;letter-spacing:.06em">@flwrpwr_co</a>
+          <a href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener" style="width:auto;border-radius:10px;padding:0 18px;font-weight:900;letter-spacing:.06em">@flwrpwr_co</a>
         </div>
         <div style="max-width:520px;margin:28px auto 0;text-align:center">
           <div class="foot-h" style="text-align:center">Join the list</div>
-          <p style="margin:8px 0 0">First to know when the shop doors open and the first drop goes live.</p>
+          <p style="margin:8px 0 0" data-content="footer-note">First to know when the shop doors open and the first drop goes live.</p>
           <form class="subscribe-form" id="subscribeForm" style="margin-top:14px">
             <input type="email" id="subscribeEmail" placeholder="your@email.com" aria-label="Email address" required />
             <button type="submit">Bloom with us</button>
@@ -12143,16 +11989,16 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
         <div id="cartItems"></div>
         <div class="empty-cart" id="emptyCart">
           <div class="big">✿</div>
-          Nothing in the basket yet.<br />Tap a pouch, here, or inside the 3D shop.
+          Nothing in the basket yet.<br />Tap a pouch, here.
         </div>
       </div>
       <div class="drawer-foot" id="cartFoot">
         <p class="drawer-note">We're pre-launch, so checkout is a <b>reservation</b>: no prices, no payment, we just hold your picks and email you on launch day.</p>
-        <button class="checkout-btn" id="toCheckoutBtn" type="button">Reserve my picks →</button>
+        <button class="checkout-btn" id="toCheckoutBtn" type="button">Reserve my picks</button>
       </div>
 
       <div class="drawer-body" id="checkoutView" hidden>
-        <button class="back-link" id="backToCart" type="button">← back to basket</button>
+        <button class="back-link" id="backToCart" type="button">back to basket</button>
         <div class="field">
           <label for="coName">Your name</label>
           <input id="coName" type="text" autocomplete="name" placeholder="e.g. Daisy Bloom" />
@@ -12180,51 +12026,6 @@ html[data-theme="dark"] .cart-count{ background:#F4728E; color:#fff; }
       </div>
     </aside>
 
-    <!-- 3D SHOP -->
-    <div class="shop-overlay" id="shopOverlay" role="dialog" aria-label="FLWRPWR virtual flower shop" tabindex="0">
-      <div id="shopCanvasWrap"></div>
-      <canvas class="vhs-grain" id="grainCanvas" width="160" height="90"></canvas>
-      <div class="vhs-scan"></div>
-      <div class="vhs-track"></div>
-      <div class="vhs-vignette"></div>
-      <div class="hud hud-rec"><span class="rec-dot"></span> REC</div>
-      <div class="hud hud-play">▶ PLAY&nbsp;&nbsp;SP 0:00:00</div>
-      <div class="hud hud-time"><span id="vhsDate"></span><br /><span id="vhsTime"></span></div>
-      <div class="hud hud-shops">
-        <div class="shops-row" role="group" aria-label="Choose a shop">
-          <button type="button" class="shop-pick is-on" data-shop-pick="0">Shop 1 · Sunshine</button>
-          <button type="button" class="shop-pick" data-shop-pick="1">Shop 2 · Daisy</button>
-          <button type="button" class="shop-pick" data-shop-pick="2">Shop 3 · Petal</button>
-        </div>
-        <div class="presence" id="presenceLabel">✿ other shoppers are browsing in here</div>
-      </div>
-      <div class="crosshair"></div>
-      <div class="hud-label" id="hudLabel"></div>
-      <div class="lock-prompt" id="lockPrompt">
-        <div class="lp-card">
-          <div class="lp-title bubble">You're in the shop ✿</div>
-          <p>Click anywhere in the store to grab the mouse and look around, first-person style, just like the FLWRPWR room.</p>
-          <div class="lp-keys"><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> walk &nbsp;·&nbsp; mouse looks &nbsp;·&nbsp; <kbd>Esc</kbd> frees the mouse</div>
-          <button class="hud-btn gold" id="lockBtn" type="button">Click to look around</button>
-        </div>
-      </div>
-      <div class="hud-bottom">
-        <div class="hud-hint"><b>Click the shop</b> to lock your mouse &nbsp;·&nbsp; mouse looks around &nbsp;·&nbsp; <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walk &nbsp;·&nbsp; <b>click a pouch</b> to add it &nbsp;·&nbsp; <kbd>Esc</kbd> frees the mouse, again to leave</div>
-        <div class="hud-actions">
-          <button class="hud-btn gold" id="shopCartBtn" type="button">Basket (<span id="shopCartCount">0</span>)</button>
-          <button class="hud-btn" id="exitShopBtn" type="button">← Exit shop</button>
-        </div>
-      </div>
-      <div class="shop-fallback" id="shopFallback">
-        <div class="fb-card">
-          <div style="font-size:2.6rem;margin-bottom:10px">✿</div>
-          <h3>The shop needs a bigger screen</h3>
-          <p>Our walk-in virtual shop is a desktop experience, it needs a keyboard and a little room to wander. On your phone, the full lineup is right here on the page, same flowers, same basket.</p>
-          <button class="btn btn-gold" id="fallbackShopBtn" type="button">Shop the lineup instead</button>
-          <div style="margin-top:14px"><button class="hud-btn" id="fallbackExitBtn" type="button">← Back</button></div>
-        </div>
-      </div>
-    </div>
 
     <div class="toast" id="toast" role="status"></div>
 
@@ -50255,6 +50056,7 @@ void [_deriveContainmentCorpusDigest_f8b6, stepShadowHeapRemoteBundle_9052, read
 
       <script src="gate.js?v=3"></script>
       <script src="content.js"></script>
+      <script src="sections.js"></script>
     <script src="signup.js?v=1"></script>
     <script src="gallery.js?v=1"></script>
     <script>

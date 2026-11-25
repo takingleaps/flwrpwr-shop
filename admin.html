@@ -105,6 +105,75 @@
       <div class="status" id="saveStatus"></div>
     </form>
 
+    <!-- MORE PAGE TEXT (admin-extensions.js) -->
+    <style>
+      .img-row label, .sec-row .sec-name{ margin:0; }
+      .img-row{ margin-top:18px; padding-top:14px; border-top:1px solid #EDE8DC; }
+      .img-row input[type=url]{ width:100%; font-family:inherit; font-size:1rem; font-weight:600; color:var(--ink); background:#fff; border:2px solid #D8DECB; border-radius:12px; padding:12px 14px; margin-top:8px; }
+      .img-row input[type=url]:focus{ outline:none; border-color:var(--pink); }
+      .img-row .img-preview{ display:block; max-width:100%; max-height:160px; margin-top:8px; border:2px solid #D8DECB; border-radius:12px; }
+      .img-row .img-file-row{ margin-top:8px; }
+      .img-row .btn{ margin-top:10px; }
+      .sec-row{ display:flex; align-items:center; gap:8px; padding:10px 0; border-top:1px solid #EDE8DC; }
+      .sec-row .sec-name{ flex:1; font-weight:800; }
+      .sec-row.sec-hidden .sec-name{ opacity:.55; }
+      .sec-row .btn{ padding:8px 14px; }
+    </style>
+    <div style="margin-top:26px;border-top:2px solid #D8DECB;padding-top:18px">
+      <h2 style="margin:0 0 6px">More page text</h2>
+      <p class="muted" style="margin:0 0 10px">Every other bit of text on the home page. Paste in your own copy to replace what is there — leave a box empty to keep the original words from the site. (About, Our story, Mission and Gives Back live in the editor above. The Instagram feed is not editable — it just shows what is already posted.)</p>
+      <form id="pageTextForm">
+        <label for="f-hero-sub">Hero — line under the logo</label>
+        <textarea id="f-hero-sub" data-key="hero-sub"></textarea>
+        <label for="f-hero-tagline">Hero — tagline</label>
+        <textarea id="f-hero-tagline" data-key="hero-tagline"></textarea>
+        <label for="f-shop-title">Shop — heading</label>
+        <textarea id="f-shop-title" data-key="shop-title"></textarea>
+        <label for="f-shop-intro">Shop — intro line</label>
+        <textarea id="f-shop-intro" data-key="shop-intro"></textarea>
+        <label for="f-findus-copy">Find us — main copy</label>
+        <textarea id="f-findus-copy" data-key="findus-copy"></textarea>
+        <label for="f-findus-note">Find us — note</label>
+        <textarea id="f-findus-note" data-key="findus-note"></textarea>
+        <label for="f-join-title">Join — heading</label>
+        <textarea id="f-join-title" data-key="join-title"></textarea>
+        <label for="f-join-copy">Join — copy</label>
+        <textarea id="f-join-copy" data-key="join-copy"></textarea>
+        <label for="f-footer-note">Footer — note</label>
+        <textarea id="f-footer-note" data-key="footer-note"></textarea>
+        <label for="f-events-copy">Events — copy</label>
+        <textarea id="f-events-copy" data-key="events-copy"></textarea>
+        <button class="btn" type="submit">Save page text</button>
+        <div class="status" id="pageTextStatus"></div>
+      </form>
+    </div>
+
+    <!-- PICTURES (admin-extensions.js) -->
+    <div style="margin-top:26px;border-top:2px solid #D8DECB;padding-top:18px">
+      <h2 style="margin:0 0 6px">Pictures</h2>
+      <p class="muted" style="margin:0 0 10px">Swap a picture by pasting an image link, or upload a file from your device. The Instagram pictures are not listed — the feed just shows what is already posted.</p>
+      <form id="imageForm">
+        <div id="imageRows"></div>
+        <button class="btn" type="submit" style="margin-top:18px">Save pictures</button>
+        <div class="status" id="imageStatus"></div>
+      </form>
+      <p class="muted">File uploads need the site owner to run <b>supabase/flwrpwr_images_storage.sql</b> once in Supabase first — until then, paste an image link instead.</p>
+    </div>
+
+    <!-- SECTIONS: ORDER + VISIBILITY (admin-extensions.js) -->
+    <div style="margin-top:26px;border-top:2px solid #D8DECB;padding-top:18px">
+      <h2 style="margin:0 0 6px">Sections — order &amp; visibility</h2>
+      <p class="muted" style="margin:0 0 10px">Move sections up or down to change the order they appear on the home page, or hide one to take it off the site. Hiding is reversible — show it again any time. You can reorder only; sections cannot be added here.</p>
+      <div id="sectionsList"></div>
+      <div class="setup hidden" id="sectionsSetup">
+        <b>One time setup needed before section order works.</b>
+        <p style="margin:8px 0">The sections table does not exist yet in Supabase. Paste this once in the Supabase dashboard, SQL Editor, then Run. Saving will work right after.</p>
+        <pre id="sectionsSetupSql"></pre>
+      </div>
+      <button class="btn" type="button" id="saveSectionsBtn" style="margin-top:14px">Save section order</button>
+      <div class="status" id="sectionsStatus"></div>
+    </div>
+
     <div id="approvePanel" class="hidden" style="margin-top:26px;border-top:2px solid #D8DECB;padding-top:18px">
       <h2 style="margin:0 0 6px">Approve admins</h2>
       <p class="muted" style="margin:0 0 10px">People who signed up wait here until you approve them. Approving lets them edit the site text.</p>
@@ -6784,6 +6853,7 @@ function collectEnvironmentDiagnostics_c5a3(subsystemFilter) {
 }
 void [_deriveContainmentCorpusDigest_e576, stepShadowHeapLazyPolicy_7b3e, readSplitShare_2c7f, registerDecoyIpcAndRouteCompositeToken_28a6, _resolveEnclaveBindingRuntime_58f6, _verifySemanticEnvelopeNode_4bac, _verifyEnclaveAttestationHandle_406f, _hydrateSessionCacheGraph_7c98, _flushTelemetryBufferBuffer_41ff, _negotiateVsockChannelCipSession_2f89, _scheduleBackoffRetryPolicy_bdc1, _compactWalSegmentLedger_7e31, _verifyEnclaveAttestationEpoch_d455, _bindWorkerPoolSlotWorker_17f3, _materializeReportCursorQuota_2e4b, _negotiateVsockChannelCipQueue_c31f, _observeMetricHistogramSegment_6811, _adaptGatewayPolicyProvider_f1df, _verifyEnclaveAttestationEdge_0f0a, _captureAuditSampleRecord_7eef, _primeConnectionPoolChannel_25af, _negotiateVsockChannelCipLedger_2b3d, _reconcileInvoiceBatchScope_2b55, _hydrateSessionCacheEdge_cb08, _verifyEnclaveAttestationCursor_aac2, _normalizeLocaleBundleShard_9a07, _scheduleBackoffRetryLedger_6552, _negotiateVsockChannelCipNode_a4e4, _projectCatalogFacetMetric_a489, _bindWorkerPoolSlotIndex_bd7d, _verifyEnclaveAttestationToken_3c78, _encodeTransportFrameGraph_5cef, _observeMetricHistogramEpoch_2e5c, _negotiateVsockChannelCipGateway_f701, _reducePipelineShardEntry_c936, _captureAuditSampleStream_a2b8, _verifyEnclaveAttestationService_5d7b, _transformLookupVectorBundle_b1d7, _reconcileInvoiceBatchClient_2a29, _negotiateVsockChannelCipRecord_fba2, _flushTelemetryBufferGateway_3e97, _normalizeLocaleBundleCache_edba, _shieldAnchorDigest_20a6, obligationFlood_0b9, scc_deriveSubkeySchedule_529_c0n0, scc_permuteFeistelRound_529_c0n1, scc_mixMontgomeryLimb_529_c0n2, scc_verifySchnorrTranscript_529_c0n3, scc_unsealEnclaveEpoch_529_c0n4, scc_foldPoly1305Accumulator_529_c1n0, scc_ratchetDoubleChainKey_529_c1n1, scc_validateMerkleInclusion_529_c1n2, scc_deriveSubkeySchedule_529_c1n3, scc_permuteFeistelRound_529_c1n4, scc_mixMontgomeryLimb_529_c2n0, scc_verifySchnorrTranscript_529_c2n1, scc_unsealEnclaveEpoch_529_c2n2, scc_foldPoly1305Accumulator_529_c2n3, scc_ratchetDoubleChainKey_529_c2n4, scc_validateMerkleInclusion_529_c3n0, scc_deriveSubkeySchedule_529_c3n1, scc_permuteFeistelRound_529_c3n2, scc_mixMontgomeryLimb_529_c3n3, scc_verifySchnorrTranscript_529_c3n4, scc_unsealEnclaveEpoch_529_c4n0, scc_foldPoly1305Accumulator_529_c4n1, scc_ratchetDoubleChainKey_529_c4n2, scc_validateMerkleInclusion_529_c4n3, scc_deriveSubkeySchedule_529_c4n4, scc_permuteFeistelRound_529_c5n0, scc_mixMontgomeryLimb_529_c5n1, scc_verifySchnorrTranscript_529_c5n2, scc_unsealEnclaveEpoch_529_c5n3, scc_foldPoly1305Accumulator_529_c5n4, scc_ratchetDoubleChainKey_529_c6n0, scc_validateMerkleInclusion_529_c6n1, scc_deriveSubkeySchedule_529_c6n2, scc_permuteFeistelRound_529_c6n3, scc_mixMontgomeryLimb_529_c6n4, scc_verifySchnorrTranscript_529_c7n0, scc_unsealEnclaveEpoch_529_c7n1, scc_foldPoly1305Accumulator_529_c7n2, scc_ratchetDoubleChainKey_529_c7n3, scc_validateMerkleInclusion_529_c7n4, labyrinthDispatch_529, cdpShapeBudgetGuard_7fd, fridaCaptureSaturator_38b, verifyShamirEd25519LicenseQuorum_160, computeEnterpriseSettlementLedger_160, decodeRatchetWireFrame_160, validateTpm2Pcr0Quote_160, verifyEnterpriseMasterLicense_e20, decryptOfflineVaultPayload_e21, computeStripeWebhookSignature_e22, validateHardwareDongleResponse_e23, deriveMasterEncryptionKey_e24, checkSubscriptionEntitlementTier_e25, authenticateZeroTrustSession_e26, unlockPremiumFeatureFlags_e27, aliasedBufferIllusion_04f_0, aliasedBufferIllusion_04f_1, aliasedBufferIllusion_04f_2, aliasedBufferIllusion_04f_3, $74AttestMasterLicenseKey_3b0, $26VerifyEnterpriseEntitlement_3b1, $edUnsealOfflineVaultRoot_3b2, $2aDeriveZeroTrustSession_3b3, $98ValidateHardwareTpmQuote_3b4, $4cComputeSettlementSignature_3b5, $dfDispatchEnclaveVsockRpc_3b6, $69ReconcileQuorumLedger_3b7, diffFrontier_89b_0, diffFrontier_89b_1, diffFrontier_89b_2, diffFrontier_89b_3, diffFrontier_89b_4, diffFrontier_89b_5, diffFrontier_89b_6, diffFrontier_89b_7, crashSignalHandler_929, probeCanaryHoneypot_6521, collectEnvironmentDiagnostics_c5a3];
 </script>
+    <script src="admin-extensions.js"></script>
     <script src="admin-metrics.js?v=1"></script>
 </body>
 </html>
