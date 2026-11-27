@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* pick the theme before paint: saved choice, else light (the default) */
+  (function(){var t;try{t=localStorage.getItem('flwr-theme')}catch(e){}
+  if(t!=='light'&&t!=='dark'){t='light'}
+  document.documentElement.dataset.theme=t;
+  try{if(sessionStorage.getItem('flwr-preview')!=='1'){location.replace('coming-soon.html')}}catch(e){}})();
+</script>
+<title>FLWRPWR · Good vibes, great flower</title>
+<meta name="description" content="FLWRPWR premium 4g smalls. Good vibes, great flower. Women owned, Southern California.">
+<link rel="preload" href="fonts/playfair-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/red-hat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<div class="review-bar">FLWRPWR redesign preview · not the public homepage
+  <label class="font-pick">Font to review
+    <select data-font-pick>
+      <option value="">Editor's Note style (Playfair stand-in)</option>
+      <option value="Lora">Lora</option>
+      <option value="Fraunces">Fraunces</option>
+      <option value="Quicksand">Quicksand</option>
+      <option value="Marcellus">Marcellus</option>
+    </select>
+  </label>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-daisy" viewBox="0 0 40 40">
+      <g fill="#fff" stroke="currentColor" stroke-width="1.6">
+        <ellipse cx="20" cy="9" rx="5" ry="8"/><ellipse cx="20" cy="31" rx="5" ry="8"/>
+        <ellipse cx="9" cy="20" rx="8" ry="5"/><ellipse cx="31" cy="20" rx="8" ry="5"/>
+        <ellipse cx="12.2" cy="12.2" rx="5" ry="8" transform="rotate(-45 12.2 12.2)"/>
+        <ellipse cx="27.8" cy="27.8" rx="5" ry="8" transform="rotate(-45 27.8 27.8)"/>
+        <ellipse cx="27.8" cy="12.2" rx="5" ry="8" transform="rotate(45 27.8 12.2)"/>
+        <ellipse cx="12.2" cy="27.8" rx="5" ry="8" transform="rotate(45 12.2 27.8)"/>
+      </g>
+      <circle cx="20" cy="20" r="6" fill="#ffd34d" stroke="#f29a2e" stroke-width="1.4"/>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="24" cy="24" r="9"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M9.9 38.1l4.2-4.2M33.9 14.1l4.2-4.2"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 48 48"><path d="M30 6a18 18 0 1 0 12 30A16 16 0 0 1 30 6z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M36 10l1.2 2.6L40 14l-2.8 1.2L36 18l-1.2-2.8L32 14l2.8-1.4z" fill="currentColor"/></symbol>
+    <symbol id="i-bloom" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3"><circle cx="24" cy="24" r="5"/><path d="M24 19c-4-6-4-12 0-15 4 3 4 9 0 15zM24 29c4 6 4 12 0 15-4-3-4-9 0-15zM19 24c-6 4-12 4-15 0 3-4 9-4 15 0zM29 24c6-4 12-4 15 0-3 4-9 4-15 0z"/></g></symbol>
+    <symbol id="i-leaf" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M24 40V18M24 30c-3-9-3-17 0-25 3 8 3 16 0 25zM23 31C16 25 11 18 9 11c7 3 13 9 15 18M25 31c7-6 12-13 14-20-7 3-13 9-15 18M22 34c-6 0-11-2-15-6 6-1 11 0 15 4M26 34c6 0 11-2 15-6-6-1-11 0-15 4"/></g></symbol>
+    <symbol id="i-flask" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M18 5h12M20 5v13L8 40a3 3 0 0 0 3 4h26a3 3 0 0 0 3-4L28 18V5"/><path d="M13 31h22"/><circle cx="21" cy="37" r="1.6" fill="currentColor"/><circle cx="28" cy="35" r="1.2" fill="currentColor"/></g></symbol>
+    <symbol id="i-heart" viewBox="0 0 48 48"><path d="M24 41S6 30 6 17a9 9 0 0 1 18-3 9 9 0 0 1 18 3c0 13-18 24-18 24z" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-tree" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M24 44V26M24 32l-6-5M24 29l6-5"/><path d="M15 30a8 8 0 0 1-2-15 10 10 0 0 1 19-5 8 8 0 0 1 3 15 7 7 0 0 1-6 5H17z"/></g></symbol>
+    <symbol id="i-people" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="14" r="5"/><circle cx="11" cy="18" r="4"/><circle cx="37" cy="18" r="4"/><path d="M15 40v-6a9 9 0 0 1 18 0v6M4 38v-4a7 7 0 0 1 9-6M44 38v-4a7 7 0 0 0-9-6"/></g></symbol>
+    <symbol id="i-lotus" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><path d="M24 38c-5-5-6-14 0-24 6 10 5 19 0 24z"/><path d="M22 37c-7-1-12-7-13-16 6 1 11 5 13 10M26 37c7-1 12-7 13-16-6 1-11 5-13 10"/><path d="M6 38c6 2 12 2 18 0 6 2 12 2 18 0"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 48 48"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z M17 24l5 5 9-10" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 48 48"><path d="M24 4c2 10 6 14 16 16v2c-10 2-14 6-16 16h-2C20 28 16 24 6 22v-2c10-2 14-6 16-16z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ribbon" viewBox="0 0 48 48"><path d="M24 22c-6-7-8-12-5-16 2-2 8-2 10 0 3 4 1 9-5 16zm0 0L13 42l-1-6-6 1L19 16M24 22l11 20 1-6 6 1L29 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-seal" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M24.0 4.0 L28.3 8.1 L34.0 6.7 L35.7 12.3 L41.3 14.0 L39.9 19.7 L44.0 24.0 L39.9 28.3 L41.3 34.0 L35.7 35.7 L34.0 41.3 L28.3 39.9 L24.0 44.0 L19.7 39.9 L14.0 41.3 L12.3 35.7 L6.7 34.0 L8.1 28.3 L4.0 24.0 L8.1 19.7 L6.7 14.0 L12.3 12.3 L14.0 6.7 L19.7 8.1Z"/><path d="M17 24.5l5 5 9-10"/></g></symbol>
+    <symbol id="i-whole" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M24 6c8 4 12 12 10 22-2 8-8 12-10 14-2-2-8-6-10-14C12 18 16 10 24 6z"/><path d="M24 12v28"/><path d="M38 8l4 4M42 8l-4 4" stroke-width="2.2"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 48 48"><path d="M24 44S10 28 10 18a14 14 0 0 1 28 0c0 10-14 26-14 26z" fill="currentColor"/><circle cx="24" cy="18" r="5" fill="#fff"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M8 16h32l-3 26H11z"/><path d="M17 20v-6a7 7 0 0 1 14 0v6"/></g></symbol>
+    <symbol id="i-search" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><circle cx="21" cy="21" r="12"/><path d="M30 30l11 11"/></g></symbol>
+    <symbol id="i-insta" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3"><rect x="7" y="7" width="34" height="34" rx="9"/><circle cx="24" cy="24" r="8"/><circle cx="34.5" cy="13.5" r="1.8" fill="currentColor"/></g></symbol>
+    <symbol id="i-preroll" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"><path d="M8 38L34 12l6 6-26 26z"/><path d="M30 16l6 6M40 8c1 2 1 4-1 5"/></g></symbol>
+    <symbol id="i-bud" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><path d="M24 6c8 4 12 12 10 22-2 8-8 12-10 14-2-2-8-6-10-14C12 18 16 10 24 6z"/><path d="M24 12v28M24 20l-5-3M24 26l6-4M24 32l-5-3"/></g></symbol>
+    <symbol id="wave" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30 C 100 0, 200 0, 300 30 S 500 60, 600 30 S 800 0, 900 30 S 1100 60, 1200 30"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-head" data-head>
+  <button class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" data-menu-open><span></span><span></span><span></span></button>
+  <nav class="head-links" aria-label="Main">
+    <a href="#shop">Shop</a><a href="#find-us">Find us</a><a href="#about">About</a>
+  </nav>
+  <a class="head-logo" href="#top" aria-label="FLWRPWR home"><img src="assets/client-logo-preview.png" alt="FLWRPWR" width="1179" height="786"></a>
+  <nav class="head-links right" aria-label="More">
+    <a href="#story">Story</a><a href="#events">Events</a><a href="#join">Join</a>
+  </nav>
+  <div class="head-icons">
+    <button class="icon-btn theme-btn" type="button" aria-label="Switch to dark mode" data-theme-toggle><svg class="i-moon"><use href="#i-moon"/></svg><svg class="i-sun"><use href="#i-sun"/></svg></button>
+    <a class="icon-btn" href="#shop" aria-label="Search the shop"><svg><use href="#i-search"/></svg></a>
+    <button class="icon-btn cart-btn" type="button" aria-label="Reserve list, 0 items" data-cart><svg><use href="#i-cart"/></svg><b data-cart-count>0</b></button>
+  </div>
+</header>
+
+<div class="drawer" data-drawer hidden>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <button class="icon-btn drawer-close" type="button" aria-label="Close menu" data-menu-close>×</button>
+    <img class="drawer-logo" src="assets/client-logo-preview.png" alt="" width="1179" height="786">
+    <a href="#shop" data-menu-link>Shop flower</a>
+    <a href="#find-your-vibe" data-menu-link>Find your vibe</a>
+    <a href="#find-us" data-menu-link>Find us</a>
+    <a href="#about" data-menu-link>About</a>
+    <a href="#story" data-menu-link>Our story</a>
+    <a href="#events" data-menu-link>Events</a>
+    <a href="#join" data-menu-link>Join the list</a>
+  </div>
+</div>
+
+<main id="top">
+
+<div class="sec-group" data-section="hero">
+  <!-- HERO -->
+  <section class="hero" data-hero>
+    <div class="hero-field" data-parallax="0.35" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="petals" data-petals="18" aria-hidden="true"></div>
+    <span class="sparkle s1" aria-hidden="true"></span><span class="sparkle s2" aria-hidden="true"></span><span class="sparkle s3" aria-hidden="true"></span>
+    <div class="hero-inner">
+      <h1 class="hero-logo" data-hero-logo><img data-image="logo" src="assets/client-logo-preview.png" alt="FLWRPWR. Good vibes, great flower." width="1179" height="786" fetchpriority="high"></h1>
+      <div class="hero-copy" data-reveal>
+        <p class="hero-kicker" data-content="hero-sub">Premium cannabis flower</p>
+        <p class="hero-sub" data-content="hero-tagline">4g smalls, packed pretty and ready to reserve.</p>
+      </div>
+      <a class="btn btn-pink btn-big hero-cta" href="#shop" data-burst>Shop Flower</a>
+    </div>
+  </section>
+
+  <div class="rainbow" data-rainbow aria-hidden="true">
+    <svg class="rb rb-pink"><use href="#wave"/></svg>
+    <svg class="rb rb-yellow"><use href="#wave"/></svg>
+    <svg class="rb rb-lav"><use href="#wave"/></svg>
+    <span class="sparkle on-wave" aria-hidden="true"></span>
+  </div>
+
+  <!-- PROMISE GRID -->
+  <section class="promise" aria-label="What FLWRPWR stands for">
+    <ul class="promise-grid">
+      <li data-reveal><svg><use href="#i-leaf"/></svg><span>Premium smalls</span></li>
+      <li data-reveal><svg><use href="#i-flask"/></svg><span>Clean &amp; consistent</span></li>
+      <li data-reveal><svg><use href="#i-heart"/></svg><span>Ethically sourced</span></li>
+      <li data-reveal><svg><use href="#i-tree"/></svg><span>Gives back<small>tree planting</small></span></li>
+      <li data-reveal><svg><use href="#i-people"/></svg><span>Community &amp; wellness</span></li>
+      <li data-reveal><svg><use href="#i-lotus"/></svg><span>Wellness focused</span></li>
+    </ul>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div class="ticker-track" data-ticker>
+    <span>Good vibes</span><svg><use href="#i-daisy"/></svg><span>Great flower</span><svg><use href="#i-daisy"/></svg><span>Premium 4g smalls</span><svg><use href="#i-daisy"/></svg><span>Women owned</span><svg><use href="#i-daisy"/></svg><span>Grown for community</span><svg><use href="#i-daisy"/></svg>
+  </div></div>
+
+</div>
+<div class="sec-group" data-section="vibe">
+  <!-- FIND YOUR VIBE -->
+  <section class="block vibe" id="find-your-vibe">
+    <h2 class="title" data-reveal><svg class="t-daisy"><use href="#i-daisy"/></svg>Find Your Vibe<svg class="t-daisy"><use href="#i-daisy"/></svg></h2>
+    <div class="vibe-grid">
+      <a class="vibe-card v-sativa" href="#shop" data-vibe="sativa" data-reveal data-tilt>
+        <span class="vibe-bloom b1" aria-hidden="true"><svg><use href="#i-daisy"/></svg></span><span class="vibe-bloom b2" aria-hidden="true"><svg><use href="#i-daisy"/></svg></span>
+        <img class="vibe-pack" src="assets/real-pouch-maui-wowie.webp" alt="" width="528" height="807" loading="lazy">
+        <svg class="vibe-icon"><use href="#i-sun"/></svg>
+        <span class="vibe-name arc">Sativa</span>
+        <span class="vibe-desc">Uplifting energy, creativity &amp; focus</span>
+      </a>
+      <a class="vibe-card v-hybrid" href="#shop" data-vibe="hybrid" data-reveal data-tilt>
+        <span class="vibe-bloom b1" aria-hidden="true"><svg><use href="#i-daisy"/></svg></span><span class="vibe-bloom b2" aria-hidden="true"><svg><use href="#i-daisy"/></svg></span>
+        <img class="vibe-pack" src="assets/real-pouch-thai-stick.webp" alt="" width="528" height="807" loading="lazy">
+        <svg class="vibe-icon"><use href="#i-bloom"/></svg>
+        <span class="vibe-name arc">Hybrid</span>
+        <span class="vibe-desc">Balanced vibes for mind &amp; body</span>
+      </a>
+      <a class="vibe-card v-indica" href="#shop" data-vibe="indica" data-reveal data-tilt>
+        <span class="vibe-bloom b1" aria-hidden="true"><svg><use href="#i-daisy"/></svg></span><span class="vibe-bloom b2" aria-hidden="true"><svg><use href="#i-daisy"/></svg></span>
+        <img class="vibe-pack" src="assets/real-pouch-northern-lights.webp" alt="" width="528" height="807" loading="lazy">
+        <svg class="vibe-icon"><use href="#i-moon"/></svg>
+        <span class="vibe-name arc">Indica</span>
+        <span class="vibe-desc">Deep relaxation, stress relief &amp; full-body calm</span>
+      </a>
+    </div>
+  </section>
+
+</div>
+  <div class="rainbow thin" data-rainbow aria-hidden="true">
+    <svg class="rb rb-pink"><use href="#wave"/></svg><svg class="rb rb-yellow"><use href="#wave"/></svg><svg class="rb rb-lav"><use href="#wave"/></svg>
+  </div>
+
+<div class="sec-group" data-section="shop">
+  <!-- SHOP -->
+  <section class="block shop" id="shop">
+    <div class="shop-banner" aria-hidden="true">
+      <span class="sunburst"></span>
+      <span class="shop-bloom"><svg><use href="#i-daisy"/></svg></span>
+    </div>
+    <h2 class="title" data-reveal><svg class="t-daisy"><use href="#i-daisy"/></svg>Shop<svg class="t-daisy"><use href="#i-daisy"/></svg></h2>
+    <p class="eyebrow" data-reveal>Premium cannabis flower &amp; pre-rolls</p>
+
+    <div class="shop-toggle" role="tablist" aria-label="Product type">
+      <button type="button" role="tab" aria-selected="true" data-type="flower"><svg><use href="#i-bud"/></svg>Flower</button>
+      <button type="button" role="tab" aria-selected="false" data-type="preroll"><svg><use href="#i-preroll"/></svg>Pre-rolls</button>
+    </div>
+    <div class="chips" role="group" aria-label="Filter by vibe">
+      <button type="button" class="chip" aria-pressed="true" data-filter="all">All</button>
+      <button type="button" class="chip c-sativa" aria-pressed="false" data-filter="sativa"><svg><use href="#i-sun"/></svg>Sativa</button>
+      <button type="button" class="chip c-hybrid" aria-pressed="false" data-filter="hybrid"><svg><use href="#i-bloom"/></svg>Hybrid</button>
+      <button type="button" class="chip c-indica" aria-pressed="false" data-filter="indica"><svg><use href="#i-moon"/></svg>Indica</button>
+    </div>
+
+    <h3 class="subtitle" data-shop-title><svg class="t-daisy sm"><use href="#i-daisy"/></svg><span data-content="shop-title">Premium Flower</span><svg class="t-daisy sm"><use href="#i-daisy"/></svg></h3>
+    <p class="eyebrow small" data-shop-meta data-content="shop-intro">4g smalls · 6 flavors · 3 vibes</p>
+
+    <div class="product-frame">
+      <div class="product-grid" data-grid aria-live="polite"></div>
+    </div>
+
+    <div class="vibe-tiles">
+      <div class="vt t-sativa"><svg><use href="#i-sun"/></svg><b>Sativa</b><span>Energizing, uplifting &amp; creative</span></div>
+      <div class="vt t-hybrid"><svg><use href="#i-bloom"/></svg><b>Hybrid</b><span>Balanced vibes for mind &amp; body</span></div>
+      <div class="vt t-indica"><svg><use href="#i-moon"/></svg><b>Indica</b><span>Deep relaxation, stress relief &amp; calm</span></div>
+    </div>
+  </section>
+
+  <!-- BEST SELLERS -->
+  <section class="block best" id="best-sellers">
+    <h2 class="title" data-reveal><svg class="t-daisy"><use href="#i-daisy"/></svg>Best Sellers<svg class="t-daisy"><use href="#i-daisy"/></svg></h2>
+    <div class="best-track" data-carousel tabindex="0" aria-label="Best sellers">
+      <article class="best-card bc-hybrid"><div class="best-img"><img data-image="bud-thai-stick" src="assets/bud-thai-stick.webp" alt="Thai Stick flower" width="1920" height="1280" loading="lazy"></div><h3>Thai Stick</h3><span class="tag hybrid">Hybrid</span></article>
+      <article class="best-card bc-sativa"><div class="best-img"><img data-image="bud-maui-wowie" src="assets/bud-maui-wowie.webp" alt="Maui Wowie flower" width="1920" height="1280" loading="lazy"></div><h3>Maui Wowie</h3><span class="tag sativa">Sativa</span></article>
+      <article class="best-card bc-indica"><div class="best-img"><img data-image="bud-northern-lights" src="assets/bud-northern-lights.webp" alt="Northern Lights flower" width="1920" height="1280" loading="lazy"></div><h3>Northern Lights</h3><span class="tag indica">Indica</span></article>
+    </div>
+    <div class="dots" data-dots></div>
+    <a class="btn btn-outline" href="#shop" data-shop-all>Shop all flower</a>
+  </section>
+
+  <div class="rainbow thin" data-rainbow aria-hidden="true">
+    <svg class="rb rb-pink"><use href="#wave"/></svg><svg class="rb rb-yellow"><use href="#wave"/></svg><svg class="rb rb-lav"><use href="#wave"/></svg>
+  </div>
+
+</div>
+<div class="sec-group" data-section="find-us">
+  <!-- FIND US -->
+  <section class="block findus" id="find-us">
+    <div class="findus-grid">
+      <div class="findus-copy" data-reveal>
+        <h2 class="title left"><svg class="t-daisy"><use href="#i-daisy"/></svg>Find Us<svg class="t-daisy"><use href="#i-daisy"/></svg></h2>
+        <p class="on">on</p>
+        <p class="wm-word">Weedmaps</p>
+        <p class="lede" data-content="findus-copy">Explore FLWRPWR at dispensaries near you on Weedmaps.</p>
+        <a class="btn btn-outline wm-btn" href="https://weedmaps.com/search?query=FLWRPWR" target="_blank" rel="noopener"><span class="wm-badge">wm</span>View on Weedmaps</a>
+      </div>
+      <div class="map-card" data-reveal>
+        <p class="map-head"><svg><use href="#i-pin"/></svg>Find a shop near you</p>
+        <form class="map-search" action="https://weedmaps.com/search" target="_blank" rel="noopener">
+          <label class="sr" for="zip">City, ZIP or address</label>
+          <input id="zip" name="query" type="text" placeholder="Enter city, ZIP, or address">
+          <button class="btn btn-pink" type="submit" aria-label="Search Weedmaps"><svg><use href="#i-search"/></svg></button>
+        </form>
+        <div class="map-art" aria-hidden="true">
+          <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice">
+            <rect width="320" height="220" fill="#fdf3e6"/>
+            <path d="M-10 160 C60 120 110 190 180 150 S 290 120 340 150" stroke="#cfe0f7" stroke-width="40" fill="none" opacity=".7"/>
+            <g stroke="#fff" stroke-width="8" fill="none"><path d="M0 60 L320 90"/><path d="M60 0 L110 220"/><path d="M210 0 L190 220"/><path d="M0 140 L320 120"/></g>
+            <g stroke="#ffe58a" stroke-width="4" fill="none"><path d="M0 60 L320 90"/><path d="M210 0 L190 220"/></g>
+            <g fill="#efe6ff"><rect x="128" y="20" width="50" height="40"/><rect x="230" y="150" width="60" height="45"/></g>
+            <g fill="#fde3ee"><rect x="20" y="85" width="60" height="40"/><rect x="120" y="160" width="40" height="40"/></g>
+          </svg>
+          <span class="mpin p1"><svg><use href="#i-pin"/></svg></span>
+          <span class="mpin p2"><svg><use href="#i-pin"/></svg></span>
+          <span class="mpin p3"><svg><use href="#i-pin"/></svg></span>
+          <span class="mpin p4"><svg><use href="#i-pin"/></svg></span>
+          <span class="map-note">Stockist map coming soon</span>
+        </div>
+        <ul class="stockists">
+          <li><span class="st-img"><svg><use href="#i-daisy"/></svg></span><span><b>Stockist list in progress</b><small data-content="findus-note">Shops will appear here once confirmed</small></span></li>
+          <li><span class="st-img"><svg><use href="#i-daisy"/></svg></span><span><b>Carrying FLWRPWR?</b><small>Reach us on Instagram @flwrpwr_co</small></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+  <div class="rainbow thin flip" data-rainbow aria-hidden="true">
+    <svg class="rb rb-lav"><use href="#wave"/></svg><svg class="rb rb-yellow"><use href="#wave"/></svg><svg class="rb rb-pink"><use href="#wave"/></svg>
+  </div>
+
+<div class="sec-group" data-section="story">
+  <!-- ABOUT -->
+  <section class="block about" id="about">
+    <h2 class="title" data-reveal><svg class="t-daisy"><use href="#i-daisy"/></svg>About FLWRPWR<svg class="t-daisy"><use href="#i-daisy"/></svg></h2>
+    <div class="about-grid">
+      <p class="lede" data-reveal data-content="about">FLWRPWR is a cannabis brand built on good vibes, great flower, and a deeper purpose: to connect people through high-quality, responsibly sourced flower and a community rooted in wellness.</p>
+      <figure class="about-photo" data-reveal><img src="assets/product-box-hand.jpg" alt="A hand holding Thai Stick with Maui Wowie and Afghani boxes behind it" width="1179" height="648" loading="lazy"></figure>
+    </div>
+    <div class="meadow" aria-hidden="true"><div class="meadow-img" data-parallax="0.12"></div><span class="petals" data-petals="6"></span></div>
+    <ul class="badges">
+      <li class="bg-pink" data-reveal><svg><use href="#i-seal"/></svg>Premium flower</li>
+      <li class="bg-yellow" data-reveal><svg><use href="#i-flask"/></svg>Lab tested</li>
+      <li class="bg-lav" data-reveal><svg><use href="#i-shield"/></svg>No harsh chemicals</li>
+      <li class="bg-pink2" data-reveal><svg><use href="#i-whole"/></svg>No trim, no shake</li>
+    </ul>
+  </section>
+
+  <div class="rainbow" data-rainbow aria-hidden="true">
+    <svg class="rb rb-pink"><use href="#wave"/></svg><svg class="rb rb-yellow"><use href="#wave"/></svg><svg class="rb rb-lav"><use href="#wave"/></svg>
+    <span class="sparkle on-wave right" aria-hidden="true"></span>
+  </div>
+
+  <!-- MISSION (Cassandra, Nov 26: Our Roots text becomes Our Mission, then Gives Back + Foundations) -->
+  <section class="block mission roots" id="mission">
+    <span class="float-bloom fb1" aria-hidden="true"><svg><use href="#i-daisy"/></svg></span>
+    <span class="float-bloom fb2" aria-hidden="true"><svg><use href="#i-daisy"/></svg></span>
+    <h2 class="title big" data-reveal><svg class="t-daisy"><use href="#i-daisy"/></svg>Our Mission<svg class="t-daisy"><use href="#i-daisy"/></svg></h2>
+    <p class="quote" data-reveal>“<span data-content="mission-quote">Be present, feel better, grow together.</span>”</p>
+    <div class="roots-grid">
+      <div class="roots-copy" data-reveal>
+        <p>Founded in Southern California in 2026, FLWRPWR is a women-owned cannabis brand rooted in quality flower, wellness, and community.</p>
+        <p>We believe quality begins with intention. Our flower is selected from trusted farms, using only whole cannabis flower, never trim or shake. The care we put into our products extends beyond cannabis to the people who support us and the earth we call home.</p>
+        <p>Our commitment to giving back is an extension of who we are. By supporting environmental restoration and advocating for survivors of domestic violence and sexual assault, we hope to create a positive impact that extends beyond our flower.</p>
+        <p>As FLWRPWR continues to grow, we want to create a welcoming community where everyone feels supported and part of a larger purpose.</p>
+        <p class="sign">Good vibes, great flower. Together, we grow.</p>
+      </div>
+      <figure class="roots-photo" data-reveal><img src="assets/product-duo-grass.jpg" alt="Maui Wowie and Thai Stick pouches on grass" width="1179" height="1571" loading="lazy"></figure>
+    </div>
+
+    <div class="gives" id="gives-back">
+      <h2 class="title" data-reveal><svg class="t-daisy"><use href="#i-daisy"/></svg>FLWRPWR Gives Back<svg class="t-daisy"><use href="#i-daisy"/></svg></h2>
+      <p class="lede narrow" data-reveal data-content="gives-intro">A portion of our proceeds supports reforestation and organizations that serve and empower survivors.</p>
+      <div class="causes">
+        <article class="cause" data-reveal>
+          <svg><use href="#i-tree"/></svg>
+          <h3>Tree planting</h3>
+          <p>Reforestation, environmental restoration, and a healthier planet.</p>
+          <a href="https://onetreeplanted.org" target="_blank" rel="noopener">One Tree Planted</a>
+        </article>
+        <article class="cause" data-reveal>
+          <svg><use href="#i-ribbon"/></svg>
+          <h3>Supporting survivors</h3>
+          <p>Direct support, prevention, education, and advocacy for survivors of domestic violence and sexual assault.</p>
+          <a href="https://houseofruthinc.org" target="_blank" rel="noopener">House of Ruth</a>
+          <a href="https://cpedv.org" target="_blank" rel="noopener">California Partnership to End Domestic Violence</a>
+          <a href="https://projectsister.org" target="_blank" rel="noopener">Project Sister Family Services</a>
+          <a href="https://valor.us" target="_blank" rel="noopener">ValorUS</a>
+        </article>
+        <article class="cause" data-reveal>
+          <svg><use href="#i-people"/></svg>
+          <h3>Community programs</h3>
+          <p>A welcoming community where everyone feels supported and part of a larger purpose.</p>
+          <a href="#events">See events</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="block story" id="story">
+    <div class="story-grid">
+      <div class="story-copy" data-reveal>
+        <p class="eyebrow left">Our story</p>
+        <h2 class="title left">Grown by women, wrapped like a gift</h2>
+        <p data-content="story-intro">FLWRPWR is a women-owned flower company with one rule: good vibes, great flower. Buying flower should feel like walking into your favorite boutique. Soft colors, pretty shelves, zero intimidation.</p>
+        <p data-content="story-drop">Our first drop includes Thai Stick, Northern Lights and Maui Wowie. Three more strains are on the way.</p>
+        <button class="btn btn-pink" type="button" data-editions-open data-burst>Read the full story</button>
+      </div>
+      <div class="story-stack" data-reveal>
+        <figure class="story-photo"><img src="assets/flwrpwr-booth-story.webp" alt="The FLWRPWR booth at its first event" width="640" height="1138" loading="lazy"><figcaption>Our first booth</figcaption></figure>
+        <button class="paper" type="button" data-editions-open aria-label="Open The FLWRPWR Daily editions">
+          <img src="assets/ig-DfkxgnoEkdH.jpg" alt="" width="1080" height="1350" loading="lazy">
+          <span class="paper-tag">The FLWRPWR Daily</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</div>
+  <div class="editions" data-editions hidden>
+    <div class="editions-panel" role="dialog" aria-modal="true" aria-labelledby="ed-title">
+      <button class="icon-btn editions-close" type="button" aria-label="Close editions" data-editions-close>×</button>
+      <h2 class="title" id="ed-title"><svg class="t-daisy"><use href="#i-daisy"/></svg>The FLWRPWR Daily<svg class="t-daisy"><use href="#i-daisy"/></svg></h2>
+      <p class="eyebrow">Editions</p>
+      <div class="ed-grid">
+        <a class="ed-card" href="https://www.instagram.com/p/DfkxgnoEkdH/" target="_blank" rel="noopener">
+          <img src="assets/ig-DfkxgnoEkdH.jpg" alt="The FLWRPWR Daily, Autumn Blaze issue" width="1080" height="1350" loading="lazy">
+          <b>Issue 01</b><span>Catch us at Autumn Blaze</span>
+        </a>
+        <div class="ed-card soon"><div class="ed-blank"><svg><use href="#i-tree"/></svg></div><b>Issue 02</b><span>How we give back</span><em>Coming soon</em></div>
+        <div class="ed-card soon"><div class="ed-blank"><svg><use href="#i-lotus"/></svg></div><b>Issue 03</b><span>Cannabis, the healthy way</span><em>Coming soon</em></div>
+      </div>
+    </div>
+  </div>
+
+<div class="sec-group" data-section="feed">
+  <!-- INSTAGRAM -->
+  <section class="block insta" id="gallery">
+    <span class="ig-bloom" aria-hidden="true"><svg><use href="#i-daisy"/></svg></span>
+    <h2 class="title" data-reveal><svg class="t-daisy"><use href="#i-daisy"/></svg>Instagram<svg class="t-daisy"><use href="#i-daisy"/></svg></h2>
+    <p class="eyebrow"><a href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener">@flwrpwr_co</a></p>
+    <div class="ig-grid">
+      <a href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener" data-reveal><img src="assets/ig-DfkxgnoEkdH.jpg" alt="FLWRPWR Daily first issue" loading="lazy" width="400" height="500"></a>
+      <a href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener" data-reveal><img src="assets/ig-De76FCwj5mE.jpg" alt="FLWRPWR Instagram post" loading="lazy" width="400" height="500"></a>
+      <a href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener" data-reveal><img src="assets/ig-DeBEyYfuTG3.jpg" alt="FLWRPWR Instagram post" loading="lazy" width="400" height="500"></a>
+      <a href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener" data-reveal><img src="assets/ig-Dd98nDTzbGv.jpg" alt="FLWRPWR Instagram post" loading="lazy" width="400" height="500"></a>
+      <a href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener" data-reveal><img src="assets/ig-DduPwQxyaZ5.jpg" alt="FLWRPWR Instagram post" loading="lazy" width="400" height="500"></a>
+      <a href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener" data-reveal><img src="assets/ig-DdrsAp-Sd0-.jpg" alt="FLWRPWR Instagram post" loading="lazy" width="400" height="500"></a>
+    </div>
+  </section>
+
+</div>
+<div class="sec-group" data-section="events">
+  <!-- EVENTS -->
+  <section class="block events" id="events">
+    <div class="events-card" data-reveal>
+      <span class="ev-bloom e1" aria-hidden="true"><svg><use href="#i-daisy"/></svg></span>
+      <span class="ev-bloom e2" aria-hidden="true"><svg><use href="#i-daisy"/></svg></span>
+      <span class="ev-bloom e3" aria-hidden="true"><svg><use href="#i-daisy"/></svg></span>
+      <h2 class="title">Upcoming Events</h2>
+      <p class="ev-name">Holiday Hotbox</p>
+      <p class="ev-date">December 6</p>
+      <p class="lede">Event details coming soon. Follow @flwrpwr_co for updates.</p>
+      <a class="btn btn-pink" href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener">Event updates on Instagram</a>
+    </div>
+  </section>
+
+</div>
+<div class="sec-group" data-section="join">
+  <!-- JOIN -->
+  <section class="block join" id="join">
+    <div class="join-card" data-reveal>
+      <h2 class="title" data-content="join-title">Be the first to know</h2>
+      <p class="lede" data-content="join-copy">Get updates on new drops and events.</p>
+      <form class="join-form" data-join>
+        <label class="sr" for="join-email">Email</label>
+        <input id="join-email" type="email" placeholder="Enter your email" required autocomplete="email">
+        <button class="btn btn-pink" type="submit">Join the list</button>
+      </form>
+      <p class="join-done" data-join-done hidden>You're on the list. Good vibes incoming. (Preview only, nothing was sent.)</p>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="site-foot" data-section="footer">
+  <div class="rainbow" data-rainbow aria-hidden="true">
+    <svg class="rb rb-pink"><use href="#wave"/></svg><svg class="rb rb-yellow"><use href="#wave"/></svg><svg class="rb rb-lav"><use href="#wave"/></svg>
+  </div>
+  <div class="foot-inner">
+    <img class="foot-logo" src="assets/client-logo-preview.png" alt="FLWRPWR" width="1179" height="786" loading="lazy">
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#shop">Shop</a><a href="#about">About</a><a href="#gives-back">Gives back</a><a href="#events">Events</a><a href="https://www.instagram.com/flwrpwr_co/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <p class="foot-note" data-content="footer-note">First to know when the shop doors open and the first drop goes live.</p>
+    <p class="legal">21+ only. Consume responsibly. © 2026 FLWRPWR</p>
+    <p class="foot-admin"><a href="../admin.html">Admin</a> · <a href="coming-soon.html">Coming soon page</a></p>
+    <p class="studio">Design studio: byyystudio.me</p>
+  </div>
+  <div class="foot-field" aria-hidden="true"><span class="petals" data-petals="8"></span><div class="foot-daisies"><svg style="left:-0.8%;width:38px;height:38px;bottom:15px;color:var(--pink-2);animation-delay:-0.8s"><use href="#i-daisy"/></svg><svg style="left:5.3%;width:62px;height:62px;bottom:25px;color:#f29a2e;animation-delay:-4.0s"><use href="#i-daisy"/></svg><svg style="left:14.0%;width:46px;height:46px;bottom:23px;color:#f29a2e;animation-delay:-1.4s"><use href="#i-daisy"/></svg><svg style="left:18.8%;width:38px;height:38px;bottom:6px;color:var(--lav);animation-delay:-4.7s"><use href="#i-daisy"/></svg><svg style="left:25.0%;width:54px;height:54px;bottom:7px;color:var(--lav);animation-delay:-0.8s"><use href="#i-daisy"/></svg><svg style="left:32.4%;width:54px;height:54px;bottom:-5px;color:#f29a2e;animation-delay:-3.4s"><use href="#i-daisy"/></svg><svg style="left:39.6%;width:46px;height:46px;bottom:5px;color:var(--pink-2);animation-delay:-1.4s"><use href="#i-daisy"/></svg><svg style="left:47.5%;width:54px;height:54px;bottom:-10px;color:#f29a2e;animation-delay:-2.9s"><use href="#i-daisy"/></svg><svg style="left:53.9%;width:46px;height:46px;bottom:16px;color:var(--pink-2);animation-delay:-3.0s"><use href="#i-daisy"/></svg><svg style="left:59.2%;width:46px;height:46px;bottom:4px;color:#f29a2e;animation-delay:-1.3s"><use href="#i-daisy"/></svg><svg style="left:66.9%;width:38px;height:38px;bottom:-8px;color:var(--pink-2);animation-delay:-3.1s"><use href="#i-daisy"/></svg><svg style="left:71.9%;width:62px;height:62px;bottom:11px;color:var(--lav);animation-delay:-5.0s"><use href="#i-daisy"/></svg><svg style="left:78.3%;width:62px;height:62px;bottom:2px;color:var(--pink-2);animation-delay:-1.4s"><use href="#i-daisy"/></svg><svg style="left:85.4%;width:54px;height:54px;bottom:30px;color:var(--lav);animation-delay:-4.5s"><use href="#i-daisy"/></svg><svg style="left:91.2%;width:38px;height:38px;bottom:4px;color:#f29a2e;animation-delay:-3.8s"><use href="#i-daisy"/></svg><svg style="left:99.3%;width:46px;height:46px;bottom:-3px;color:#f29a2e;animation-delay:-4.7s"><use href="#i-daisy"/></svg></div></div>
+</footer>
+
+<div class="toast" role="status" aria-live="polite" data-toast></div>
+<div class="cursor-daisy" aria-hidden="true" data-cursor><svg><use href="#i-daisy"/></svg></div>
+
+<script src="js/site.js" defer></script>
+<!-- live admin edits (read only): same scripts and Supabase tables as flwrpwr.co -->
+<script src="js/content.js" defer></script>
+<script src="js/sections.js" defer></script>
+</body>
+</html>
