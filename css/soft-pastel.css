@@ -490,3 +490,19 @@ main section.block:not(.story):not(.best)::after{content:"";position:absolute;z-
 .insta{--wa:rgba(255,226,150,.32);--wb:rgba(208,190,255,.36);--wy2:40%}
 :root[data-theme="dark"] main section.block::after{opacity:.4}
 @media (prefers-reduced-motion:reduce){main section.block::after{animation:none}}
+/* ---------- 28. reveal failsafe + shop-banner life (Nov 27) ---------- */
+/* Reveal failsafe: the scroll-reveal adds .in via IntersectionObserver plus
+   a scroll-frame fallback. On fast flick-scrolls (phones) the observer can
+   miss elements, leaving them stuck at opacity:0, a blank section. This
+   timed failsafe guarantees any [data-reveal] that never got .in still
+   fades in, so no section can stay blank. Elements the observer catches
+   are unaffected (they already have .in, so :not(.in) stops matching). */
+@media (prefers-reduced-motion:no-preference){
+  [data-reveal]:not(.in){animation:reveal-failsafe .7s ease 2.2s forwards}
+}
+@keyframes reveal-failsafe{to{opacity:1;transform:none}}
+/* Shop banner: the pale top of the shop gets a slow, soft breathe on the
+   sunburst glow so it reads as alive, not empty. Gentle on purpose. */
+.shop-banner .sunburst{animation:sunbreathe 9s ease-in-out infinite}
+@keyframes sunbreathe{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+@media (prefers-reduced-motion:reduce){.shop-banner .sunburst{animation:none}}
