@@ -341,7 +341,7 @@ html body .flwr-soon-blaze,html body .flwr-soon-form button,html body .flwr-soon
 /* keep the normal pointer so links are easy to hit; the daisy just trails beside it */
 html.has-cursor body{cursor:auto}
 html.has-cursor a,html.has-cursor button,html.has-cursor [role=button],html.has-cursor .rotator{cursor:pointer}
-.cursor-daisy,.cursor-daisy.big{width:20px;height:20px;margin:16px 0 0 14px;opacity:.85}
+.cursor-daisy,.cursor-daisy.big{width:20px;height:20px;margin:10px 0 0 9px;opacity:.9}
 .flwr-cursor{display:none!important}
 
 /* footer links: bigger targets, clear hover */

@@ -443,7 +443,7 @@
     document.addEventListener('mouseleave', () => doc.classList.remove('has-cursor'));
     (function loop() {
       const dx = tx - cx, dy = ty - cy;
-      cx += dx * 0.22; cy += dy * 0.22;
+      cx = tx; cy = ty;
       rot += Math.hypot(dx, dy) * 0.6 + 0.4;
       cur.style.transform = `translate3d(${cx}px,${cy}px,0) rotate(${rot % 360}deg)`;
       requestAnimationFrame(loop);
