@@ -28,10 +28,13 @@
       const pair = flower ? `assets/real-box-${s.slug}.webp` : `assets/real-pouch-${s.slug}.webp`;
       const ready = flower && s.ready;
       const meta = flower ? `4g Smalls · ${label(s.vibe)}` : `Pre-roll pack · ${label(s.vibe)}`;
-      const combo = `<div class="slide"><img class="card-pair" src="${pair}" alt="" loading="lazy"><img class="card-main" src="${img}" alt="FLWRPWR ${s.name} ${flower ? '4g pouch' : 'pre-roll box'}" loading="lazy"></div>`;
+      // flower shows the pouch on its own; boxes belong to pre-rolls only
+      const combo = flower
+        ? `<div class="slide solo"><img class="card-main" src="${img}" alt="FLWRPWR ${s.name} 4g pouch" loading="lazy"></div>`
+        : `<div class="slide"><img class="card-pair" src="${pair}" alt="" loading="lazy"><img class="card-main" src="${img}" alt="FLWRPWR ${s.name} pre-roll box" loading="lazy"></div>`;
       const boxPhoto = `<div class="slide"><img class="card-photo" src="assets/photo-box-${s.slug}.webp" alt="FLWRPWR ${s.name} box" loading="lazy"></div>`;
       const bud = BUDS.includes(s.slug) ? `<div class="slide"><img class="card-photo" src="assets/card-bud-${s.slug}.webp" alt="${s.name} flower up close" loading="lazy"></div>` : '';
-      const slides = flower ? [combo, boxPhoto, bud].filter(Boolean) : [boxPhoto, combo];
+      const slides = flower ? [combo, bud].filter(Boolean) : [boxPhoto, combo];
       const nav = `<button class="card-arrow prev" type="button" aria-label="Previous photo of ${s.name}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="card-arrow next" type="button" aria-label="Next photo of ${s.name}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button><span class="card-dots" aria-hidden="true">${slides.map((_, k) => `<i${k ? '' : ' class="on"'}></i>`).join('')}</span>`;
       return `<article class="card ${s.vibe}${flower ? '' : ' preroll'}" style="--i:${i}" data-tilt>
         <div class="card-img has-slides${flower ? '' : ' is-photo'}" data-slides>${ready ? '' : '<span class="card-flag">Coming soon</span>'}${slides.join('')}${nav}</div>
@@ -313,7 +316,7 @@
   });
 
   /* ---------- scroll: hero parallax, header shadow, wave speed from velocity ---------- */
-  const head = $('[data-head]'), logo = $('[data-hero-logo]');
+  const head = $('[data-head]'), logo = $('[data-hero-logo]'), heroEl = $('[data-hero]');
   const par = $$('[data-parallax]');
   const waves = $$('[data-rainbow] .rb');
   let lastY = scrollY, vel = 0, ticking = false, pending = $$('[data-reveal]');
@@ -322,6 +325,7 @@
     const y = scrollY;
     vel = vel * 0.8 + (y - lastY) * 0.2; lastY = y;
     head.classList.toggle('scrolled', y > 8);
+    head.classList.toggle('past-hero', y > (heroEl ? heroEl.offsetHeight - head.offsetHeight - 24 : 8));
     const h = innerHeight;
     if (logo && y < h * 1.2) logo.style.transform = `translateY(${y * 0.28}px) scale(${1 - Math.min(y / h, 1) * 0.12})`;
     par.forEach(el => {

@@ -305,3 +305,34 @@ html body .flwr-soon-blaze,html body .flwr-soon-form button,html body .flwr-soon
 :root[data-theme="dark"] .wm-word{background-image:linear-gradient(90deg,#4a2aa8,#8a5ce0,#4a2aa8)}
 :root[data-theme="dark"] :is(.vibe-card,.card-img,.vt,.best-card,.badges li,.mission-row p,.events-card,.edition,.paper){--pink-deep:#a0287a;--pink:#b8378a}
 :root[data-theme="dark"] .vt b{color:#a0287a}
+
+/* flower cards: pouch alone, centered */
+.card-img .slide.solo .card-main{inset:6% 11%;width:78%;height:88%}
+
+/* ---------- 21. header: sky blue over the hero, then clear frosted glass
+   that takes on whatever section is scrolling under it ---------- */
+.site-head{transition:background-color .45s ease,box-shadow .45s ease,color .45s ease}
+:root[data-theme] .site-head.past-hero{background:rgba(255,251,248,.5);-webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6);box-shadow:0 1px 0 rgba(255,255,255,.55) inset,0 8px 24px rgba(120,60,110,.08)}
+:root[data-theme="light"] .site-head.past-hero{color:#a3165a}
+:root[data-theme="light"] .site-head.past-hero :is(.icon-btn,a){color:#a3165a}
+:root[data-theme="light"] .site-head.past-hero .menu-btn span{background:#a3165a}
+:root[data-theme="dark"] .site-head.past-hero{background:rgba(200,192,246,.5)}
+:root[data-theme="dark"] .site-head.past-hero :is(.icon-btn,a){color:#2b2260}
+/* over the sky photo the nav words get a deeper ink so they read on the blue */
+:root[data-theme="light"] .site-head:not(.past-hero) :is(.icon-btn,a){color:#b0125c}
+
+/* ---------- 22. vibe cards: the pouch stands fully in the card, bigger, with a real floor shadow ---------- */
+.vibe-pack{filter:drop-shadow(0 2px 2px rgba(75,37,71,.22)) drop-shadow(0 16px 18px rgba(75,37,71,.22))}
+.vibe-card::after{content:"";position:absolute;z-index:0;pointer-events:none;border-radius:50%;background:radial-gradient(closest-side,rgba(75,37,71,.22),rgba(75,37,71,0))}
+@media (max-width:899px){
+  .vibe-card{min-height:190px;padding-right:150px}
+  .vibe-pack{right:22px;bottom:16px;width:104px;transform:rotate(6deg)}
+  .vibe-card:hover .vibe-pack{transform:rotate(2deg) translateY(-8px) scale(1.04)}
+  .vibe-card::after{right:16px;bottom:8px;width:116px;height:18px}
+}
+@media (min-width:900px){
+  .vibe-card{min-height:480px;padding:30px 20px 326px}
+  .vibe-pack{bottom:30px;width:150px;transform:translateX(-50%) rotate(-5deg)}
+  .vibe-card:hover .vibe-pack{transform:translateX(-50%) rotate(0) translateY(-12px) scale(1.04)}
+  .vibe-card::after{left:50%;bottom:22px;width:170px;height:26px;transform:translateX(-50%)}
+}
