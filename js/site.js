@@ -16,6 +16,7 @@
     { name: 'Afghani', vibe: 'indica', slug: 'afghani', ready: false },
   ];
   const label = v => v[0].toUpperCase() + v.slice(1);
+  const BUDS = ['thai-stick', 'maui-wowie', 'northern-lights'];
   const state = { type: 'flower', filter: 'all' };
   const grid = $('[data-grid]');
 
@@ -24,10 +25,16 @@
     const flower = state.type === 'flower';
     grid.innerHTML = list.map((s, i) => {
       const img = flower ? `assets/real-pouch-${s.slug}.webp` : `assets/real-box-${s.slug}.webp`;
+      const pair = flower ? `assets/real-box-${s.slug}.webp` : `assets/real-pouch-${s.slug}.webp`;
       const ready = flower && s.ready;
       const meta = flower ? `4g Smalls · ${label(s.vibe)}` : `Pre-roll pack · ${label(s.vibe)}`;
+      const combo = `<div class="slide"><img class="card-pair" src="${pair}" alt="" loading="lazy"><img class="card-main" src="${img}" alt="FLWRPWR ${s.name} ${flower ? '4g pouch' : 'pre-roll box'}" loading="lazy"></div>`;
+      const boxPhoto = `<div class="slide"><img class="card-photo" src="assets/photo-box-${s.slug}.webp" alt="FLWRPWR ${s.name} box" loading="lazy"></div>`;
+      const bud = BUDS.includes(s.slug) ? `<div class="slide"><img class="card-photo" src="assets/card-bud-${s.slug}.webp" alt="${s.name} flower up close" loading="lazy"></div>` : '';
+      const slides = flower ? [combo, boxPhoto, bud].filter(Boolean) : [boxPhoto, combo];
+      const nav = `<button class="card-arrow prev" type="button" aria-label="Previous photo of ${s.name}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="card-arrow next" type="button" aria-label="Next photo of ${s.name}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button><span class="card-dots" aria-hidden="true">${slides.map((_, k) => `<i${k ? '' : ' class="on"'}></i>`).join('')}</span>`;
       return `<article class="card ${s.vibe}${flower ? '' : ' preroll'}" style="--i:${i}" data-tilt>
-        <div class="card-img">${ready ? '' : '<span class="card-flag">Coming soon</span>'}<img src="${img}" alt="FLWRPWR ${s.name} ${flower ? '4g pouch' : 'pre-roll box'}" loading="lazy"></div>
+        <div class="card-img has-slides${flower ? '' : ' is-photo'}" data-slides>${ready ? '' : '<span class="card-flag">Coming soon</span>'}${slides.join('')}${nav}</div>
         <h4>${s.name}</h4><span class="meta">${meta}</span>
         ${ready
           ? `<button class="btn btn-pink" type="button" data-reserve="${s.name}" data-burst>Reserve</button>`
@@ -37,7 +44,33 @@
     $('[data-shop-title] span').textContent = flower ? 'Premium Flower' : 'Cannabis Pre-rolls';
     $('[data-shop-meta]').textContent = flower ? '4g smalls · 6 flavors · 3 vibes' : 'Premium flower · 6 flavors · launch status to confirm';
     bindTilt($$('[data-tilt]', grid));
+    $$('[data-slides]', grid).forEach(box => show(box, 0));
   }
+
+  /* ---------- card photos: arrows at the edges, tap the photo, or swipe ---------- */
+  function show(box, n) {
+    const slides = $$('.slide', box), dots = $$('.card-dots i', box);
+    const k = (n + slides.length) % slides.length;
+    box.dataset.at = k;
+    slides.forEach((el, j) => el.classList.toggle('on', j === k));
+    dots.forEach((el, j) => el.classList.toggle('on', j === k));
+  }
+  const step = (box, d) => show(box, +(box.dataset.at || 0) + d);
+  let sx = null, sy = null, swiped = false;
+  grid.addEventListener('pointerdown', e => { swiped = false; if (e.target.closest('[data-slides]')) { sx = e.clientX; sy = e.clientY; } }, { passive: true });
+  grid.addEventListener('pointerup', e => {
+    const box = e.target.closest('[data-slides]');
+    if (box && sx !== null) {
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { swiped = true; step(box, dx < 0 ? 1 : -1); }
+    }
+    sx = null;
+  }, { passive: true });
+  grid.addEventListener('click', e => {
+    const box = e.target.closest('[data-slides]'); if (!box) return;
+    if (swiped) { swiped = false; return; }
+    step(box, e.target.closest('.card-arrow.prev') ? -1 : 1);
+  });
 
   $$('.shop-toggle [data-type]').forEach(b => b.addEventListener('click', () => {
     state.type = b.dataset.type;
@@ -71,25 +104,82 @@
 
   /* join form is handled by the live signup.js (Supabase) */
 
-  /* ---------- font review picker: Lora / Fraunces / Quicksand / Marcellus (all free Google Fonts, OFL) ---------- */
-  const pick = $('[data-font-pick]');
-  const applyFont = f => {
-    if (!f) { doc.style.removeProperty('--display'); return; }
-    const id = 'gf-' + f;
-    if (!document.getElementById(id)) {
-      const l = document.createElement('link'); l.id = id; l.rel = 'stylesheet';
-      l.href = 'https://fonts.googleapis.com/css2?family=' + f + ':wght@400;500;600;700' + (f === 'Marcellus' ? '' : '') + '&display=swap';
-      if (f === 'Marcellus') l.href = 'https://fonts.googleapis.com/css2?family=Marcellus&display=swap';
-      if (f === 'Fraunces' || f === 'Lora') l.href = 'https://fonts.googleapis.com/css2?family=' + f + ':ital,wght@0,400;0,600;0,700;1,700&display=swap';
+  /* ---------- rotating photos: crossfade every few seconds, pause on hover or off screen, dots to jump ---------- */
+  $$('[data-rotate]').forEach(fig => {
+    const imgs = $$('img', fig), dots = $$('.rot-dots button', fig);
+    if (imgs.length < 2) return;
+    let at = 0, timer = null, seen = false, hover = false;
+    const go = n => {
+      at = (n + imgs.length) % imgs.length;
+      imgs.forEach((im, j) => { im.classList.toggle('on', j === at); if (j === (at + 1) % imgs.length) im.loading = 'eager'; });
+      dots.forEach((d, j) => d.classList.toggle('on', j === at));
+    };
+    const tick = () => { clearTimeout(timer); if (!reduce && seen && !hover && !document.hidden) timer = setTimeout(() => { go(at + 1); tick(); }, 4500); };
+    dots.forEach((d, j) => d.addEventListener('click', () => { go(j); tick(); }));
+    fig.addEventListener('mouseenter', () => { hover = true; tick(); });
+    fig.addEventListener('mouseleave', () => { hover = false; tick(); });
+    document.addEventListener('visibilitychange', tick);
+    new IntersectionObserver(es => es.forEach(e => { seen = e.isIntersecting; tick(); }), { threshold: 0.3 }).observe(fig);
+  });
+
+  /* ---------- font tester for the client review: open the site with ?fonts to show it (free Google Fonts, OFL, self-hosted in fonts/test) ---------- */
+  (function fontTester() {
+    let on = /[?&#]fonts\b/.test(location.search + location.hash);
+    try { if (on) sessionStorage.setItem('flwr-fonts-on', '1'); else on = sessionStorage.getItem('flwr-fonts-on') === '1'; } catch (e) {}
+    if (!on) return;
+    const HEAD = [
+      ['', 'Playfair (now)', '"FLWR Playfair",Georgia,serif'],
+      ['Fraunces', 'Fraunces', 'ital,wght@0,400;0,600;0,700;1,600'],
+      ['Lora', 'Lora', 'ital,wght@0,400;0,600;0,700;1,600'],
+      ['DM Serif Display', 'DM Serif Display', 'ital@0;1'],
+      ['Cormorant Garamond', 'Cormorant', 'wght@500;600;700'],
+      ['Marcellus', 'Marcellus', ''],
+      ['Quicksand', 'Quicksand', 'wght@500;600;700'],
+      ['Shrikhand', 'Shrikhand', '']
+    ];
+    const BODY = [
+      ['', 'Red Hat (now)', '"FLWR Red Hat",system-ui,sans-serif'],
+      ['Nunito', 'Nunito', 'wght@400;600;700;800;900'],
+      ['Quicksand', 'Quicksand', 'wght@500;600;700'],
+      ['DM Sans', 'DM Sans', 'wght@400;500;700;900'],
+      ['Outfit', 'Outfit', 'wght@400;500;700;800'],
+      ['Karla', 'Karla', 'wght@400;600;700;800']
+    ];
+    let loaded = false;
+    const load = () => {
+      if (loaded) return; loaded = true;
+      const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'css/font-tester.css';
       document.head.appendChild(l);
-    }
-    doc.style.setProperty('--display', `"${f}",Georgia,serif`);
-  };
-  if (pick) {
-    let saved = ''; try { saved = localStorage.getItem('flwr-font') || ''; } catch (e) {}
-    pick.value = saved; applyFont(saved);
-    pick.addEventListener('change', () => { applyFont(pick.value); try { localStorage.setItem('flwr-font', pick.value); } catch (e) {} });
-  }
+    };
+    const stack = (row, serif) => row[0] ? `"${row[0]}",${serif ? 'Georgia,serif' : 'system-ui,sans-serif'}` : row[2];
+    const set = (kind, row) => {
+      if (row[0]) load();
+      if (kind === 'head') { if (row[0]) doc.style.setProperty('--display', stack(row, true)); else doc.style.removeProperty('--display'); }
+      else ['--body', '--label'].forEach(v => row[0] ? doc.style.setProperty(v, stack(row, false)) : doc.style.removeProperty(v));
+      try { sessionStorage.setItem('flwr-font-' + kind, row[0]); } catch (e) {}
+      $$(`.ft-opts[data-kind="${kind}"] button`, box).forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === row[0])));
+    };
+    const box = document.createElement('div');
+    box.className = 'ft';
+    const opts = (kind, rows, serif) => `<div class="ft-opts" data-kind="${kind}">${rows.map(r => `<button type="button" data-f="${r[0]}" style="font-family:${stack(r, serif).replace(/"/g, '\x27')}">${r[1]}</button>`).join('')}</div>`;
+    box.innerHTML = `<button class="ft-toggle" type="button" aria-expanded="false"><b>Aa</b> Try fonts</button>
+      <div class="ft-panel" hidden><p class="ft-h">Headings</p>${opts('head', HEAD, true)}<p class="ft-h">Body and labels</p>${opts('body', BODY, false)}<button class="ft-reset" type="button">Back to current fonts</button></div>`;
+    document.body.appendChild(box);
+    const panel = $('.ft-panel', box), tog = $('.ft-toggle', box);
+    tog.addEventListener('click', () => {
+      const open = panel.hidden; panel.hidden = !open; tog.setAttribute('aria-expanded', String(open));
+      if (open) load();
+    });
+    box.addEventListener('click', e => {
+      const b = e.target.closest('.ft-opts button');
+      if (b) { const kind = b.parentElement.dataset.kind; set(kind, (kind === 'head' ? HEAD : BODY).find(r => r[0] === b.dataset.f)); }
+      if (e.target.closest('.ft-reset')) { set('head', HEAD[0]); set('body', BODY[0]); }
+    });
+    let h = '', bd = '';
+    try { h = sessionStorage.getItem('flwr-font-head') || ''; bd = sessionStorage.getItem('flwr-font-body') || ''; } catch (e) {}
+    set('head', HEAD.find(r => r[0] === h) || HEAD[0]);
+    set('body', BODY.find(r => r[0] === bd) || BODY[0]);
+  })();
 
   /* ---------- light / dark theme ---------- */
   const themeBtn = $('[data-theme-toggle]');
@@ -97,7 +187,7 @@
   syncThemeLabel();
   themeBtn.addEventListener('click', () => {
     doc.dataset.theme = doc.dataset.theme === 'dark' ? 'light' : 'dark';
-    try { localStorage.setItem('flwr-theme', doc.dataset.theme); } catch (e) {}
+    try { sessionStorage.setItem('flwr-theme', doc.dataset.theme); } catch (e) {}
     syncThemeLabel();
   });
 
@@ -245,16 +335,28 @@
       if (el.getBoundingClientRect().top < h * 0.92) { el.classList.add('in'); io.unobserve(el); return false; }
       return true;
     });
-    // v2: the ribbons flow with the scroll. Each one slides by its own offset and loops every wave length.
+  }
+  /* ---------- ribbons flow on their own, a gentle drift that picks up speed while you scroll ---------- */
+  let drift = 0, lastT = performance.now();
+  const live = new Set();
+  const rio = new IntersectionObserver(es => es.forEach(en => en.isIntersecting ? live.add(en.target) : live.delete(en.target)), { rootMargin: '200px 0px' });
+  waves.forEach(w => rio.observe(w));
+  function flow(t) {
+    const dt = Math.min(t - lastT, 64) / 1000; lastT = t;
+    vel *= 0.94;
+    drift += dt * (34 + Math.min(Math.abs(vel), 60) * 5);
     waves.forEach((w, i) => {
-      const r = w.getBoundingClientRect();
-      if (r.bottom < -200 || r.top > h + 200) return;
+      if (!live.has(w)) return;
       const loop = w.clientWidth / 2 || 1;
       const dir = w.closest('.flip') ? -1 : 1;
-      const shift = ((y * 0.55 * dir + i * loop * 0.37) % loop + loop) % loop;
-      w.style.transform = `translate3d(${(-shift).toFixed(1)}px,0,0)`;
+      const shift = ((drift * dir + i * loop * 0.37) % loop + loop) % loop;
+      const bob = Math.sin(t / 1300 + i * 1.7) * 3;
+      w.style.transform = `translate3d(${(-shift).toFixed(1)}px,${bob.toFixed(2)}px,0)`;
     });
+    requestAnimationFrame(flow);
   }
+  requestAnimationFrame(flow);
+
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
   frame();
 

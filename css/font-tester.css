@@ -1,0 +1,36 @@
+/* Font tester faces, self-hosted latin subsets of free Google Fonts (OFL). Loaded only when the tester is open. */
+@font-face { font-family: 'Fraunces'; font-style: italic; font-weight: 600; font-display: swap; src: url(../fonts/test/fraunces-70d3ac.woff2) format('woff2'); }
+@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/test/fraunces-c06a4e.woff2) format('woff2'); }
+@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/test/fraunces-c06a4e.woff2) format('woff2'); }
+@font-face { font-family: 'Fraunces'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/test/fraunces-c06a4e.woff2) format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: italic; font-weight: 600; font-display: swap; src: url(../fonts/test/lora-7d04c9.woff2) format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/test/lora-ecda3b.woff2) format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/test/lora-ecda3b.woff2) format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/test/lora-ecda3b.woff2) format('woff2'); }
+@font-face { font-family: 'DM Serif Display'; font-style: italic; font-weight: 400; font-display: swap; src: url(../fonts/test/dm-serif-display-fb30d4.woff2) format('woff2'); }
+@font-face { font-family: 'DM Serif Display'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/test/dm-serif-display-8c7199.woff2) format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url(../fonts/test/cormorant-garamond-2fed1d.woff2) format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/test/cormorant-garamond-2fed1d.woff2) format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/test/cormorant-garamond-2fed1d.woff2) format('woff2'); }
+@font-face { font-family: 'Marcellus'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/test/marcellus-9d4869.woff2) format('woff2'); }
+@font-face { font-family: 'Quicksand'; font-style: normal; font-weight: 500; font-display: swap; src: url(../fonts/test/quicksand-d8da43.woff2) format('woff2'); }
+@font-face { font-family: 'Quicksand'; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/test/quicksand-d8da43.woff2) format('woff2'); }
+@font-face { font-family: 'Quicksand'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/test/quicksand-d8da43.woff2) format('woff2'); }
+@font-face { font-family: 'Shrikhand'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/test/shrikhand-6252d4.woff2) format('woff2'); }
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/test/nunito-798ec6.woff2) format('woff2'); }
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/test/nunito-798ec6.woff2) format('woff2'); }
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/test/nunito-798ec6.woff2) format('woff2'); }
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 800; font-display: swap; src: url(../fonts/test/nunito-798ec6.woff2) format('woff2'); }
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 900; font-display: swap; src: url(../fonts/test/nunito-798ec6.woff2) format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/test/dm-sans-40fe3c.woff2) format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url(../fonts/test/dm-sans-40fe3c.woff2) format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/test/dm-sans-40fe3c.woff2) format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 900; font-display: swap; src: url(../fonts/test/dm-sans-40fe3c.woff2) format('woff2'); }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/test/outfit-357083.woff2) format('woff2'); }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 500; font-display: swap; src: url(../fonts/test/outfit-357083.woff2) format('woff2'); }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/test/outfit-357083.woff2) format('woff2'); }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 800; font-display: swap; src: url(../fonts/test/outfit-357083.woff2) format('woff2'); }
+@font-face { font-family: 'Karla'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/test/karla-ca0ae6.woff2) format('woff2'); }
+@font-face { font-family: 'Karla'; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/test/karla-ca0ae6.woff2) format('woff2'); }
+@font-face { font-family: 'Karla'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/test/karla-ca0ae6.woff2) format('woff2'); }
+@font-face { font-family: 'Karla'; font-style: normal; font-weight: 800; font-display: swap; src: url(../fonts/test/karla-ca0ae6.woff2) format('woff2'); }

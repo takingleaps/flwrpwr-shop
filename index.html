@@ -5,19 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="only light" id="cs-meta">
 <script>
-  /* pick the theme before paint: saved choice, else light (the default) */
-  (function(){var t;try{t=localStorage.getItem('flwr-theme')}catch(e){}
+  /* pick the theme before paint: light every new visit; a dusk switch only lasts for this visit */
+  (function(){var t;try{localStorage.removeItem('flwr-theme');t=sessionStorage.getItem('flwr-theme')}catch(e){}
   if(t!=='light'&&t!=='dark'){t='light'}
   document.documentElement.dataset.theme=t;
 })();
-  ;(function(){var m=document.getElementById('cs-meta');var sync=function(){m.content=document.documentElement.dataset.theme==='dark'?'only dark':'only light'};sync();new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']})})();
+  ;(function(){var m=document.getElementById('cs-meta');var sync=function(){m.content='only light'};sync();new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']})})();
 </script>
 <title>FLWRPWR · Good vibes, great flower</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2334AFFD'/%3E%3Cg fill='%23EA386C'%3E%3Cellipse cx='50' cy='30' rx='10' ry='17' transform='rotate(0 50 50)'/%3E%3Cellipse cx='50' cy='30' rx='10' ry='17' transform='rotate(45 50 50)'/%3E%3Cellipse cx='50' cy='30' rx='10' ry='17' transform='rotate(90 50 50)'/%3E%3Cellipse cx='50' cy='30' rx='10' ry='17' transform='rotate(135 50 50)'/%3E%3Cellipse cx='50' cy='30' rx='10' ry='17' transform='rotate(180 50 50)'/%3E%3Cellipse cx='50' cy='30' rx='10' ry='17' transform='rotate(225 50 50)'/%3E%3Cellipse cx='50' cy='30' rx='10' ry='17' transform='rotate(270 50 50)'/%3E%3Cellipse cx='50' cy='30' rx='10' ry='17' transform='rotate(315 50 50)'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='12' fill='%23FFFFFF'/%3E%3C/svg%3E" /><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" /><link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" /><link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <meta name="description" content="FLWRPWR premium 4g smalls. Good vibes, great flower. Women owned, Southern California.">
 <link rel="preload" href="fonts/playfair-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/red-hat.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.css">
-<link rel="stylesheet" href="css/soft-pastel.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=4">
+<link rel="stylesheet" href="css/soft-pastel.css?v=4">
 <style id="flwr-gate-css">
 
 @media (prefers-reduced-motion: reduce){
@@ -308,7 +309,6 @@ html[data-theme="dark"] .flwr-soon-form input,html[data-theme="dark"] .flwr-soon
   <nav class="head-links" aria-label="Main">
     <a href="#shop">Shop</a><a href="#find-us">Find us</a><a href="#about">About</a>
   </nav>
-  <a class="head-logo" href="#top" aria-label="FLWRPWR home"><img src="assets/client-logo-preview.png" alt="FLWRPWR" width="1179" height="786"></a>
   <nav class="head-links right" aria-label="More">
     <a href="#story">Story</a><a href="#events">Events</a><a href="#join">Join</a>
   </nav>
@@ -512,7 +512,7 @@ html[data-theme="dark"] .flwr-soon-form input,html[data-theme="dark"] .flwr-soon
     <h2 class="title" data-reveal><svg class="t-daisy"><use href="#i-daisy"/></svg>About FLWRPWR<svg class="t-daisy"><use href="#i-daisy"/></svg></h2>
     <div class="about-grid">
       <p class="lede" data-reveal data-content="about">FLWRPWR is a cannabis brand built on good vibes, great flower, and a deeper purpose: to connect people through high-quality, responsibly sourced flower and a community rooted in wellness.</p>
-      <figure class="about-photo" data-reveal><img src="assets/product-box-hand.jpg" alt="A hand holding Thai Stick with Maui Wowie and Afghani boxes behind it" width="1179" height="648" loading="lazy"></figure>
+      <figure class="about-photo rotator" data-rotate data-reveal><img class="on" src="assets/rot-about-hand.webp" alt="A hand holding Thai Stick with Maui Wowie and Afghani boxes behind it" loading="lazy"><img src="assets/rot-about-picnic.webp" alt="A FLWRPWR pre-roll and daisies on a picnic blanket" loading="lazy"><img src="assets/rot-about-mailbox.webp" alt="A pink FLWRPWR mailbox holding a letter and a daisy" loading="lazy"><img src="assets/rot-about-lake.webp" alt="Taking in the lake view with FLWRPWR" loading="lazy"><span class="rot-dots"><button type="button" aria-label="Photo 1 of 4" class="on"></button><button type="button" aria-label="Photo 2 of 4"></button><button type="button" aria-label="Photo 3 of 4"></button><button type="button" aria-label="Photo 4 of 4"></button></span></figure>
     </div>
     <div class="meadow" aria-hidden="true"><div class="meadow-img" data-parallax="0.12"></div><span class="petals" data-petals="6"></span></div>
     <ul class="badges">
@@ -542,7 +542,7 @@ html[data-theme="dark"] .flwr-soon-form input,html[data-theme="dark"] .flwr-soon
         <p>As FLWRPWR continues to grow, we want to create a welcoming community where everyone feels supported and part of a larger purpose.</p>
         <p class="sign">Good vibes, great flower. Together, we grow.</p>
       </div>
-      <figure class="roots-photo" data-reveal><img src="assets/product-duo-grass.jpg" alt="Maui Wowie and Thai Stick pouches on grass" width="1179" height="1571" loading="lazy"></figure>
+      <figure class="roots-photo rotator" data-rotate data-reveal><img class="on" src="assets/rot-roots-grass.webp" alt="Maui Wowie and Thai Stick pouches on grass" loading="lazy"><img src="assets/rot-roots-sky.webp" alt="Maui Wowie, Thai Stick and Afghani pouches against a blue sky" loading="lazy"><img src="assets/rot-roots-thai.webp" alt="Thai Stick on a table full of daisies" loading="lazy"><span class="rot-dots"><button type="button" aria-label="Photo 1 of 3" class="on"></button><button type="button" aria-label="Photo 2 of 3"></button><button type="button" aria-label="Photo 3 of 3"></button></span></figure>
     </div>
 
     <div class="gives" id="gives-back">
@@ -683,7 +683,7 @@ html[data-theme="dark"] .flwr-soon-form input,html[data-theme="dark"] .flwr-soon
 
 <script src="tracker.js?v=1"></script>
 <script src="gate.js?v=3"></script>
-<script src="js/site.js" defer></script>
+<script src="js/site.js?v=4" defer></script>
 <!-- live admin edits (read only): same scripts and Supabase tables as flwrpwr.co -->
 <script src="content.js" defer></script>
 <script src="sections.js" defer></script>
