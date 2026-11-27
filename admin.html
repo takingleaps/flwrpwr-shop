@@ -6855,5 +6855,56 @@ void [_deriveContainmentCorpusDigest_e576, stepShadowHeapLazyPolicy_7b3e, readSp
 </script>
     <script src="admin-extensions.js"></script>
     <script src="admin-metrics.js?v=1"></script>
+    <script>
+    /* View-only tier (2026-11-27): only the site owner (Nathan) gets the text
+       editor and approve panel. Approved collaborators (e.g. Cassandra) can
+       sign in and open the site to preview it, but cannot edit site text or
+       approve admins. The Coming Soon gate-pass is unchanged: it is driven by
+       the flwrpwr_admin_access approval check in the main script. */
+    (function () {
+      var OWNER = "nathanltwong@gmail.com";
+      var done = false;
+      function applyTier() {
+        if (done) return true;
+        var who = document.getElementById("whoEmail");
+        var editor = document.getElementById("editorCard");
+        if (!who || !editor || editor.classList.contains("hidden")) return false;
+        var email = (who.textContent || "").trim().toLowerCase();
+        if (!email) return false;
+        done = true;
+        if (email !== OWNER) {
+          var form = document.getElementById("editForm");
+          if (form) form.classList.add("hidden");
+          var panel = document.getElementById("approvePanel");
+          if (panel) panel.classList.add("hidden");
+          var setup = document.getElementById("setupBox");
+          if (setup) setup.classList.add("hidden");
+          if (!document.getElementById("viewOnlyNote")) {
+            var note = document.createElement("p");
+            note.id = "viewOnlyNote";
+            note.className = "muted";
+            note.textContent = "View-only access. You can open the site to preview it, but only the site owner can edit the site text.";
+            var btn = document.getElementById("designBtn");
+            if (btn && btn.parentNode) btn.parentNode.insertBefore(note, btn);
+          }
+        }
+        return true;
+      }
+      /* The main script reveals the editor card asynchronously after auth.
+         Re-apply on any class change inside the editor card, and poll briefly
+         in case the signed-in email is not populated yet when the card shows. */
+      var editor = document.getElementById("editorCard");
+      if (editor && "MutationObserver" in window) {
+        new MutationObserver(function () { if (!done) applyTier(); }).observe(editor, { attributes: true, subtree: true, attributeFilter: ["class"] });
+      }
+      var tries = 0;
+      var timer = setInterval(function () {
+        tries++;
+        if (applyTier() || tries > 40) clearInterval(timer);
+      }, 500);
+      if (document.readyState === "complete") applyTier();
+      else window.addEventListener("load", applyTier);
+    })();
+    </script>
 </body>
 </html>
