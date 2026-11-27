@@ -336,3 +336,75 @@ html body .flwr-soon-blaze,html body .flwr-soon-form button,html body .flwr-soon
   .vibe-card:hover .vibe-pack{transform:translateX(-50%) rotate(0) translateY(-12px) scale(1.04)}
   .vibe-card::after{left:50%;bottom:22px;width:170px;height:26px;transform:translateX(-50%)}
 }
+
+/* ---------- 23. round 14: real cursor back, faster ribbon, photo controls, titles that pop, calmer ticker ---------- */
+/* keep the normal pointer so links are easy to hit; the daisy just trails beside it */
+html.has-cursor body{cursor:auto}
+html.has-cursor a,html.has-cursor button,html.has-cursor [role=button],html.has-cursor .rotator{cursor:pointer}
+.cursor-daisy,.cursor-daisy.big{width:20px;height:20px;margin:16px 0 0 14px;opacity:.85}
+.flwr-cursor{display:none!important}
+
+/* footer links: bigger targets, clear hover */
+.foot-admin{display:flex;justify-content:center;align-items:center;gap:4px;flex-wrap:wrap}
+.foot-admin span{opacity:.5}
+.foot-admin a{display:inline-block;padding:8px 8px;border-radius:999px;text-decoration:underline;text-decoration-color:rgba(224,64,138,.35);text-underline-offset:4px;transition:background .2s,color .2s}
+.foot-admin a:hover,.foot-admin a:focus-visible{background:rgba(224,64,138,.1);text-decoration-color:currentColor}
+.studio a{display:inline-block;padding:4px 2px}
+
+/* silk ribbon: four layers that only slide */
+.rainbow .silk-set{position:absolute;left:0;right:0;top:6px;height:92px;overflow:hidden;pointer-events:none}
+.rainbow.thin .silk-set{top:4px;height:84px}
+@media (min-width:900px){.rainbow .silk-set,.rainbow.thin .silk-set{height:140px;top:-18px}}
+.silk-l{position:absolute;left:-100%;top:0;width:300%;height:100%;overflow:visible;will-change:transform;backface-visibility:hidden}
+.silk-l.st1,.silk-l.st3{filter:drop-shadow(0 4px 6px rgba(130,90,170,.13))}
+.silk-l .silk-hi{fill:#fff;opacity:.6}
+
+/* header glass: lighter blur, same look, less work for the browser */
+:root[data-theme] .site-head.past-hero{-webkit-backdrop-filter:blur(10px) saturate(1.5);backdrop-filter:blur(10px) saturate(1.5)}
+
+/* photo rotators: rounded photo, arrows on the sides, dots sit under the photo instead of on it */
+.rotator{overflow:visible;margin-bottom:34px!important;cursor:pointer;touch-action:pan-y}
+.rotator img{border-radius:inherit}
+.about-photo.rotator,.roots-photo.rotator{border-radius:26px}
+.rotator img{border-radius:23px}
+.rotator:hover img.on{transform:none}
+.rot-dots{position:absolute;left:50%;top:calc(100% + 14px);bottom:auto!important;transform:translateX(-50%);display:flex;gap:8px;padding:0;background:none;backdrop-filter:none;z-index:2}
+.rot-dots button{width:8px;height:8px;padding:0;border:0;border-radius:99px;background:#f3bfd5;box-shadow:none;cursor:pointer;transition:width .35s ease,background .35s}
+.rot-dots button.on{width:24px;background:#e0408a}
+.rot-dots button:hover{background:#ec84b2}
+.rot-dots button::after{content:"";position:absolute;inset:-10px -4px}
+.rot-dots button{position:relative}
+:root[data-theme="dark"] .rot-dots button{background:rgba(52,36,122,.25)}
+:root[data-theme="dark"] .rot-dots button.on{background:#5a34c0}
+.rot-arrow{position:absolute;top:50%;z-index:3;width:42px;height:42px;margin-top:-21px;display:grid;place-items:center;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.88);color:#c2185b;box-shadow:0 6px 18px rgba(80,30,70,.18);cursor:pointer;opacity:0;transition:opacity .25s,transform .25s,background .2s}
+.rot-arrow svg{width:20px;height:20px}
+.rot-arrow.prev{left:12px;transform:translateX(-6px)}
+.rot-arrow.next{right:12px;transform:translateX(6px)}
+.rotator:hover .rot-arrow,.rot-arrow:focus-visible{opacity:1;transform:none}
+.rot-arrow:hover{background:#fff}
+@media (hover:none){.rot-arrow{opacity:.92;transform:none;width:36px;height:36px;margin-top:-18px}.rot-arrow svg{width:17px;height:17px}}
+:root[data-theme="dark"] .rot-arrow{color:#5a34c0}
+
+/* titles: deeper berry gradient, violet highlighted accent word, soft white glow and two little daisies */
+:root .title{background:linear-gradient(100deg,#a3124f 0%,#d42f7c 45%,#ef6aa0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 1px rgba(255,255,255,1)) drop-shadow(0 0 7px rgba(255,255,255,.95)) drop-shadow(0 0 18px rgba(255,255,255,.7))}
+:root .title em{-webkit-text-fill-color:#7c3fd0;color:#7c3fd0;background:none;padding:0 .06em;border-radius:.14em;box-shadow:inset 0 -.24em 0 rgba(255,224,140,.75);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+:root[data-theme="dark"] .title{background:linear-gradient(100deg,#2a1b6e 0%,#4a2aa8 55%,#7a3fc0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 1px rgba(255,255,255,.9)) drop-shadow(0 0 8px rgba(255,255,255,.6))}
+:root[data-theme="dark"] .title em{-webkit-text-fill-color:#a0287a;color:#a0287a;box-shadow:inset 0 -.24em 0 rgba(255,255,255,.55)}
+.title::before,.title::after{content:"";flex:none;width:.34em;height:.34em;align-self:flex-start;margin-top:.12em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='%23fff' stroke='%23f29cc2' stroke-width='1.6'%3E%3Cellipse cx='20' cy='9' rx='5.5' ry='8'/%3E%3Cellipse cx='20' cy='31' rx='5.5' ry='8'/%3E%3Cellipse cx='9' cy='20' rx='8' ry='5.5'/%3E%3Cellipse cx='31' cy='20' rx='8' ry='5.5'/%3E%3Cellipse cx='12.2' cy='12.2' rx='5.5' ry='8' transform='rotate(-45 12.2 12.2)'/%3E%3Cellipse cx='27.8' cy='27.8' rx='5.5' ry='8' transform='rotate(-45 27.8 27.8)'/%3E%3Cellipse cx='27.8' cy='12.2' rx='5.5' ry='8' transform='rotate(45 27.8 12.2)'/%3E%3Cellipse cx='12.2' cy='27.8' rx='5.5' ry='8' transform='rotate(45 12.2 27.8)'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='6' fill='%23ffd166' stroke='%23f2a93b' stroke-width='1.4'/%3E%3C/svg%3E") center/contain no-repeat;animation:spin 16s linear infinite}
+.title::after{align-self:flex-end;margin:0 0 .1em;width:.26em;height:.26em;animation-direction:reverse}
+.title.left::before{display:none}
+.title.left::after{display:inline-block;vertical-align:top;margin-left:.15em}
+@media (max-width:520px){.title::before,.title::after{display:none}}
+
+/* ticker: airy strip, small tracked caps, fades at the edges */
+:root[data-theme] .ticker{background:rgba(255,255,255,.6);border:0;border-block:1px solid rgba(224,64,138,.16);color:#a3124f;margin-top:18px;-webkit-mask:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+:root[data-theme] .ticker-track{font:700 12.5px/1 var(--label);letter-spacing:.24em;text-transform:uppercase;gap:30px;padding:17px 0;animation-duration:44s}
+:root[data-theme] .ticker-track svg{width:13px;height:13px;color:#f4a3c6;animation:none;filter:none}
+:root[data-theme="dark"] .ticker{background:rgba(255,255,255,.22);border-block-color:rgba(255,255,255,.35);color:#2b2260}
+:root[data-theme="dark"] .ticker-track svg{color:#fff}
+
+/* vibe icons: sun spins, flower turns, moon rocks */
+.v-hybrid .vibe-icon{animation:spin 20s linear infinite}
+.v-indica .vibe-icon{animation:moonrock 4.8s ease-in-out infinite;transform-origin:50% 55%}
+@keyframes moonrock{0%,100%{transform:rotate(-14deg) translateY(0)}50%{transform:rotate(10deg) translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){.v-hybrid .vibe-icon,.v-indica .vibe-icon,.title::before,.title::after{animation:none}}

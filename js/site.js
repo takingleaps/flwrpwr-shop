@@ -107,22 +107,42 @@
 
   /* join form is handled by the live signup.js (Supabase) */
 
-  /* ---------- rotating photos: crossfade every few seconds, pause on hover or off screen, dots to jump ---------- */
+  /* ---------- rotating photos: arrows, tap the photo, swipe, or the dots under it; pauses on hover or off screen ---------- */
+  const CHEV = d => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${d}" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   $$('[data-rotate]').forEach(fig => {
     const imgs = $$('img', fig), dots = $$('.rot-dots button', fig);
     if (imgs.length < 2) return;
     let at = 0, timer = null, seen = false, hover = false;
     const go = n => {
       at = (n + imgs.length) % imgs.length;
-      imgs.forEach((im, j) => { im.classList.toggle('on', j === at); if (j === (at + 1) % imgs.length) im.loading = 'eager'; });
-      dots.forEach((d, j) => d.classList.toggle('on', j === at));
+      imgs.forEach((im, j) => { im.classList.toggle('on', j === at); if (j === (at + 1) % imgs.length || j === (at - 1 + imgs.length) % imgs.length) im.loading = 'eager'; });
+      dots.forEach((d, j) => { d.classList.toggle('on', j === at); d.setAttribute('aria-current', j === at ? 'true' : 'false'); });
     };
-    const tick = () => { clearTimeout(timer); if (!reduce && seen && !hover && !document.hidden) timer = setTimeout(() => { go(at + 1); tick(); }, 4500); };
-    dots.forEach((d, j) => d.addEventListener('click', () => { go(j); tick(); }));
+    const tick = () => { clearTimeout(timer); if (!reduce && seen && !hover && !document.hidden) timer = setTimeout(() => { go(at + 1); tick(); }, 5000); };
+    const step = (n, e) => { if (e) e.stopPropagation(); go(at + n); tick(); };
+    const mk = (cls, label, d, n) => {
+      const btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'rot-arrow ' + cls; btn.setAttribute('aria-label', label); btn.innerHTML = CHEV(d);
+      btn.addEventListener('click', e => step(n, e));
+      fig.appendChild(btn);
+    };
+    mk('prev', 'Previous photo', 'M15 5l-7 7 7 7', -1);
+    mk('next', 'Next photo', 'M9 5l7 7-7 7', 1);
+    dots.forEach((d, j) => d.addEventListener('click', e => { e.stopPropagation(); go(j); tick(); }));
+    fig.addEventListener('click', e => { if (!e.target.closest('button')) step(1); });
+    let sx = null, sy0 = 0;
+    fig.addEventListener('pointerdown', e => { sx = e.clientX; sy0 = e.clientY; }, { passive: true });
+    fig.addEventListener('pointerup', e => {
+      if (sx === null) return;
+      const dx = e.clientX - sx, dy = e.clientY - sy0; sx = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { fig.dataset.swiped = '1'; step(dx < 0 ? 1 : -1); setTimeout(() => delete fig.dataset.swiped, 50); }
+    });
+    fig.addEventListener('click', e => { if (fig.dataset.swiped) e.stopImmediatePropagation(); }, true);
     fig.addEventListener('mouseenter', () => { hover = true; tick(); });
     fig.addEventListener('mouseleave', () => { hover = false; tick(); });
     document.addEventListener('visibilitychange', tick);
     new IntersectionObserver(es => es.forEach(e => { seen = e.isIntersecting; tick(); }), { threshold: 0.3 }).observe(fig);
+    go(0);
   });
 
   /* ---------- font tester for the client review: open the site with ?fonts to show it (free Google Fonts, OFL, self-hosted in fonts/test) ---------- */
@@ -318,7 +338,7 @@
   /* ---------- scroll: hero parallax, header shadow, wave speed from velocity ---------- */
   const head = $('[data-head]'), logo = $('[data-hero-logo]'), heroEl = $('[data-hero]');
   const par = $$('[data-parallax]');
-  const waves = $$('[data-rainbow] .rb');
+  const waves = $$('[data-rainbow] .silk-set');
   let lastY = scrollY, vel = 0, ticking = false, pending = $$('[data-reveal]');
   function frame() {
     ticking = false;
@@ -346,25 +366,30 @@
   const rio = new IntersectionObserver(es => es.forEach(en => en.isIntersecting ? live.add(en.target) : live.delete(en.target)), { rootMargin: '200px 0px' });
   waves.forEach(w => rio.observe(w));
   const SILK = [0.42, 0.9, 0.62, 1.25];
+  // Each strand is its own layer that only slides (transform), so the browser never repaints the ribbon while it moves.
+  const geo = new Map();
+  const measure = () => waves.forEach(w => geo.set(w, { cw: w.clientWidth || 1, h: w.clientHeight || 92, dir: w.closest('.flip') ? -1 : 1, layers: [...w.children] }));
+  measure(); addEventListener('resize', measure, { passive: true });
   function flow(t) {
     const dt = Math.min(t - lastT, 64) / 1000; lastT = t;
     vel *= 0.94;
     drift += dt * (34 + Math.min(Math.abs(vel), 60) * 5);
-    waves.forEach((w, i) => {
-      if (!live.has(w)) return;
-      const loop = w.clientWidth / 2 || 1;
-      const dir = w.closest('.flip') ? -1 : 1;
-      const shift = ((drift * dir + i * loop * 0.37) % loop + loop) % loop;
-      const bob = Math.sin(t / 1300 + i * 1.7) * 3;
-      w.style.transform = `translate3d(${(-shift).toFixed(1)}px,${bob.toFixed(2)}px,0)`;
-      // silk strands slide against each other with scroll position and sway with scroll speed
-      const sy = scrollY * dir, sway = 3 + Math.min(Math.abs(vel), 40) * 0.35;
-      SILK.forEach((k, j) => {
-        const p = ((sy * k + drift * (j - 1.5) * 0.4 + i * 211) % 1200 + 1200) % 1200;
-        w.style.setProperty('--p' + (j + 1), p.toFixed(1));
-        w.style.setProperty('--q' + (j + 1), (Math.sin(t / 1700 + sy / 260 + j * 1.9) * sway).toFixed(2));
+    if (live.size) {
+      const y = scrollY, sway = 3 + Math.min(Math.abs(vel), 40) * 0.35;
+      waves.forEach((w, i) => {
+        if (!live.has(w)) return;
+        const g = geo.get(w); if (!g) return;
+        const { cw, h, dir, layers } = g, u = cw / 1200, sy = y * dir;
+        const base = -(drift * dir + i * cw * 0.37), bob = Math.sin(t / 1300 + i * 1.7) * 3;
+        layers.forEach((L, k) => {
+          const j = ['st3', 'st1', 'st2', 'st4'].indexOf(L.classList[1]);
+          const p = sy * SILK[j] + drift * (j - 1.5) * 0.4 + i * 211;
+          const x = (((base + p * u) % cw) + cw) % cw;
+          const q = Math.sin(t / 1700 + sy / 260 + j * 1.9) * sway * h / 120 + bob;
+          L.style.transform = `translate3d(${x.toFixed(1)}px,${q.toFixed(1)}px,0)`;
+        });
       });
-    });
+    }
     requestAnimationFrame(flow);
   }
   requestAnimationFrame(flow);
@@ -427,7 +452,7 @@
     addEventListener('pointermove', e => {
       if (e.pointerType !== 'mouse') return;
       const now = performance.now();
-      if (now - lastTrail < 90) return;
+      if (now - lastTrail < 140) return;
       lastTrail = now;
       const p = document.createElement('i');
       p.className = 'burst-petal';
