@@ -24,8 +24,8 @@
     const list = STRAINS.filter(s => state.filter === 'all' || s.vibe === state.filter);
     const flower = state.type === 'flower';
     grid.innerHTML = list.map((s, i) => {
-      const img = flower ? `assets/real-pouch-${s.slug}.webp` : `assets/real-box-${s.slug}.webp`;
-      const pair = flower ? `assets/real-box-${s.slug}.webp` : `assets/real-pouch-${s.slug}.webp`;
+      const img = flower ? `assets/real-pouch-${s.slug}.webp?v=2` : `assets/real-box-${s.slug}.webp`;
+      const pair = flower ? `assets/real-box-${s.slug}.webp` : `assets/real-pouch-${s.slug}.webp?v=2`;
       const ready = flower && s.ready;
       const meta = flower ? `4g Smalls · ${label(s.vibe)}` : `Pre-roll pack · ${label(s.vibe)}`;
       // flower shows the pouch on its own; boxes belong to pre-rolls only
