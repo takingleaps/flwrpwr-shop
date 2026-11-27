@@ -44,6 +44,18 @@ html[data-theme="dark"] .flwr-soon .flwr-soon-form input::placeholder{color:#c7b
 html .flwr-soon .flwr-soon-sub{border-radius:14px!important}
 html .flwr-soon .flwr-soon-opt{font-size:13px;text-shadow:0 1px 3px rgba(138,74,124,.7),0 0 12px rgba(138,74,124,.45)}
 html .flwr-soon .flwr-soon-feed-kicker{color:#EA386C;text-shadow:0 0 2px #fff,0 0 12px rgba(255,255,255,.95)}
+/* shop densify (Nov 27): tighter hero, wider grid, vibe legend below the cards */
+.page-hero .wrap{padding-bottom:22px}
+.wrap.shop-wide{max-width:1320px}
+.shop-vibes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}
+.shop-vibes .vt{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;padding:14px 8px;border:2px solid #fff;outline:2px solid var(--line);font-size:12.5px;line-height:1.3;font-weight:700;border-radius:12px}
+.shop-vibes .vt svg{width:28px;height:28px}
+.shop-vibes .vt b{font-family:"Shrikhand",cursive;font-weight:600;font-size:20px;line-height:1.2;color:#d01f6c}
+.shop-vibes .vt.t-sativa{background:#fff6cf}
+.shop-vibes .vt.t-hybrid{background:#fde3ee}
+.shop-vibes .vt.t-indica{background:#f1e9ff}
+.shop-vibes .vt.t-indica b{color:#6b3cc4}
+@media (max-width:560px){.shop-vibes{gap:8px}.shop-vibes .vt b{font-size:16px}.shop-vibes .vt{font-size:11px}}
 </style>
 </head>
   <body>
@@ -148,20 +160,25 @@ html .flwr-soon .flwr-soon-feed-kicker{color:#EA386C;text-shadow:0 0 2px #fff,0 
     </header>
     <main>
       <section class="page-hero">
-        <div class="wrap">
+        <div class="wrap shop-wide">
           <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> / Shop</nav>
           <span class="kicker" style="margin-top:22px">✿ The lineup ✿</span>
           <h1 data-split>Shop the <span class="leaf">smalls</span></h1>
           <p class="lede">Six strains on the sheet. Three are in the first drop, ready to reserve. Three are still growing, get notified, skip the line. Every pouch is FLWRPWR 4g Smalls. Tap any pouch for its own page.</p>
         </div>
       </section>
-      <section class="block" style="padding-top:48px">
-        <div class="wrap">
+      <section class="block" style="padding-top:28px">
+        <div class="wrap shop-wide">
           <div class="gal-wrap">
           <div class="grid" id="productGrid"></div>
           <button class="gal-arrow gal-prev" type="button" aria-label="Previous products"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
           <button class="gal-arrow gal-next" type="button" aria-label="Next products"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
+          <div class="vibe-tiles shop-vibes">
+            <div class="vt t-sativa"><svg viewBox="0 0 24 24" fill="none" stroke="#e48a00" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="#ffe58a"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.1" y2="4.9"/></svg><b>Sativa</b><span>Energizing, uplifting &amp; creative</span></div>
+            <div class="vt t-hybrid"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="#fff" stroke="#ec2f7f" stroke-width="1.4"><ellipse cx="12" cy="6.5" rx="3" ry="4.5"/><ellipse cx="12" cy="6.5" rx="3" ry="4.5" transform="rotate(72 12 12)"/><ellipse cx="12" cy="6.5" rx="3" ry="4.5" transform="rotate(144 12 12)"/><ellipse cx="12" cy="6.5" rx="3" ry="4.5" transform="rotate(216 12 12)"/><ellipse cx="12" cy="6.5" rx="3" ry="4.5" transform="rotate(288 12 12)"/></g><circle cx="12" cy="12" r="3" fill="#ffe58a" stroke="#ec2f7f" stroke-width="1.2"/></svg><b>Hybrid</b><span>Balanced vibes for mind &amp; body</span></div>
+            <div class="vt t-indica"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z" fill="#e9ddff" stroke="#7d4fd6" stroke-width="1.6" stroke-linejoin="round"/></svg><b>Indica</b><span>Deep relaxation, stress relief &amp; calm</span></div>
+          </div>
           <p style="text-align:center;margin-top:34px;color:var(--ink-soft);font-weight:700">Pre-launch: reserving holds your picks for launch day, no prices, no payment yet.<br />Want the full walk-through? <a href="./#visit" style="color:var(--coral);font-weight:900">Step inside the 3D shop →</a></p>
         </div>
       </section>
@@ -216,6 +233,7 @@ html .flwr-soon .flwr-soon-feed-kicker{color:#EA386C;text-shadow:0 0 2px #fff,0 
       <script src="gate.js?v=3"></script>
     <script src="signup.js?v=1"></script>
     <script src="credit.js"></script>
+    <script src="cursor.js"></script>
     <script src="gallery.js?v=1"></script>
     <!-- mobile bottom tab bar (phones only; see .flwr-tabbar in the page styles) -->
     <nav class="flwr-tabbar" aria-label="Shop sections">

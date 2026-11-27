@@ -506,3 +506,35 @@ main section.block:not(.story):not(.best)::after{content:"";position:absolute;z-
 .shop-banner .sunburst{animation:sunbreathe 9s ease-in-out infinite}
 @keyframes sunbreathe{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
 @media (prefers-reduced-motion:reduce){.shop-banner .sunburst{animation:none}}
+/* ---------- 29. About densify + wider shop (Nov 27) ---------- */
+/* About: the text column was a 3-line lede centered against a tall square
+   photo, leaving ~245px of empty cream above and below it. Fill the column
+   with a designed panel (pull-quote + bigger lede + vibe legend) that
+   stretches to the photo height, so the column reads as a full card. */
+@media (min-width:900px){
+  .about-grid{align-items:stretch}
+}
+.about-copy{
+  display:flex;flex-direction:column;justify-content:space-evenly;gap:18px;
+  padding:clamp(22px,3vw,36px);
+  border-radius:26px;
+  background:linear-gradient(155deg,#fff0f6 0%,#fff6cf 52%,#f3ecff 100%);
+  border:3px solid #fff;outline:2px solid var(--line);
+  box-shadow:var(--sh-lg);
+}
+.about-quote{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(28px,3.2vw,40px);line-height:1.08;
+  color:var(--pink-deep);margin:0;
+}
+.about .lede{margin:0;font-size:clamp(19px,1.6vw,23px);line-height:1.65}
+.about-vibes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.about-vibes .vt{padding:12px 6px}
+@media (max-width:899px){
+  .about-copy{gap:16px;padding:22px 18px}
+  .about-quote{text-align:center}
+  .about .lede{text-align:center}
+}
+/* Shop: widen the homepage shop section so the product cards are bigger
+   and the side margins shrink (1180px -> 1320px). */
+.block.shop{max-width:1320px}

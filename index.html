@@ -18,7 +18,7 @@
 <link rel="preload" href="fonts/playfair-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/red-hat.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css?v=5">
-<link rel="stylesheet" href="css/soft-pastel.css?v=18">
+<link rel="stylesheet" href="css/soft-pastel.css?v=19">
 <style id="flwr-gate-css">
 
 @media (prefers-reduced-motion: reduce){
@@ -534,7 +534,15 @@ html .flwr-soon .flwr-soon-feed-kicker{color:#EA386C;text-shadow:0 0 2px #fff,0 
   <section class="block about" id="about">
     <h2 class="title" data-reveal><svg class="t-daisy"><use href="#i-daisy"/></svg>About FLWRPWR<svg class="t-daisy"><use href="#i-daisy"/></svg></h2>
     <div class="about-grid">
-      <p class="lede" data-reveal data-content="about">FLWRPWR is a cannabis brand built on good vibes, great flower, and a deeper purpose: to connect people through high-quality, responsibly sourced flower and a community rooted in wellness.</p>
+      <div class="about-copy" data-reveal>
+        <p class="about-quote">Good vibes, great flower.</p>
+        <p class="lede" data-reveal data-content="about">FLWRPWR is a cannabis brand built on good vibes, great flower, and a deeper purpose: to connect people through high-quality, responsibly sourced flower and a community rooted in wellness.</p>
+        <div class="about-vibes">
+          <div class="vt t-sativa"><svg><use href="#i-sun"/></svg><b>Sativa</b><span>Energizing, uplifting &amp; creative</span></div>
+          <div class="vt t-hybrid"><svg><use href="#i-bloom"/></svg><b>Hybrid</b><span>Balanced vibes for mind &amp; body</span></div>
+          <div class="vt t-indica"><svg><use href="#i-moon"/></svg><b>Indica</b><span>Deep relaxation, stress relief &amp; calm</span></div>
+        </div>
+      </div>
       <figure class="about-photo rotator" data-rotate data-reveal><img class="on" src="assets/rot-about-tree.webp" alt="Sunlight through the trees with the FLWRPWR script in the sky" loading="lazy"><img src="assets/rot-about-mailbox.webp" alt="A pink FLWRPWR mailbox holding a letter and a daisy" loading="lazy"><img src="assets/rot-about-lake.webp" alt="Taking in the lake view with FLWRPWR" loading="lazy"><span class="rot-dots"><button type="button" aria-label="Photo 1 of 3" class="on"></button><button type="button" aria-label="Photo 2 of 3"></button><button type="button" aria-label="Photo 3 of 3"></button></span></figure>
     </div>
     <div class="meadow" aria-hidden="true"><div class="meadow-img" data-parallax="0.12"></div><span class="petals" data-petals="6"></span></div>
@@ -711,5 +719,6 @@ html .flwr-soon .flwr-soon-feed-kicker{color:#EA386C;text-shadow:0 0 2px #fff,0 
 <script src="sections.js" defer></script>
 <script src="signup.js?v=1" defer></script>
 <script src="gallery.js?v=1" defer></script>
+<script src="cursor.js" defer></script>
 </body>
 </html>
