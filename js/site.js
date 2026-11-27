@@ -165,7 +165,7 @@
   tick.innerHTML += tick.innerHTML;
 
   /* ---------- flowers and petals riding on the rainbow dividers (call 23:17) ---------- */
-  const RB_COLORS = ['#ec2f7f', '#f79cc3', '#b99bf0', '#ffd84d', '#ffffff'];
+  const RB_COLORS = ['#f4a3c6', '#f9c6dc', '#cdb8f6', '#ffe29a', '#ffffff'];
   $$('[data-rainbow]').forEach((rb, n) => {
     const layer = document.createElement('div');
     layer.className = 'rb-flowers';
@@ -184,6 +184,19 @@
   });
 
   render();
+
+  /* ---------- v2: one ribbon at a time. If two dividers end up stacked (section order), keep the first ---------- */
+  function dedupeRibbons() {
+    let prev = null;
+    $$('[data-rainbow]').forEach(rb => {
+      rb.classList.toggle('rb-dupe', false);
+      const r = rb.getBoundingClientRect();
+      if (prev && r.height && Math.abs(r.top - prev.bottom) < 60) rb.classList.toggle('rb-dupe', true);
+      else prev = r;
+    });
+  }
+  addEventListener('load', dedupeRibbons);
+  setTimeout(dedupeRibbons, 600);
 
   if (reduce) { $$('[data-reveal]').forEach(el => el.classList.add('in')); return; }
 
@@ -232,8 +245,15 @@
       if (el.getBoundingClientRect().top < h * 0.92) { el.classList.add('in'); io.unobserve(el); return false; }
       return true;
     });
-    const skew = Math.max(-1, Math.min(1, vel / 40));
-    waves.forEach((w, i) => { w.style.translate = `0 ${(skew * (i % 3 + 1) * 3).toFixed(1)}px`; });
+    // v2: the ribbons flow with the scroll. Each one slides by its own offset and loops every wave length.
+    waves.forEach((w, i) => {
+      const r = w.getBoundingClientRect();
+      if (r.bottom < -200 || r.top > h + 200) return;
+      const loop = w.clientWidth / 2 || 1;
+      const dir = w.closest('.flip') ? -1 : 1;
+      const shift = ((y * 0.55 * dir + i * loop * 0.37) % loop + loop) % loop;
+      w.style.transform = `translate3d(${(-shift).toFixed(1)}px,0,0)`;
+    });
   }
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
   frame();

@@ -1,0 +1,95 @@
+/* FLWRPWR v2: soft pastel pass.
+   Loaded after site.css. Square card corners stay locked (site.css line 20); this file only
+   1) softens the palette in light mode, 2) swaps the three drifting wave lines for one touching ribbon,
+   3) rounds the shapes that are meant to be organic (petals, sparkles, the seal, the meadow edge, the sun). */
+
+/* ---------- 1. pastel palette (light mode only; dark mode untouched) ---------- */
+:root[data-theme="light"]{
+  --pink:#d65d97;          /* text accents and headings: softer rose, still readable on cream */
+  --pink-deep:#c9568d;
+  --pink-2:#f9c6dc;
+  --pink-soft:#fde8f1;
+  --pink-mist:#fff3f8;
+  --yellow:#ffe39a;
+  --yellow-2:#fff0bd;
+  --yellow-soft:#fff8de;
+  --lav:#cdb8f6;
+  --lav-2:#e5d9fd;
+  --lav-soft:#f5f0ff;
+  --line:#f4d3e3;
+  --fill-pink:#f7b6d1;     /* pastel fill for buttons, ticker, toggles */
+  --on-fill:#6f2d5f;       /* text on pastel fills */
+}
+
+:root[data-theme="light"] .btn-pink{background:var(--fill-pink);border-color:var(--fill-pink);color:var(--on-fill);box-shadow:5px 5px 0 var(--yellow-2)}
+:root[data-theme="light"] .btn-pink:hover{box-shadow:8px 8px 0 var(--lav-2)}
+:root[data-theme="light"] .btn-outline{color:var(--pink);border-color:var(--fill-pink)}
+:root[data-theme="light"] .shop-toggle{border-color:var(--fill-pink)}
+:root[data-theme="light"] .shop-toggle button[aria-selected="true"],
+:root[data-theme="light"] .chip[aria-pressed="true"]{background:var(--fill-pink);border-color:var(--fill-pink);color:var(--on-fill)}
+:root[data-theme="light"] .ticker{background:#f9c9dd;border-color:#fbdbe8;color:var(--on-fill)}
+:root[data-theme="light"] .ticker-track svg{color:#fff}
+:root[data-theme="light"] .card-flag,
+:root[data-theme="light"] .map-note,
+:root[data-theme="light"] .toast{background:var(--fill-pink);border-color:var(--fill-pink);color:var(--on-fill)}
+:root[data-theme="light"] .cart-btn b,
+:root[data-theme="light"] .wm-badge{background:var(--fill-pink);color:var(--on-fill)}
+:root[data-theme="light"] .head-links a::after,
+:root[data-theme="light"] .dots button[aria-current="true"]{background:var(--fill-pink)}
+:root[data-theme="light"] .wm-word{background-image:linear-gradient(90deg,#e48ab3,#b89be9,#e48ab3)}
+
+/* Find Your Vibe cards: lighter washes, softer outline lettering */
+:root[data-theme="light"] .v-sativa{background:linear-gradient(120deg,#fff8d6,#ffefb0 55%,#fffaea)}
+:root[data-theme="light"] .v-hybrid{background:linear-gradient(120deg,#ffe6f1,#fcd0e3 55%,#fff1f7)}
+:root[data-theme="light"] .v-indica{background:linear-gradient(120deg,#f2ebff,#e2d5fd 55%,#f8f4ff)}
+:root[data-theme="light"] .vibe-name{-webkit-text-stroke-color:#e07fab;text-shadow:3px 3px 0 #f4b5d0}
+:root[data-theme="light"] .v-sativa .vibe-name{-webkit-text-stroke-color:#e8a03c;text-shadow:3px 3px 0 #ffd98a}
+:root[data-theme="light"] .v-indica .vibe-name{color:#fff;-webkit-text-stroke-color:#9f86e0;text-shadow:3px 3px 0 #d4c4fa}
+:root[data-theme="light"] .vibe-icon{color:#e07fab}
+:root[data-theme="light"] .v-indica .vibe-icon,
+:root[data-theme="light"] .chip.c-indica svg,
+:root[data-theme="light"] .t-indica svg{color:#a98fe6}
+:root[data-theme="light"] .t-indica b,
+:root[data-theme="light"] .tag.indica{color:#8f74d6}
+:root[data-theme="light"] .v-sativa .vibe-icon{color:#eeb04a}
+
+/* ---------- 2. the ribbon: thick pink, peach and green bands that touch, shaded like the mockup,
+   and slide sideways as you scroll (js/site.js drives the shift; no timed loop) ---------- */
+.rainbow .rb-ribbon{top:6px;height:92px;animation:none;filter:drop-shadow(0 5px 6px rgba(150,90,70,.13))}
+.rainbow.thin .rb-ribbon{top:4px;height:84px}
+@media (min-width:900px){.rainbow .rb-ribbon,.rainbow.thin .rb-ribbon{height:140px;top:-18px}}
+.rainbow .rb-ribbon .rb-hi{fill:#fff;opacity:.32}
+.rainbow .rb-ribbon .rb-lo{fill:#5b3f9a;opacity:.16}
+.rainbow.rb-dupe{display:none}
+
+/* Instagram tiles: the start of each post's caption sits on top, like the post itself */
+.ig-grid a{position:relative}
+.ig-cap{position:absolute;left:0;right:0;top:0;z-index:2;padding:9px 10px 10px;
+  background:linear-gradient(180deg,rgba(255,250,252,.95),rgba(255,250,252,.86));
+  color:#6f2d5f;font-size:12.5px;line-height:1.35;font-weight:600;
+  border-bottom:2px solid var(--line)}
+.ig-cap-t{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ig-cap b{font-weight:800;color:#c9568d;margin-right:2px}
+@media (min-width:700px){.ig-cap{font-size:13.5px}.ig-cap-t{-webkit-line-clamp:3}}
+:root[data-theme="dark"] .ig-cap{background:rgba(40,22,44,.9);color:#f6dceb;border-color:rgba(255,255,255,.12)}
+:root[data-theme="dark"] .ig-cap b{color:#f7a9cb}
+
+/* ---------- 3. rounded, organic shapes ---------- */
+/* petals: soft rounded teardrops instead of pointed leaf corners */
+.petal,.rb-flowers .rbp,.burst-petal{border-radius:50% 50% 50% 50% / 68% 68% 32% 32% !important;box-shadow:none}
+
+/* sparkles: curved four-point twinkle instead of a sharp polygon star */
+.sparkle{clip-path:none;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C53 34 66 47 98 50C66 53 53 66 50 98C47 66 34 53 2 50C34 47 47 34 50 2Z'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 2C53 34 66 47 98 50C66 53 53 66 50 98C47 66 34 53 2 50C34 47 47 34 50 2Z'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* meadow photo band: soft rolling edges instead of a zigzag cut */
+.meadow{clip-path:none;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 12C12 3 22 3 34 9S58 17 70 8S90 2 100 9V91C88 98 78 98 66 92S42 83 30 91S9 98 0 91Z'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 12C12 3 22 3 34 9S58 17 70 8S90 2 100 9V91C88 98 78 98 66 92S42 83 30 91S9 98 0 91Z'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
+
+/* shop sun: a soft round glow instead of hard conic rays */
+.sunburst{background:radial-gradient(circle,rgba(255,232,163,.9) 0 22%,rgba(255,240,189,.55) 38%,rgba(255,240,189,0) 66%);mask:none;-webkit-mask:none;animation:none}
+
+/* 4. Hero logo sits straight on the sky: no white offset backing */
+.hero-logo img{filter:drop-shadow(0 14px 22px rgba(208,31,108,.22))}
