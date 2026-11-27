@@ -434,3 +434,17 @@ a.byyy:focus-visible{outline:2px solid #37ff00;outline-offset:6px;border-radius:
 @media (prefers-reduced-motion:reduce){.byyy-mark b{animation:none}.byyy-mark{transition:none}}
 /* about: keep the text off the left edge on laptop widths */
 @media (min-width:900px){.about .about-grid{padding-inline:clamp(12px,3.2vw,44px)}}
+/* ---------- 25. spacing pass: one rhythm for every section ---------- */
+.block{padding-block:clamp(44px,5.5vw,72px)}
+.vibe{padding-top:clamp(28px,3.6vw,44px)}
+.best{padding-top:clamp(24px,3vw,40px)}
+.rainbow.thin{margin-block:-6px}
+.join-card{padding:clamp(34px,4vw,48px) clamp(20px,4vw,44px) clamp(38px,4.4vw,52px)}
+.join-form{gap:12px;margin-top:4px}
+.join-form button{padding-inline:28px}
+@media (min-width:900px){.findus-grid{align-items:start}.findus-grid>:first-child{padding-top:clamp(24px,4vw,72px)}}
+.ig-grid{gap:clamp(12px,1.6vw,20px)}
+/* flower pattern drifts slowly behind the sections that carry it */
+@keyframes petaldrift{to{background-position:220px 220px}}
+.vibe::before,.findus::before,.gives::before,.join::before{animation:petaldrift 48s linear infinite}
+@media (prefers-reduced-motion:reduce){.vibe::before,.findus::before,.gives::before,.join::before{animation:none}}
