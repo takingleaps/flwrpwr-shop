@@ -409,26 +409,28 @@ html.has-cursor a,html.has-cursor button,html.has-cursor [role=button],html.has-
 @keyframes moonrock{0%,100%{transform:rotate(-14deg) translateY(0)}50%{transform:rotate(10deg) translateY(-3px)}}
 @media (prefers-reduced-motion:reduce){.v-hybrid .vibe-icon,.v-indica .vibe-icon,.title::before,.title::after{animation:none}}
 
-/* ---------- 24. round 15: byyy studio credit + about spacing ---------- */
-.studio{margin:18px 0 6px;font-size:inherit}
-.studio a.byyy{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;padding:0;text-decoration:none;color:inherit}
-.byyy-by{font:600 11.5px/1 var(--label,inherit);letter-spacing:.14em;text-transform:uppercase;color:#a3124f;
-  text-shadow:0 0 6px rgba(255,255,255,.95),0 0 14px rgba(255,255,255,.8)}
-.byyy-tag{display:inline-flex;align-items:center;gap:2px;padding:8px 15px 8px 13px;border-radius:999px;
-  background:#070908;color:#f1f5f2;font:500 14.5px/1 "JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  border:1px solid rgba(55,255,0,.22);
-  box-shadow:0 0 0 3px rgba(255,255,255,.55),0 0 18px 4px rgba(255,255,255,.85),0 0 34px rgba(55,255,0,.14);
+/* ---------- 24. byyy studio stamp (footer credit) ---------- */
+@font-face{font-family:"Byyy Mono";src:url(../assets/jbm500.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Byyy Mono";src:url(../assets/jbm800.woff2) format("woff2");font-weight:800;font-display:swap}
+.studio{margin:20px 0 6px;font-size:inherit}
+.studio a.byyy{display:inline-flex;align-items:center;gap:12px;padding:0;text-decoration:none;color:inherit}
+.byyy-mark{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;
+  background:#070908;color:#f1f5f2;font:800 15px/1 "Byyy Mono",ui-monospace,Menlo,Consolas,monospace;letter-spacing:-.04em;
+  box-shadow:0 0 0 3px rgba(255,255,255,.6),0 0 18px 5px rgba(255,255,255,.85),0 0 26px rgba(55,255,0,.22);
   transition:transform .25s ease,box-shadow .25s ease}
-.byyy-tag b{color:#37ff00;font-weight:700;margin-right:5px}
-.byyy-tag sup{font-size:.62em;vertical-align:.55em;margin-left:1px}
-.byyy-cur{display:inline-block;width:7px;height:13px;margin:0 9px 0 4px;background:#37ff00;animation:byyyblink 1.1s steps(1) infinite}
-.byyy-name{color:#a2ada5;font-size:.86em;letter-spacing:.02em}
+.byyy-mark b{color:#37ff00;margin-right:2px;animation:byyyblink 1.1s steps(1) infinite}
+.byyy-mark sup{font-size:.55em;vertical-align:.7em;margin-left:1px}
+.byyy-txt{font:500 13px/1.2 "Byyy Mono",ui-monospace,Menlo,Consolas,monospace;color:#2f6b1f;letter-spacing:.01em;
+  text-shadow:0 0 6px rgba(255,255,255,.95),0 0 14px rgba(255,255,255,.75)}
+.byyy-txt em{font-style:normal;font-weight:800;color:#0f7a00;padding:1px 5px 2px;border-radius:4px;
+  background:linear-gradient(transparent 38%,rgba(55,255,0,.38) 38%,rgba(55,255,0,.38) 92%,transparent 92%)}
 @keyframes byyyblink{50%{opacity:0}}
-a.byyy:hover .byyy-tag,a.byyy:focus-visible .byyy-tag{transform:translateY(-2px);
-  box-shadow:0 0 0 3px rgba(255,255,255,.7),0 0 22px 6px rgba(255,255,255,.9),0 0 30px rgba(55,255,0,.35)}
-a.byyy:hover .byyy-name{color:#f1f5f2}
-a.byyy:focus-visible{outline:none}
-a.byyy:focus-visible .byyy-tag{outline:2px solid #37ff00;outline-offset:3px}
-@media (prefers-reduced-motion:reduce){.byyy-cur{animation:none}.byyy-tag{transition:none}}
+a.byyy:hover .byyy-mark,a.byyy:focus-visible .byyy-mark{transform:translateY(-2px) rotate(-3deg);
+  box-shadow:0 0 0 3px rgba(255,255,255,.75),0 0 22px 7px rgba(255,255,255,.9),0 0 30px rgba(55,255,0,.45)}
+a.byyy:hover .byyy-txt em{background:linear-gradient(transparent 38%,rgba(55,255,0,.55) 38%,rgba(55,255,0,.55) 92%,transparent 92%)}
+a.byyy:focus-visible{outline:2px solid #37ff00;outline-offset:6px;border-radius:14px}
+:root[data-theme="dark"] .byyy-txt{color:#b9f5a6;text-shadow:0 0 10px rgba(55,255,0,.25)}
+:root[data-theme="dark"] .byyy-txt em{color:#37ff00;background:none}
+@media (prefers-reduced-motion:reduce){.byyy-mark b{animation:none}.byyy-mark{transition:none}}
 /* about: keep the text off the left edge on laptop widths */
 @media (min-width:900px){.about .about-grid{padding-inline:clamp(12px,3.2vw,44px)}}
