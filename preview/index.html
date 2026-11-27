@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="only light" id="cs-meta">
 <script>
   /* pick the theme before paint: saved choice, else light (the default) */
   (function(){var t;try{t=localStorage.getItem('flwr-theme')}catch(e){}
   if(t!=='light'&&t!=='dark'){t='light'}
   document.documentElement.dataset.theme=t;
   try{if(sessionStorage.getItem('flwr-preview')!=='1'){location.replace('coming-soon.html')}}catch(e){}})();
+  ;(function(){var m=document.getElementById('cs-meta');var sync=function(){m.content=document.documentElement.dataset.theme==='dark'?'only dark':'only light'};sync();new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']})})();
 </script>
 <title>FLWRPWR · Good vibes, great flower</title>
 <meta name="description" content="FLWRPWR premium 4g smalls. Good vibes, great flower. Women owned, Southern California.">
