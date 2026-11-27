@@ -245,8 +245,12 @@ button{font:inherit;color:inherit;cursor:pointer}
 .best-card{scroll-snap-align:center;padding:10px 10px 16px;border:3px solid #fff;outline:2px solid var(--line);transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
 .best-card:hover{transform:translateY(-6px) rotate(-1deg)}
 .bc-hybrid{background:var(--pink-soft)}.bc-sativa{background:var(--yellow-soft)}.bc-indica{background:var(--lav-soft)}
-.best-img{aspect-ratio:4/3;overflow:hidden;background:#fff}
+.best-img{aspect-ratio:4/3;overflow:hidden;background:linear-gradient(160deg,#ffe8f2,#f9b9d6)}
 .best-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.15);transition:transform .6s}
+/* Best-seller photo tint: a soft pastel mist per vibe, never plain white,
+   so a slow-loading photo reads as intentional, not a broken white box. */
+.bc-sativa .best-img{background:linear-gradient(160deg,#fff6cf,#ffe58a)}
+.bc-indica .best-img{background:linear-gradient(160deg,#f3ecff,#d4c0fb)}
 .best-card:hover .best-img img{transform:scale(1.25)}
 .best-card h3{font-weight:1000;font-size:19px;margin:10px 0 2px}
 .tag{display:inline-block;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding:2px 10px;border:2px solid currentColor}
@@ -574,14 +578,20 @@ body{font-weight:400;font-size:17px;line-height:1.65}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='%23f9c1da'%3E%3Ccircle cx='30' cy='22' r='5'/%3E%3Ccircle cx='38' cy='30' r='5'/%3E%3Ccircle cx='30' cy='38' r='5'/%3E%3Ccircle cx='22' cy='30' r='5'/%3E%3C/g%3E%3Ccircle cx='30' cy='30' r='3.5' fill='%23ffe58a'/%3E%3Cg fill='%23d8c6fb'%3E%3Ccircle cx='160' cy='132' r='4'/%3E%3Ccircle cx='166' cy='138' r='4'/%3E%3Ccircle cx='160' cy='144' r='4'/%3E%3Ccircle cx='154' cy='138' r='4'/%3E%3C/g%3E%3Ccircle cx='160' cy='138' r='3' fill='%23ffe58a'/%3E%3Cg fill='%23ffe58a'%3E%3Ccircle cx='96' cy='186' r='3'/%3E%3Ccircle cx='101' cy='191' r='3'/%3E%3Ccircle cx='96' cy='196' r='3'/%3E%3Ccircle cx='91' cy='191' r='3'/%3E%3C/g%3E%3C/svg%3E")}
 :root[data-theme="dark"] .vibe::before,:root[data-theme="dark"] .findus::before,:root[data-theme="dark"] .gives::before,:root[data-theme="dark"] .join::before{opacity:.18}
 @media (prefers-reduced-motion:reduce){.rb-flowers{display:none}}
-/* ---------- mockup pass: shop grid is 3 across on phones too, like her rendered shots ---------- */
+/* ---------- mobile fix (Nov 27): phones get a thumb-friendly 1-column shop grid ----------
+   The old 3-across override made 110px cards with 10.5px text and 34px
+   RESERVE buttons, and the swipe arrows covered the pouch art. One column
+   keeps titles/meta readable and buttons thumb-sized. */
 @media (max-width:699px){
-  .product-grid{grid-template-columns:repeat(3,1fr);gap:8px}
-  .product-frame{padding:8px}
-  .card h4{font-size:13px;margin-top:6px}
-  .card .meta{font-size:10.5px;letter-spacing:0}
-  .card .btn{min-height:34px;padding:6px 4px;font-size:10.5px;letter-spacing:.06em;margin-top:6px;box-shadow:2px 2px 0 var(--pink-2)}
-  .card-flag{font-size:8.5px;padding:2px 5px;top:4px;left:4px}
+  .product-grid{grid-template-columns:1fr;gap:16px}
+  .product-frame{padding:16px}
+  .card h4{font-size:17px;line-height:1.25;margin:12px 0 2px}
+  .card .meta{font-size:14px;line-height:1.4;margin-top:4px}
+  .card .btn{min-height:48px;padding:12px 16px;font-size:14px;margin-top:10px}
+  .card-flag{font-size:10px;padding:3px 8px;top:8px;left:8px}
+  /* Product-card swipe arrows must not cover the art on phones: drop them
+     here (users swipe, and the dots sit underneath). */
+  .product-grid .rot-arrow{display:none}
 }
 /* find a shop near you: search box like the mockup */
 .map-search{display:flex;gap:0;margin:0 0 12px}
@@ -622,3 +632,30 @@ body{font-weight:400;font-size:17px;line-height:1.65}
 :root[data-theme="light"] .shop-toggle button[aria-selected="true"],
 :root[data-theme="light"] .chip[aria-pressed="true"]{background:#f06aa5;border-color:#f06aa5}
 .title.left{display:block}
+
+/* ---------- mobile fix (Nov 27): phones only ----------
+   Defect 2 — the page slides sideways on phones (body scrollWidth 429-430
+   against a 390px viewport). The culprits are decorations wider than the
+   viewport. Clip each one inside its own container with overflow-x: clip,
+   which keeps vertical overflow visible (flowers and waves can still show
+   above and below) while stopping any sideways slide. Do NOT use a global
+   body overflow-x:hidden hack — it breaks sticky elements.
+   Defect 3 — Best Sellers shows 1.5 cards on phones (74% column + peek).
+   On phones the carousel shows one full card, no peek.
+   Defect 4 — the editions grid (.ed-grid) had no mobile rule at all.
+   It collapses to 1 column on phones with the same readable type as the
+   shop cards. */
+@media (max-width:699px){
+  /* Defect 2: clip the decorations that are wider than the viewport. */
+  .rainbow{overflow-x:clip}
+  .rb-flowers{overflow-x:clip}
+  .hero{overflow-x:clip}
+  .ticker{overflow-x:clip}
+  .hero-glow{width:min(760px,100vw)}
+  /* Defect 3: one full Best Seller card on phones, no peek. */
+  .best-track{grid-auto-columns:100%}
+  /* Defect 4: editions grid collapses to 1 column with readable type. */
+  .ed-grid{grid-template-columns:1fr;gap:12px}
+  .ed-card{font-size:14px;padding:10px}
+  .ed-card em{font-size:12px}
+}
