@@ -341,6 +341,7 @@
   const live = new Set();
   const rio = new IntersectionObserver(es => es.forEach(en => en.isIntersecting ? live.add(en.target) : live.delete(en.target)), { rootMargin: '200px 0px' });
   waves.forEach(w => rio.observe(w));
+  const SILK = [0.42, 0.9, 0.62, 1.25];
   function flow(t) {
     const dt = Math.min(t - lastT, 64) / 1000; lastT = t;
     vel *= 0.94;
@@ -352,6 +353,13 @@
       const shift = ((drift * dir + i * loop * 0.37) % loop + loop) % loop;
       const bob = Math.sin(t / 1300 + i * 1.7) * 3;
       w.style.transform = `translate3d(${(-shift).toFixed(1)}px,${bob.toFixed(2)}px,0)`;
+      // silk strands slide against each other with scroll position and sway with scroll speed
+      const sy = scrollY * dir, sway = 3 + Math.min(Math.abs(vel), 40) * 0.35;
+      SILK.forEach((k, j) => {
+        const p = ((sy * k + drift * (j - 1.5) * 0.4 + i * 211) % 1200 + 1200) % 1200;
+        w.style.setProperty('--p' + (j + 1), p.toFixed(1));
+        w.style.setProperty('--q' + (j + 1), (Math.sin(t / 1700 + sy / 260 + j * 1.9) * sway).toFixed(2));
+      });
     });
     requestAnimationFrame(flow);
   }

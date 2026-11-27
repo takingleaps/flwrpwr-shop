@@ -116,32 +116,32 @@
 /* 8. Dark mode is a soft pastel dusk: lavender and periwinkle, never near-black, sky photo left bright */
 :root[data-theme="dark"]{
   color-scheme:only light;
-  --cream:#bfb6f0; --surface:#d6d0f8; --frame:#eeebff; --glass:rgba(226,221,252,.92); --head-bg:#aea6ea;
+  --cream:#b1a7ea; --surface:#ccc5f4; --frame:#eeebff; --glass:rgba(218,212,250,.92); --head-bg:#a096e2;
   --ink:#2b2260; --ink-2:#4b4190; --line:rgba(60,45,140,.26);
-  --pink:#b3226b; --pink-deep:#9e1b5e; --pink-soft:#d3c9f6; --pink-mist:#d0c8f6;
+  --pink:#b3226b; --pink-deep:#9e1b5e; --pink-soft:#c9bef2; --pink-mist:#c6bdf2;
   --glow:rgba(255,255,255,.4); --glow-2:rgba(255,255,255,.15);
   --hero-tint:linear-gradient(180deg,rgba(150,132,232,.26),rgba(170,160,240,.08) 50%,rgba(191,182,240,.12));
-  --mission-glow:rgba(120,140,250,.2); --story-band:#b2a9ec;
-  --sky:#aea6ea; --sky-ink:#2b2260;
+  --mission-glow:rgba(120,140,250,.2); --story-band:#a59be5;
+  --sky:#a096e2; --sky-ink:#2b2260;
 }
-:root[data-theme="dark"] body{background:linear-gradient(180deg,#bfb6f0 0%,#c8c1f4 35%,#bab1ee 60%,#b4b8f2 100%)}
+:root[data-theme="dark"] body{background:linear-gradient(180deg,#b1a7ea 0%,#bbb3ef 35%,#aca2e6 60%,#a7abe9 100%)}
 :root[data-theme="dark"] .hero-field{filter:none}
 :root[data-theme="dark"] .site-head{background:var(--sky);border-bottom:0;color:var(--sky-ink)}
 :root[data-theme="dark"] .site-head .icon-btn{color:var(--sky-ink)}
 :root[data-theme="dark"] .site-head .menu-btn span{background:var(--sky-ink)}
 :root[data-theme="dark"] .site-head:not(.scrolled){box-shadow:none}
-:root[data-theme="dark"] .hero::before{content:"";position:absolute;inset:0 0 auto;height:clamp(140px,22vh,220px);z-index:-1;pointer-events:none;background:linear-gradient(180deg,#aea6ea 0%,rgba(174,166,234,.7) 35%,rgba(174,166,234,0) 100%)}
+:root[data-theme="dark"] .hero::before{content:"";position:absolute;inset:0 0 auto;height:clamp(140px,22vh,220px);z-index:-1;pointer-events:none;background:linear-gradient(180deg,#a096e2 0%,rgba(160,150,226,.7) 35%,rgba(160,150,226,0) 100%)}
 :root[data-theme="dark"] .title{text-shadow:none}
-:root[data-theme="dark"] .ticker{background:#8576e2;border-color:#a99ef3;color:#fff}
-:root[data-theme="dark"] .site-foot{background:#ada5ea}
-:root[data-theme="dark"] .foot-field{background:linear-gradient(180deg,rgba(173,165,234,0),#ada5ea 60%,#a3a8ee)}
+:root[data-theme="dark"] .ticker{background:#7868da;border-color:#a99ef3;color:#fff}
+:root[data-theme="dark"] .site-foot{background:#a097e2}
+:root[data-theme="dark"] .foot-field{background:linear-gradient(180deg,rgba(160,151,226,0),#a097e2 60%,#969be6)}
 :root[data-theme="dark"] .join-form input{background:#eeebff;color:#2b2260}
-:root[data-theme="dark"] .drawer-panel{background:#cfc8f6}
+:root[data-theme="dark"] .drawer-panel{background:#c5bdf2}
 :root[data-theme="dark"] .ig-cap{background:rgba(236,232,255,.92);color:#2b2260;border-color:rgba(255,255,255,.6)}
 :root[data-theme="dark"] .ig-cap b{color:#9e1b5e}
 :root[data-theme="dark"] .vibe::before,:root[data-theme="dark"] .findus::before,:root[data-theme="dark"] .gives::before,:root[data-theme="dark"] .join::before{opacity:.35}
 /* coming-soon page in dusk mode */
-html[data-theme="dark"] body .flwr-soon{background:#c3bbf2}
+html[data-theme="dark"] body .flwr-soon{background:#b6adec}
 html[data-theme="dark"] body :is(.flwr-soon-form input,.flwr-soon-ig a,.flwr-soon-count div,.flwr-soon-feed-item,.flwr-soon-blaze,.flwr-soon-video){background:#eeebff;border-color:#b3a9f5;color:#2b2260}
 html[data-theme="dark"] body :is(.flwr-soon-sub,.flwr-soon-fine,.flwr-soon-cd-note,.flwr-soon-done,.flwr-soon-blaze-details,.flwr-soon-blaze-copy,.flwr-soon-video figcaption){color:#2b2260;text-shadow:none}
 
@@ -218,3 +218,90 @@ html[data-theme] body .flwr-soon-feed-item blockquote a{box-shadow:var(--sh-sm)}
 @media (min-width:900px){.about-grid{gap:64px}.roots-grid{gap:64px}.story-grid{gap:64px}}
 .mission .roots-grid{margin-top:30px}
 .about .lede,.roots-copy p{line-height:1.7}
+
+/* ---------- 16. photo framing and spacing pass ---------- */
+.about-photo.rotator{aspect-ratio:1/1}
+.roots-photo.rotator{aspect-ratio:3/4;max-height:none}
+.rotator img[src*="rot-about-hand"]{object-position:45% 55%}
+.rotator img[src*="rot-about-mailbox"]{object-position:50% 42%}
+.rotator img[src*="rot-about-lake"]{object-position:50% 70%}
+.rotator img[src*="rot-roots-sky"]{object-position:50% 28%}
+.rotator img[src*="rot-roots-thai"]{object-position:60% 50%}
+.rot-dots{bottom:14px}
+@media (max-width:899px){
+  .about-photo.rotator{display:block;width:100%;max-width:440px;margin:6px auto 0}
+  .roots-photo.rotator{width:100%;max-width:440px;margin:6px auto 0}
+  .about .lede{text-align:center}
+}
+/* more air between tiles */
+.vibe-grid{gap:22px}
+.best-track{gap:22px}
+.ig-grid{gap:20px}
+@media (max-width:899px){.ig-grid{gap:12px}.product-grid{gap:14px}}
+@media (min-width:900px){.product-grid{gap:26px}}
+.best-img img{transform:scale(1.06)}
+.best-card:hover .best-img img{transform:scale(1.12)}
+
+/* hero logo: soft white glow behind it so the edges blend */
+:root .hero-logo img{filter:drop-shadow(0 0 5px rgba(255,255,255,.55)) drop-shadow(0 0 16px rgba(255,255,255,.35)) drop-shadow(0 14px 22px rgba(208,31,108,.18))}
+
+/* ---------- 17. each vibe gets its own color ---------- */
+:root .vibe-card.v-sativa .vibe-name,:root[data-theme] .vibe-card.v-sativa .vibe-name{color:#e8740c;-webkit-text-stroke:0;text-shadow:0 2px 0 #fff,0 6px 14px rgba(232,116,12,.18)}
+:root .vibe-card.v-hybrid .vibe-name,:root[data-theme] .vibe-card.v-hybrid .vibe-name{color:#e0408a;-webkit-text-stroke:0;text-shadow:0 2px 0 #fff,0 6px 14px rgba(224,64,138,.18)}
+:root .vibe-card.v-indica .vibe-name,:root[data-theme] .vibe-card.v-indica .vibe-name{color:#7a4fd8;-webkit-text-stroke:0;text-shadow:0 2px 0 #fff,0 6px 14px rgba(122,79,216,.2)}
+:root[data-theme] .vibe-card.v-sativa .vibe-icon{color:#f0a020}
+:root[data-theme] .vibe-card.v-hybrid .vibe-icon{color:#e0408a}
+:root[data-theme] .vibe-card.v-indica .vibe-icon{color:#8f68e4}
+:root[data-theme="light"] .v-sativa{background:linear-gradient(120deg,#fff6cc,#ffe48f 55%,#fff8dc)}
+:root[data-theme="light"] .v-hybrid{background:linear-gradient(120deg,#ffe3f0,#fbc3dc 55%,#ffeef6)}
+:root[data-theme="light"] .v-indica{background:linear-gradient(120deg,#efe6ff,#d9c8fc 55%,#f6f1ff)}
+:root[data-theme] .t-sativa b,:root[data-theme] .tag.sativa{color:#d9680a}
+:root[data-theme] .t-indica b,:root[data-theme] .tag.indica{color:#7a4fd8}
+
+/* cursor daisy trails beside the pointer so it never sits on the words */
+.cursor-daisy,.cursor-daisy.big{width:26px;height:26px;margin:14px 0 0 14px}
+.cursor-daisy.big svg{transform:scale(1.25)}
+
+/* sky band between sections: flowers and sky only, sharp 2x photo */
+.meadow-img{background-image:url(../assets/meadow-sky.webp);background-position:center 55%}
+
+/* studio credit link */
+.studio a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.studio a:hover{color:var(--pink-deep)}
+
+/* ---------- 18. Coming Soon overlay matches the site ---------- */
+html body .flwr-soon-logo{filter:drop-shadow(0 0 5px rgba(255,255,255,.55)) drop-shadow(0 0 16px rgba(255,255,255,.35)) drop-shadow(0 14px 22px rgba(208,31,108,.18))}
+html body .flwr-cs-ig{gap:10px}
+html body .flwr-cs-ig a{display:block;border-radius:var(--r-sm);overflow:hidden;box-shadow:var(--sh-sm)}
+html body .flwr-cs-ig img{display:block;border:0;aspect-ratio:4/5;object-fit:cover}
+html body .flwr-soon-blaze,html body .flwr-soon-form button,html body .flwr-soon-ig a{box-shadow:var(--sh-sm)}
+
+/* ---------- 19. silk divider: thin sheer strands that twist and cross,
+   each one slides at its own pace as you scroll (js/site.js sets --p/--q) ---------- */
+.rainbow .rb-ribbon{filter:drop-shadow(0 4px 9px rgba(130,90,170,.16))}
+.rb-ribbon .silk-hi{fill:#fff;opacity:.6}
+.rb-ribbon .silk{will-change:transform}
+.rb-ribbon .st1{transform:translate(calc(var(--p1,0)*1px),calc(var(--q1,0)*1px))}
+.rb-ribbon .st2{transform:translate(calc(var(--p2,0)*1px),calc(var(--q2,0)*1px))}
+.rb-ribbon .st3{transform:translate(calc(var(--p3,0)*1px),calc(var(--q3,0)*1px))}
+.rb-ribbon .st4{transform:translate(calc(var(--p4,0)*1px),calc(var(--q4,0)*1px))}
+
+/* dark mode headings: deep violet instead of the hot pink-red */
+:root[data-theme="dark"] :is(.title,.subtitle){color:#34247a}
+:root[data-theme="dark"] :is(.title,.subtitle) em{color:#6a3bd2}
+
+/* sign-up card: heading sits close to its line */
+:root .join-card .title{margin-bottom:12px}
+:root .join-card .lede{margin:0 auto 22px}
+
+/* photo dots: no grey pill, just soft white dots that read on any photo */
+.rot-dots{background:none;backdrop-filter:none;padding:0;gap:8px;bottom:16px}
+.rot-dots button{width:7px;height:7px;background:rgba(255,255,255,.6);box-shadow:0 1px 4px rgba(40,20,60,.35);transition:width .35s ease,background .35s}
+.rot-dots button.on{width:22px;background:#fff}
+.rot-dots button:hover{background:rgba(255,255,255,.9)}
+
+/* ---------- 20. dark mode accents: violet family instead of crimson ---------- */
+:root[data-theme="dark"]{--pink:#5a34c0;--pink-deep:#47279e;--pink-2:#8d6be0}
+:root[data-theme="dark"] .wm-word{background-image:linear-gradient(90deg,#4a2aa8,#8a5ce0,#4a2aa8)}
+:root[data-theme="dark"] :is(.vibe-card,.card-img,.vt,.best-card,.badges li,.mission-row p,.events-card,.edition,.paper){--pink-deep:#a0287a;--pink:#b8378a}
+:root[data-theme="dark"] .vt b{color:#a0287a}

@@ -100,6 +100,7 @@
       if (!gate) return;
       var email = sessionEmail();
       var isAllowed = email && ALLOWED_EMAILS.indexOf(String(email).trim().toLowerCase()) !== -1;
+      if (/[?&]soon=1\b/.test(location.search)) isAllowed = false;
       if (isAllowed) {
         gate.style.display = "none";
         gate.setAttribute("aria-hidden", "true");
