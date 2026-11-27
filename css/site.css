@@ -587,7 +587,7 @@ body{font-weight:400;font-size:17px;line-height:1.65}
   .product-frame{padding:16px}
   .card h4{font-size:17px;line-height:1.25;margin:12px 0 2px}
   .card .meta{font-size:14px;line-height:1.4;margin-top:4px}
-  .card .btn{min-height:48px;padding:12px 16px;font-size:14px;margin-top:10px}
+  .card .btn{min-height:40px;padding:8px 12px;font-size:13px;margin-top:8px}
   .card-flag{font-size:10px;padding:3px 8px;top:8px;left:8px}
   /* Product-card swipe arrows must not cover the art on phones: drop them
      here (users swipe, and the dots sit underneath). */
@@ -658,4 +658,19 @@ body{font-weight:400;font-size:17px;line-height:1.65}
   .ed-grid{grid-template-columns:1fr;gap:12px}
   .ed-card{font-size:14px;padding:10px}
   .ed-card em{font-size:12px}
+}
+
+/* ---------- mobile follow-up (Nov 27): phone fixes from Nathan's screenshots ---------- */
+@media (max-width:699px){
+  /* 1. Hero: less empty sky above the logo. Shorter hero and tighter top
+     padding so the logo sits higher. The logo itself is not shrunk. */
+  .hero{min-height:min(64vh,560px);padding:16px 18px 56px}
+  /* 3. The Flower/Pre-rolls toggle and the filter chips were oversized
+     on phones. Tighten them; the toggle stays a comfortable 44px target. */
+  .shop-toggle button{min-height:44px;font-size:16px;gap:8px}
+  .shop-toggle button svg{width:20px;height:20px}
+  .chip{min-height:36px;padding:5px 10px;font-size:11px}
+  .chip svg{width:16px;height:16px}
+  /* 5. "FLWRPWR Gives Back" must fit on ONE line on a 390px phone. */
+  .gives .title{font-size:26px;white-space:nowrap}
 }

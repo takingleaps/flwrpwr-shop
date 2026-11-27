@@ -562,3 +562,14 @@ main section.block:not(.story):not(.best)::after{content:"";position:absolute;z-
 /* Shop: widen the homepage shop section so the product cards are bigger
    and the side margins shrink (1180px -> 1320px). */
 .block.shop{max-width:1320px}
+
+/* ---------- mobile follow-up (Nov 27): seamless section backgrounds ---------- */
+@media (max-width:699px){
+  /* 2. The side-wash pseudo-elements end exactly at each section boundary,
+     leaving a visible hard edge between sections instead of blending.
+     Extend them 32px past the section top and bottom so neighbouring
+     washes overlap and blend. Width stays 100vw, so no horizontal
+     overflow is added and body scrollWidth still equals the viewport. */
+  .best::before{top:-32px;bottom:-32px}
+  main section.block:not(.story):not(.best)::after{top:-32px;bottom:-32px}
+}
