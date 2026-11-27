@@ -220,6 +220,26 @@ html[data-theme="dark"] .flwr-soon-form input,html[data-theme="dark"] .flwr-soon
 .flwr-cs-ig{width:100%}
 
 </style>
+<style id="cs-polish">
+/* coming soon polish (Nov 27): rounded frosted fields, readable title */
+html .flwr-soon :is(.flwr-soon-form input,.flwr-soon-form button,.flwr-soon-ig a,.flwr-soon-blaze,.flwr-soon-video,.flwr-cs-ig img,.flwr-next video,.flwr-soon-slides,.flwr-soon-blaze-logo){border-radius:14px!important}
+html .flwr-soon .flwr-soon-form{max-width:460px;gap:10px;margin-top:22px}
+html .flwr-soon .flwr-soon-form input{height:50px;padding:0 16px;font-size:15px;font-weight:600;color:#8a3f6e;background:rgba(255,255,255,.86);border:1.5px solid rgba(244,114,142,.35);box-shadow:0 6px 18px rgba(138,74,124,.12);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:border-color .2s,box-shadow .2s}
+html .flwr-soon .flwr-soon-form input::placeholder{color:#b88aa6;font-weight:600;opacity:1}
+html .flwr-soon .flwr-soon-form input:focus{border-color:#F4728E;box-shadow:0 0 0 4px rgba(244,114,142,.18),0 6px 18px rgba(138,74,124,.12)}
+html .flwr-soon .flwr-soon-form button{height:50px;padding:0 26px;font-size:15px;letter-spacing:.02em;background:linear-gradient(180deg,#f78aa6,#ee5f86);box-shadow:0 8px 20px rgba(238,95,134,.35);transition:transform .15s,box-shadow .2s}
+html .flwr-soon .flwr-soon-form button:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(238,95,134,.42)}
+html .flwr-soon .flwr-soon-extra input{flex:1 1 120px}
+.flwr-soon-opt{flex:1 1 100%;margin:2px 0 0;font-size:12.5px;opacity:.8}
+html .flwr-soon .flwr-soon-opt{opacity:1;flex:1 1 100%;margin:2px 0 0;font-size:12.5px;font-weight:700;color:#fff;text-shadow:0 1px 6px rgba(138,74,124,.45)}
+html .flwr-soon .flwr-soon-title{color:#EA386C;text-shadow:0 0 2px #fff,0 0 2px #fff,0 0 14px rgba(255,255,255,.95),0 0 30px rgba(255,255,255,.75),0 4px 18px rgba(138,74,124,.18)}
+html .flwr-soon .flwr-soon-kicker,html .flwr-soon .flwr-soon-sub{text-shadow:0 1px 3px rgba(138,74,124,.55),0 0 14px rgba(138,74,124,.35)}
+html .flwr-soon .flwr-soon-sub{padding:10px 16px;border-radius:14px;background:rgba(138,74,124,.16);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+html .flwr-soon .flwr-soon-ig a{background:rgba(255,255,255,.88)}
+html[data-theme="dark"] .flwr-soon .flwr-soon-form input{background:rgba(37,27,92,.85);color:#f6efff;border-color:#4a3a96}
+html[data-theme="dark"] .flwr-soon .flwr-soon-form input::placeholder{color:#c7bdf0}
+@media (max-width:540px){html .flwr-soon .flwr-soon-form button{width:100%}}
+</style>
 </head>
 <body>
 <div aria-label="FLWRPWR coming soon" aria-modal="true" class="flwr-soon" id="flwrGate" role="dialog">
@@ -244,10 +264,10 @@ html[data-theme="dark"] .flwr-soon-form input,html[data-theme="dark"] .flwr-soon
 <form class="flwr-soon-form" id="flwrSoonForm" novalidate="">
 <input aria-label="Email address" id="flwrSoonEmail" placeholder="your@email.com" required="" type="email"/>
 <button type="submit">Notify Me</button>
-<div class="flwr-soon-extra">
-<input aria-label="Name (optional)" autocomplete="name" id="flwrSoonName" placeholder="Name (optional)" type="text"/>
-<input aria-label="Phone (optional)" autocomplete="tel" id="flwrSoonPhone" placeholder="Phone (optional)" type="tel"/>
-<input aria-label="Business (optional)" autocomplete="organization" id="flwrSoonBusiness" placeholder="Business (optional)" type="text"/>
+<div class="flwr-soon-extra"><p class="flwr-soon-opt">Name, phone and business are optional.</p>
+<input aria-label="Name (optional)" autocomplete="name" id="flwrSoonName" placeholder="Name" type="text"/>
+<input aria-label="Phone (optional)" autocomplete="tel" id="flwrSoonPhone" placeholder="Phone" type="tel"/>
+<input aria-label="Business (optional)" autocomplete="organization" id="flwrSoonBusiness" placeholder="Business" type="text"/>
 </div>
 </form>
 <p class="flwr-soon-done" hidden="" id="flwrSoonDone">You're on the list ✿ See you at launch</p>
