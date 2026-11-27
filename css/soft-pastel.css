@@ -448,3 +448,4 @@ a.byyy:focus-visible{outline:2px solid #37ff00;outline-offset:6px;border-radius:
 @keyframes petaldrift{to{background-position:220px 220px}}
 .vibe::before,.findus::before,.gives::before,.join::before{animation:petaldrift 48s linear infinite}
 @media (prefers-reduced-motion:reduce){.vibe::before,.findus::before,.gives::before,.join::before{animation:none}}
+.join{padding-block:clamp(24px,3vw,40px)}
