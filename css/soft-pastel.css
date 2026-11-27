@@ -449,3 +449,23 @@ a.byyy:focus-visible{outline:2px solid #37ff00;outline-offset:6px;border-radius:
 .vibe::before,.findus::before,.gives::before,.join::before{animation:petaldrift 48s linear infinite}
 @media (prefers-reduced-motion:reduce){.vibe::before,.findus::before,.gives::before,.join::before{animation:none}}
 .join{padding-block:clamp(24px,3vw,40px)}
+/* ---------- 26. best sellers: wider, tighter, quiet motion ---------- */
+.best{isolation:isolate;max-width:1320px;padding-bottom:clamp(28px,3.4vw,44px)}
+.best::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;translate:-50% 0;pointer-events:none;
+  background:radial-gradient(38% 60% at 12% 40%,rgba(249,193,218,.45),transparent 70%),radial-gradient(34% 55% at 88% 55%,rgba(208,190,255,.42),transparent 70%),radial-gradient(30% 45% at 50% 100%,rgba(255,226,150,.32),transparent 70%);
+  animation:bestwash 18s ease-in-out infinite alternate}
+@keyframes bestwash{from{transform:translateX(-2%) scale(1)}to{transform:translateX(2%) scale(1.06)}}
+.best .title{margin-bottom:6px}
+@media (min-width:900px){
+  .best-track{gap:clamp(18px,2vw,28px);margin-top:10px;padding-inline:clamp(0px,2vw,24px)}
+  .best-card{animation:bestfloat 6s ease-in-out infinite}
+  .best-card:nth-child(2){animation-delay:-2s}.best-card:nth-child(3){animation-delay:-4s}
+  .best-card:hover{animation-play-state:paused}
+}
+@keyframes bestfloat{0%,100%{translate:0 0}50%{translate:0 -6px}}
+.best-card{padding:10px 10px 14px}
+.best-img{aspect-ratio:5/4}
+.best-card h3{margin:12px 0 6px}
+.best .btn{margin-top:4px}
+@media (prefers-reduced-motion:reduce){.best::before,.best-card{animation:none}}
+:root[data-theme="dark"] .best::before{opacity:.35}
