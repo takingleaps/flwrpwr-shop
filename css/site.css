@@ -623,6 +623,9 @@ body{font-weight:400;font-size:17px;line-height:1.65}
 :root[data-theme="light"] .t-sativa svg{color:#f5b93a}
 :root[data-theme="light"] .tag.sativa{color:#e6a52a}
 :root[data-theme="light"] .ticker{background:#f79cc3;border-color:#f7b8d4}
+/* Light mode is pastel cream everywhere — no brown/olive (Nov 27) */
+:root[data-theme="light"] .promise,
+:root[data-theme="light"] .vibe{background:var(--cream)}
 :root[data-theme="light"] .ticker-track svg{color:#fff}
 :root[data-theme="light"] .menu-btn span{background:#e2508f}
 :root[data-theme="light"] .drawer{background:rgba(247,156,195,.35)}
